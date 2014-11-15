@@ -77,39 +77,41 @@ Bonus Features
 
 URL Map
 
-/					GET		default
-/login				GET
-/login				POST
-/user				GET		create
-/user/{id}			GET		retrieve
-/user/{id}			POST	update
-/user/{id}			POST	delete
-/game				GET		create
-/game/{id}			GET		retrieve
-/game/{id}			POST	update, make move
-/game/edit/{id}		GET		update position
-/game/edit/{id}		POST	delete
-/position			GET		create
-/position/{id}		GET		retrieve
-/position/{id}		POST	update
-/note/{id}			GET		retrieve
-/note/{id}			POST	update
+	/					GET		default
+	/login				GET
+	/login				POST
+	/user				GET		create
+	/user/{id}			GET		retrieve
+	/user/{id}			POST	update
+	/user/{id}			POST	delete
+	/game				GET		create
+	/game/{id}			GET		retrieve
+	/game/{id}			POST	update, make move
+	/game/edit/{id}		GET		update position
+	/game/edit/{id}		POST	delete
+	/position			GET		create
+	/position/{id}		GET		retrieve
+	/position/{id}		POST	update
+	/note/{id}			GET		retrieve
+	/note/{id}			POST	update
 
 ## Roadmap
 
-* Create project
-* Create chess demo page
-* Find positional database
-* Create database
-	* Create user table (this might be coming from instructor)
-	* Create game table
-	* Create position table
-* User CRUD
-* Game CRUD
-* Position CRUD
-* Migrate to production
-* Notes CRUD
-* Migrate to production
+	> Create project
+		* Create master blade
+		* download chess OSS Projects
+	* Create chess demo page
+	* Find positional database
+	* Create database
+		* Create user table (this might be coming from instructor)
+		* Create game table
+		* Create position table
+	* User CRUD
+	* Game CRUD
+	* Position CRUD
+	* Migrate to production
+	* Notes CRUD
+	* Migrate to production
 
 ## Bugs
 None known
