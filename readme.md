@@ -18,7 +18,98 @@
 
 # Project Notes
 
+Essential Features
+* User (TABLE)
+	* Fields
+		* id
+		* email
+		* username
+		* password
+		* timestamps
+	* Create new account
+	* Retrieve account information
+	* Update account information -> AJAX
+	* Delete (soft) account
+* Game (TABLE)
+	* Fields
+		* id
+		* white_user (id)
+		* black_user (id)
+		* position
+		* player_turn
+		* result -> WWIN, BWIN, DRAW
+		* timestamps
+	* Create a game
+		* Select an opponent
+		* Select an opening position
+		* Select White vs Black
+	* Retrieve a game
+	* Update a game -> AJAX
+		* Submit a move
+		* Ping for move
+	* Delete (soft) a game
+* Openings (TABLE)
+	* Fields
+		* id
+		* name
+		* position
+		* player_turn
+		* comments
+		* timestamps
+	* preloaded
+	
+Bonus Features
+
+* Game
+	* Update a game
+		* Edit the position (add/remove/move pieces without making a move)
+* Openings (TABLE, req editing an already-existing position)
+	* Create a position
+	* Retrieve a position
+	* Update a position -> AJAX
+	* Delete (soft) a position
+* Notes (TABLE)
+	* id
+	* user_id
+	* game_id
+	* content
+	* timestamps
+
+URL Map
+
+/					GET		default
+/login				GET
+/login				POST
+/user				GET		create
+/user/{id}			GET		retrieve
+/user/{id}			POST	update
+/user/{id}			POST	delete
+/game				GET		create
+/game/{id}			GET		retrieve
+/game/{id}			POST	update, make move
+/game/edit/{id}		GET		update position
+/game/edit/{id}		POST	delete
+/position			GET		create
+/position/{id}		GET		retrieve
+/position/{id}		POST	update
+/note/{id}			GET		retrieve
+/note/{id}			POST	update
+
 ## Roadmap
+
+* Create project
+* Create chess demo page
+* Find positional database
+* Create database
+	* Create user table (this might be coming from instructor)
+	* Create game table
+	* Create position table
+* User CRUD
+* Game CRUD
+* Position CRUD
+* Migrate to production
+* Notes CRUD
+* Migrate to production
 
 ## Bugs
 None known
