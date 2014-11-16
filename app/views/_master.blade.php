@@ -13,6 +13,8 @@
         @yield('title')
     </title>
 
+	<!-- BOOTSTRAP INCLUDE START -->
+
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
 
@@ -22,7 +24,28 @@
     <!-- Latest compiled and minified JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
 
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="../../dist/js/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
+
+    <!-- BOOTSTRAP INCLUDE END -->
+
+	<!-- CHESS INCLUDE START -->
+
+	<script src="js/chess.js"></script>
+	<script src="js/chessboard-0.3.0.js"></script>
+	<link rel="stylesheet" href="css/chessboard-0.3.0.css" />
+
+	<!-- CHESS INCLUDE END -->
+
 	<link rel="stylesheet" href="/css/styles.css">
+
+	@yield('head');
+
 </head>
 
 <body>
@@ -68,13 +91,5 @@
     </footer>
 </div> <!-- /container -->
 
-
-<!-- Bootstrap core JavaScript
-================================================== -->
-<!-- Placed at the end of the document so the pages load faster -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-<script src="../../dist/js/bootstrap.min.js"></script>
-<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-<script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
 </body>
 </html>

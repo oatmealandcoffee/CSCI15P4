@@ -126,5 +126,6 @@ None known
 
 * 14\_11\_14\_01\_00\_000: Started source
 * 14\_11\_15\_01\_00\_001: Added chessboard.js, chess.js code
+* 14\_11\_15\_01\_00\_002: Added test integration of example random v. random game code
 
-/Applications/MAMP/htdocs/CSCI15P4; git add --all; git commit -m "Added chessboard.js, chess.js code"; git push origin master
+cd /Applications/MAMP/htdocs/CSCI15P4; git add --all; git commit -m "Added test integration of example random v. random game code"; git push origin master

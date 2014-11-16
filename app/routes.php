@@ -20,3 +20,9 @@ Route::get('/login', function()
 {
     return View::make('login');
 });
+
+// testing for chess engine integration
+Route::get('/randomchess', function()
+{
+    return View::make('randomchess');
+});
