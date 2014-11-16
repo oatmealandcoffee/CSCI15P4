@@ -103,12 +103,12 @@ URL Map
 
 ## Roadmap
 
-	> Create project
-		* Create master blade
-		* download chess OSS Projects
-	* Create chess demo page
-	* Find positional database
-	* Create database
+	X Create project
+		X Create master blade
+		X download chess OSS Projects
+	X Create chess demo page
+	X Find positional database
+	* Create databases
 		* Create user table (this might be coming from instructor)
 		* Create game table
 		* Create position table
@@ -119,6 +119,18 @@ URL Map
 	* Notes CRUD
 	* Migrate to production
 
+## Basic Openings
+    Ruy Lopez	r1bqkbnr/pppp1ppp/2n5/1B2p3/4P3/5N2/PPPP1PPP/RNBQK2R b KQkq - 3 3
+    Sicilian Defense	rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1
+    Queen's Gambit	rnbqkbnr/ppp1pppp/8/3p4/2PP4/8/PP2PPPP/RNBQKBNR
+    Alekhine Defense	rnbqkb1r/pppppppp/5n2/8/4P3/8/PPPP1PPP/RNBQKBNR
+    Modern Defense	rnbqkbnr/pppppp1p/6p1/8/4P3/8/PPPP1PPP/RNBQKBNR
+    King's Indian Defense	rnbqkb1r/pppppp1p/5np1/8/2PP4/8/PP2PPPP/RNBQKBNR
+    King's Indian Attack	rnbqkbnr/ppp1pppp/8/3p4/8/5NP1/PPPPPP1P/RNBQKB1R
+    English Opening	rnbqkbnr/pppppppp/8/8/2P5/8/PP1PPPPP/RNBQKBNR
+    Dutch Defense	rnbqkbnr/ppppp1pp/8/5p2/3P4/8/PPP1PPPP/RNBQKBNR
+    Dutch Stonewall	rnbqkbnr/ppp3pp/4p3/3p1p2/2PP4/2N5/PP2PPPP/R1BQKBNR
+    
 ## Bugs
 None known
 
@@ -128,4 +140,4 @@ None known
 * 14\_11\_15\_01\_00\_001: Added chessboard.js, chess.js code
 * 14\_11\_15\_01\_00\_002: Added test integration of example random v. random game code
 
-cd /Applications/MAMP/htdocs/CSCI15P4; git add --all; git commit -m "Added test integration of example random v. random game code"; git push origin master
+cd /Applications/MAMP/htdocs/CSCI15P4; git add --all; git commit -m "Added positions to readme"; git push origin master
