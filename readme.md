@@ -15,6 +15,12 @@
 
 # Dependencies and Citations
 <!--A list of any plugins, libraries, packages or outside code used in the project. See Student Responsibilities for more details on avoiding code plagiarism.-->
+* Based on the Laravel framework
+* PHP created and edited with [PHPStorm](http://www.jetbrains.com/phpstorm/).
+* HTML and CSS created and edited with [BBEdit](http://www.barebones.com/products/bbedit/)
+* Design created with [Bootstrap](http://www.bootstrap.org)
+* Chess board provided with [chessboard.js](http://chessboardjs.com)
+* Chess logic provided by [chess.js](https://github.com/jhlywa/chess.js)
 
 # Project Notes
 
@@ -119,5 +125,6 @@ None known
 # Change History
 
 * 14\_11\_14\_01\_00\_000: Started source
+* 14\_11\_15\_01\_00\_001: Added chessboard.js, chess.js code
 
-/Applications/MAMP/htdocs/CSCI15P4; git add --all; git commit -m "Started source"; git push origin master
+/Applications/MAMP/htdocs/CSCI15P4; git add --all; git commit -m "Added chessboard.js, chess.js code"; git push origin master
