@@ -115,12 +115,17 @@ URL Map
 		X Create position table
 		* Create user table (this might be coming from instructor)
 		* Create game table
-	* Position CRUD
+	> Position CRUD
 		* Create GET
 		* Create POST
 		X Retrieve all GET
+			* View -> Update
 		* Retrieve {id} GET
 		* Update {id} POST
+			* Change position
+			* Change title
+			* New game
+			* Delete position
 		* Delete {id} POST
 	* User CRUD
 	* Game CRUD
@@ -140,5 +145,6 @@ None known
 * 14\_11\_15\_01\_00\_003: Added local database connection
 * 14\_11\_15\_01\_01\_000: Added positions table with seed data
 * 14\_11\_15\_01\_02\_000: Added positions retrieve all view and output
+* 14\_11\_15\_01\_03\_000: Added positions retrieve one view and output; added navigation from positions retrieve all to positions retrieve one
 
-cd /Applications/MAMP/htdocs/CSCI15P4; git add --all; git commit -m "Added positions retrieve all view and output"; git push origin master
+cd /Applications/MAMP/htdocs/CSCI15P4; git add --all; git commit -m "Added positions retrieve one view and output; added navigation from positions retrieve all to positions retrieve one"; git push origin master

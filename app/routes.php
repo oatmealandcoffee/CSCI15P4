@@ -44,8 +44,8 @@ Route::get('/positions', function () {
 });
 
 // Retrieve position {id} for updating and deleting
-Route::get('/position/{id}', function ( $id ) {
-
+Route::get('/position/{id}', function ( $position_id ) {
+    return View::make('position_retrieve_one')->with('position_id', $position_id);
 });
 
 // Update position

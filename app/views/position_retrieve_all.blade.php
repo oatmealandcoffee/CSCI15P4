@@ -10,8 +10,13 @@ Laravel Chess Server
 
 @section('body')
 
-@foreach( $positions as $pos )
-	{{$pos->name;}}<br/>
-@endforeach
-
+<table class="table">
+	@foreach( $positions as $pos )
+		<tr>
+			<td>
+				<a href="/position/{{$pos->id}}" title="{{$pos->name}}">{{$pos->name}}</a>
+			</td>
+		</tr>
+	@endforeach
+</table>
 @stop
