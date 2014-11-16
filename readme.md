@@ -57,11 +57,11 @@ Essential Features
 * Openings (TABLE)
 	* Fields
 		* id
+		* timestamps
 		* name
-		* position
+		* fen
 		* player_turn
 		* comments
-		* timestamps
 	* preloaded
 	
 Bonus Features
@@ -122,8 +122,8 @@ URL Map
 	* Migrate to production
 
 ## Basic Openings
-    Ruy Lopez	r1bqkbnr/pppp1ppp/2n5/1B2p3/4P3/5N2/PPPP1PPP/RNBQK2R b KQkq - 3 3
-    Sicilian Defense	rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1
+    Ruy Lopez	r1bqkbnr/pppp1ppp/2n5/1B2p3/4P3/5N2/PPPP1PPP/RNBQK2R
+    Sicilian Defense	rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR
     Queen's Gambit	rnbqkbnr/ppp1pppp/8/3p4/2PP4/8/PP2PPPP/RNBQKBNR
     Alekhine Defense	rnbqkb1r/pppppppp/5n2/8/4P3/8/PPPP1PPP/RNBQKBNR
     Modern Defense	rnbqkbnr/pppppp1p/6p1/8/4P3/8/PPPP1PPP/RNBQKBNR
@@ -142,5 +142,6 @@ None known
 * 14\_11\_15\_01\_00\_001: Added chessboard.js, chess.js code
 * 14\_11\_15\_01\_00\_002: Added test integration of example random v. random game code
 * 14\_11\_15\_01\_00\_003: Added local database connection
+* 14\_11\_15\_01\_01\_000: Added positions table with seed data
 
-cd /Applications/MAMP/htdocs/CSCI15P4; git add --all; git commit -m "Added local database connection"; git push origin master
+cd /Applications/MAMP/htdocs/CSCI15P4; git add --all; git commit -m "Added positions table with seed data"; git push origin master
