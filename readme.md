@@ -108,13 +108,15 @@ URL Map
 		X download chess OSS Projects
 	X Create chess demo page
 	X Find positional database
-	* Create databases
+	> Create databases
+		> Establish connection
+		> establish environment 
+		* Create position table
 		* Create user table (this might be coming from instructor)
 		* Create game table
-		* Create position table
+	* Position CRUD
 	* User CRUD
 	* Game CRUD
-	* Position CRUD
 	* Migrate to production
 	* Notes CRUD
 	* Migrate to production
@@ -139,5 +141,6 @@ None known
 * 14\_11\_14\_01\_00\_000: Started source
 * 14\_11\_15\_01\_00\_001: Added chessboard.js, chess.js code
 * 14\_11\_15\_01\_00\_002: Added test integration of example random v. random game code
+* 14\_11\_15\_01\_00\_003: Added local database connection
 
-cd /Applications/MAMP/htdocs/CSCI15P4; git add --all; git commit -m "Added positions to readme"; git push origin master
+cd /Applications/MAMP/htdocs/CSCI15P4; git add --all; git commit -m "Added local database connection"; git push origin master
