@@ -12,10 +12,6 @@ Random Chess Demo
 
 @stop
 
-@section('home_nav_active')
-class="active"
-@stop
-
 @section('description')
 A demo integration of chessboard.js and chess.js
 @stop
@@ -49,14 +45,14 @@ var makeRandomMove = function() {
   board.position(game.fen());
 
 	// game loop; lather, rinse, repeat
-  window.setTimeout(makeRandomMove, 50);
+  window.setTimeout(makeRandomMove, 500);
 };
 
 // instantiate the new board
 board = new ChessBoard('board', 'start');
 
 // kick off the game loop
-window.setTimeout(makeRandomMove, 50);
+window.setTimeout(makeRandomMove, 500);
 //--- end example JS ---
 
 }; // end init()

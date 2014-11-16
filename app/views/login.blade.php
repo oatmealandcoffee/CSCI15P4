@@ -8,10 +8,6 @@ Laravel Chess Server
 Laravel Chess Server Login
 @stop
 
-@section('home_nav_active')
-class="active"
-@stop
-
 @section('description')
 A simple server dedicated to the playing of chess.
 @stop

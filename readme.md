@@ -83,23 +83,24 @@ Bonus Features
 
 URL Map
 
-	/					GET		default
-	/login				GET
-	/login				POST
-	/user				GET		create
-	/user/{id}			GET		retrieve
-	/user/{id}			POST	update
-	/user/{id}			POST	delete
-	/game				GET		create
-	/game/{id}			GET		retrieve
-	/game/{id}			POST	update, make move
-	/game/edit/{id}		GET		update position
-	/game/edit/{id}		POST	delete
-	/position			GET		create
-	/position/{id}		GET		retrieve
-	/position/{id}		POST	update
-	/note/{id}			GET		retrieve
-	/note/{id}			POST	update
+	/							GET		default
+	/login						GET
+	/login						POST
+	/user						GET		create
+	/user/{id}				GET		retrieve
+	/user/{id}				POST	update
+	/user/{id}				POST	delete
+	/game						GET		create
+	/game/{id}				GET		retrieve
+	/game/{id}				POST	update, make move
+	/game/edit/{id}			GET		update position
+	/game/edit/{id}			POST	delete
+	/position					GET		create
+	/position/{id}			GET		retrieve
+	/position/update/{id}		POST	update
+	/position/delete/{id}		POST	delete
+	/note/{id}				GET		retrieve
+	/note/{id}				POST	update
 
 ## Roadmap
 
@@ -108,30 +109,25 @@ URL Map
 		X download chess OSS Projects
 	X Create chess demo page
 	X Find positional database
-	> Create databases
-		> Establish connection
-		> establish environment 
-		* Create position table
+	X Create databases
+		X Establish connection
+		X establish environment 
+		X Create position table
 		* Create user table (this might be coming from instructor)
 		* Create game table
 	* Position CRUD
+		* Create GET
+		* Create POST
+		X Retrieve all GET
+		* Retrieve {id} GET
+		* Update {id} POST
+		* Delete {id} POST
 	* User CRUD
 	* Game CRUD
+	* Add navigation to the top of the master page
 	* Migrate to production
 	* Notes CRUD
 	* Migrate to production
-
-## Basic Openings
-    Ruy Lopez	r1bqkbnr/pppp1ppp/2n5/1B2p3/4P3/5N2/PPPP1PPP/RNBQK2R
-    Sicilian Defense	rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR
-    Queen's Gambit	rnbqkbnr/ppp1pppp/8/3p4/2PP4/8/PP2PPPP/RNBQKBNR
-    Alekhine Defense	rnbqkb1r/pppppppp/5n2/8/4P3/8/PPPP1PPP/RNBQKBNR
-    Modern Defense	rnbqkbnr/pppppp1p/6p1/8/4P3/8/PPPP1PPP/RNBQKBNR
-    King's Indian Defense	rnbqkb1r/pppppp1p/5np1/8/2PP4/8/PP2PPPP/RNBQKBNR
-    King's Indian Attack	rnbqkbnr/ppp1pppp/8/3p4/8/5NP1/PPPPPP1P/RNBQKB1R
-    English Opening	rnbqkbnr/pppppppp/8/8/2P5/8/PP1PPPPP/RNBQKBNR
-    Dutch Defense	rnbqkbnr/ppppp1pp/8/5p2/3P4/8/PPP1PPPP/RNBQKBNR
-    Dutch Stonewall	rnbqkbnr/ppp3pp/4p3/3p1p2/2PP4/2N5/PP2PPPP/R1BQKBNR
     
 ## Bugs
 None known
@@ -143,5 +139,6 @@ None known
 * 14\_11\_15\_01\_00\_002: Added test integration of example random v. random game code
 * 14\_11\_15\_01\_00\_003: Added local database connection
 * 14\_11\_15\_01\_01\_000: Added positions table with seed data
+* 14\_11\_15\_01\_02\_000: Added positions retrieve all view and output
 
-cd /Applications/MAMP/htdocs/CSCI15P4; git add --all; git commit -m "Added positions table with seed data"; git push origin master
+cd /Applications/MAMP/htdocs/CSCI15P4; git add --all; git commit -m "Added positions retrieve all view and output"; git push origin master

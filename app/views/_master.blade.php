@@ -44,43 +44,22 @@
 
 	<link rel="stylesheet" href="/css/styles.css">
 
-	@yield('head');
+	@yield('head')
 
 </head>
 
 <body>
 
-<div class="navbar navbar-default navbar-fixed-top" role="navigation">
-    <div class="container">
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"><a href="login">Login</a></span>
-            </button>
-            <a class="navbar-brand" href="/">Laravel Chess Server</a>
-        </div>
-        <div class="navbar-collapse collapse">
-            <ul class="nav navbar-nav">
-                <li @yield('text_nav_active')><a href="login">Login</a></li>
-            </ul>
-        </div><!--/.nav-collapse -->
-    </div>
-</div>
 
-<!-- Main jumbotron for a primary marketing message or call to action -->
-<div class="jumbotron">
-    <div class="container">
-        <h1>
-            @yield('title_h1')
-        </h1>
-        <p>
-            @yield('description')
-        </p>
-    </div>
-</div>
 
 <div class="container">
 
+	<header>
+    	<h1>Laravel Chess Server</h1>
+    	<p>Because I am a Big Nerd.</p>
+    </header>
+
+    <hr>
 
     @yield('body')
 

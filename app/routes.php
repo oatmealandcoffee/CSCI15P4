@@ -21,6 +21,47 @@ Route::get('/login', function()
     return View::make('login');
 });
 
+/*
+ * POSITION ROUTES
+ */
+
+// Create position
+Route::get('/position', function () {
+
+});
+
+// Create position
+Route::post('/position/create/', function ( $id ) {
+
+});
+
+// Retrieve all positions
+Route::get('/positions', function () {
+
+    $positions = Position::all();
+
+    return View::make('position_retrieve_all')->with('positions', $positions);
+});
+
+// Retrieve position {id} for updating and deleting
+Route::get('/position/{id}', function ( $id ) {
+
+});
+
+// Update position
+Route::post('/position/update/{id}', function ( $id ) {
+
+});
+
+// Delete position
+Route::post('/position/delete/{id}', function ( $id ) {
+
+});
+
+/*
+ * TESTING ROUTES
+ */
+
 // testing for chess engine integration
 Route::get('/randomchess', function()
 {
