@@ -45,7 +45,19 @@ Route::get('/positions', function () {
 
 // Retrieve position {id} for updating and deleting
 Route::get('/position/{id}', function ( $position_id ) {
-    return View::make('position_retrieve_one')->with('position_id', $position_id);
+
+    $positions = Position::all();
+
+    if ( !is_numeric( $position_id ) || $position_id < 0 || $position_id > count( $positions ) ) {
+        return Redirect::to('/positions');
+    }
+
+    $position = Position::find($position_id);
+
+    return View::make('position_retrieve_one')->with('position', $position);
+
+
+
 });
 
 // Update position

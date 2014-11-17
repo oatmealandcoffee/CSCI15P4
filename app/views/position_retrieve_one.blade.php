@@ -10,6 +10,6 @@ Laravel Chess Server
 
 @section('body')
 
-<p>{{$position_id}}</p>
+<p>{{$position->name}}</p>
 
 @stop

@@ -146,5 +146,6 @@ None known
 * 14\_11\_15\_01\_01\_000: Added positions table with seed data
 * 14\_11\_15\_01\_02\_000: Added positions retrieve all view and output
 * 14\_11\_15\_01\_03\_000: Added positions retrieve one view and output; added navigation from positions retrieve all to positions retrieve one
+* 14\_11\_15\_01\_03\_001: Added retrieval of individual position for editing
 
-cd /Applications/MAMP/htdocs/CSCI15P4; git add --all; git commit -m "Added positions retrieve one view and output; added navigation from positions retrieve all to positions retrieve one"; git push origin master
+cd /Applications/MAMP/htdocs/CSCI15P4; git add --all; git commit -m "Added retrieval of individual position for editing"; git push origin master
