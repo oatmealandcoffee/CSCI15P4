@@ -147,5 +147,6 @@ None known
 * 14\_11\_15\_01\_02\_000: Added positions retrieve all view and output
 * 14\_11\_15\_01\_03\_000: Added positions retrieve one view and output; added navigation from positions retrieve all to positions retrieve one
 * 14\_11\_15\_01\_03\_001: Added retrieval of individual position for editing
+* 14\_11\_15\_01\_03\_002: Fixed bug with linking to chess engine js; Adding linking back to positions page
 
-cd /Applications/MAMP/htdocs/CSCI15P4; git add --all; git commit -m "Added retrieval of individual position for editing"; git push origin master
+cd /Applications/MAMP/htdocs/CSCI15P4; git add --all; git commit -m "Fixed bug with linking to chess engine js; Adding linking back to positions page"; git push origin master

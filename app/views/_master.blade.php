@@ -36,13 +36,13 @@
 
 	<!-- CHESS INCLUDE START -->
 
-	<script src="js/chess.js"></script>
-	<script src="js/chessboard-0.3.0.js"></script>
-	<link rel="stylesheet" href="css/chessboard-0.3.0.css" />
+	<script src="http://localhost/js/chess.js"></script>
+	<script src="http://localhost/js/chessboard-0.3.0.js"></script>
+	<link rel="stylesheet" href="http://localhost/css/chessboard-0.3.0.css" />
 
 	<!-- CHESS INCLUDE END -->
 
-	<link rel="stylesheet" href="/css/styles.css">
+	<link rel="stylesheet" href="http://localhost/css/styles.css">
 
 	@yield('head')
 
@@ -66,6 +66,7 @@
     <hr>
 
     <footer>
+    	<p><a href="/positions">Positions</a></p>
         <p>Copyright &copy; 2014 Philip Regan. All Rights Reserved. All Wrongs Revenged.</p>
     </footer>
 </div> <!-- /container -->
