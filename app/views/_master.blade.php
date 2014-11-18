@@ -56,7 +56,6 @@
 
 	<header>
     	<h1>Laravel Chess Server</h1>
-    	<p>Because I am a Big Nerd.</p>
     </header>
 
     <hr>

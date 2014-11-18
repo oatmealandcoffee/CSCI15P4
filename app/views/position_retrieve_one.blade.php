@@ -31,15 +31,44 @@ $(document).ready(init);
 
 <h2>{{$position->name}}</h2>
 <table class="table">
-	<tr>
-		<td>
-			FEN: {{$position->fen}}
-		</td>
-	</tr>
+
 	<tr>
     	<td>
 			<div id="board" style="width: 200px"></div>
     	</td>
+    	<td></td>
+    	<td></td>
+    	<td></td>
+    </tr>
+    <tr>
+    	<td>
+    		<b>FEN:</b> <tt>{{$position->fen}}</tt>
+    	</td>
+    	<td></td>
+    	<td></td>
+    	<td></td>
+    </tr>
+    <tr>
+        <td>
+        	{{ Form::open(array('url'=>'/positions', 'method' => 'GET')) }}
+			{{ Form::submit('Play') }}
+        	{{ Form::close() }}
+        </td>
+        <td>
+            {{ Form::open(array('url'=>'/positions', 'method' => 'GET')) }}
+            {{ Form::submit('Edit') }}
+            {{ Form::close() }}
+        </td>
+        <td>
+        	{{ Form::open(array('url'=>'/positions', 'method' => 'GET')) }}
+           	{{ Form::submit('Duplicate') }}
+            {{ Form::close() }}
+        </td>
+        <td>
+			{{ Form::open(array('url'=>'/positions', 'method' => 'GET')) }}
+			{{ Form::submit('Delete') }}
+        	{{ Form::close() }}
+       	</td>
     </tr>
 </table>
 
