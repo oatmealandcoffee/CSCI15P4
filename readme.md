@@ -134,6 +134,7 @@ URL Map
 		* Delete {id} POST
 	* User CRUD
 	* Game CRUD
+		* Game invitations: how to get two players to play a game
 	* Add navigation to the top of the master page
 	* Migrate to production
 	* Notes CRUD
@@ -155,5 +156,6 @@ None known
 * 14\_11\_15\_01\_03\_002: Fixed bug with linking to chess engine js; Adding linking back to positions page
 * 14\_11\_15\_01\_03\_003: Added buttons to position page
 * 14\_11\_15\_02\_00\_000: Added users migration; added UserController, GameController, PositionController
+* 14\_11\_15\_02\_01\_000: Added user_create form
 
-cd /Applications/MAMP/htdocs/CSCI15P4; git add --all; git commit -m "RAdded users migration; added UserController, GameController, PositionController"; git push origin master
+cd /Applications/MAMP/htdocs/CSCI15P4; git add --all; git commit -m "Added user_create form"; git push origin master

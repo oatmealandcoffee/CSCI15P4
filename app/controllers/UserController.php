@@ -1,15 +1,25 @@
 <?php
 
+/*
+ - Route::get('/user', 'UserController@index');
+ > Route::get('/user/create', 'UserController@create');
+ * Route::post('/user', 'UserController@store');
+ * Route::get('/user/{user_id}', 'UserController@show');
+ * Route::get('/user/{user_id}/edit', 'UserController@edit');
+ * Route::put('/user/{user_id}', 'UserController@update');
+ * Route::delete('/user/{user_id}', 'UserController@destroy');
+ */
+
 class UserController extends \BaseController {
 
 	/**
-	 * Display a listing of the resource.
+	 * Display a listing of the resource. $this->user->all();
 	 *
 	 * @return Response
 	 */
 	public function index()
 	{
-		//
+		// redirect to create
 	}
 
 
@@ -20,7 +30,7 @@ class UserController extends \BaseController {
 	 */
 	public function create()
 	{
-		//
+        return View::make('user_create');
 	}
 
 
