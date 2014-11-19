@@ -41,7 +41,23 @@ class UserController extends \BaseController {
 	 */
 	public function store()
 	{
-		//
+        $s = new User;
+        $s->username = Input::get('username');
+        $s->email = Input::get('email');
+        $s->password = Hash::make(Input::get('password'));
+        $s->save();
+
+        // validate save
+
+        if($s->isSaved())
+        {
+            return Redirect::route('users.index')
+                ->with('flash', 'The new user has been created');
+        }
+
+        return Redirect::route('users.create')
+            ->withInput()
+            ->withErrors($s->errors());
 	}
 
 

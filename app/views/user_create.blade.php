@@ -11,7 +11,7 @@ Create User
 
 @section('body')
 
-{{ Form::open(array('url'=>'/user/store')) }}
+{{ Form::open(array('url'=>'/user', 'method'=>'POST')) }}
 <table class="table">
 	<tr>
 		<td>
