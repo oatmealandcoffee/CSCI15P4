@@ -60,15 +60,11 @@ $(document).ready(init);
             {{ Form::close() }}
         </td>
         <td>
-        	{{ Form::open(array('url'=>'/positions', 'method' => 'GET')) }}
-           	{{ Form::submit('Duplicate') }}
-            {{ Form::close() }}
-        </td>
-        <td>
 			{{ Form::open(array('url'=>'/positions', 'method' => 'GET')) }}
 			{{ Form::submit('Delete') }}
         	{{ Form::close() }}
        	</td>
+       	<td></td>
     </tr>
 </table>
 

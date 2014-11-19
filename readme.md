@@ -115,7 +115,12 @@ URL Map
 		X Create position table
 		* Create user table (this might be coming from instructor)
 		* Create game table
+	* Create User Functonality
+		* Create Users DB Table
+		* Create UserController as RESTful
+		* Build credentialed access
 	> Position CRUD
+		* Update Position to RESTful Controller
 		* Create GET
 		* Create POST
 		X Retrieve all GET
@@ -150,4 +155,4 @@ None known
 * 14\_11\_15\_01\_03\_002: Fixed bug with linking to chess engine js; Adding linking back to positions page
 * 14\_11\_15\_01\_03\_003: Added buttons to position page
 
-cd /Applications/MAMP/htdocs/CSCI15P4; git add --all; git commit -m "Added buttons to position page"; git push origin master
+cd /Applications/MAMP/htdocs/CSCI15P4; git add --all; git commit -m "Removing PositionsController to change it to RESTful controller"; git push origin master

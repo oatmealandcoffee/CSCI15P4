@@ -22,6 +22,18 @@ Route::get('/login', function()
 });
 
 /*
+ * GAME ROUTES
+ */
+
+Route::get('/game/{id}', function ( $id ) {
+
+    // if the id does not exist, then create a new game
+
+    // if the id does exist, then retrieve the game
+
+});
+
+/*
  * POSITION ROUTES
  */
 
