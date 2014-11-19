@@ -22,6 +22,12 @@ Route::get('/login', function()
 });
 
 /*
+ * User Routes
+ */
+
+Route::resource('user', 'UserController');
+
+/*
  * GAME ROUTES
  */
 

@@ -154,5 +154,6 @@ None known
 * 14\_11\_15\_01\_03\_001: Added retrieval of individual position for editing
 * 14\_11\_15\_01\_03\_002: Fixed bug with linking to chess engine js; Adding linking back to positions page
 * 14\_11\_15\_01\_03\_003: Added buttons to position page
+* 14\_11\_15\_02\_00\_000: Added users migration; added UserController, GameController, PositionController
 
-cd /Applications/MAMP/htdocs/CSCI15P4; git add --all; git commit -m "Removing PositionsController to change it to RESTful controller"; git push origin master
+cd /Applications/MAMP/htdocs/CSCI15P4; git add --all; git commit -m "RAdded users migration; added UserController, GameController, PositionController"; git push origin master
