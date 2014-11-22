@@ -144,7 +144,8 @@ URL Map
 	* Migrate to production
     
 ## Bugs
-* User does not redirect correctly create->store->show
+* [fixed] User does not redirect correctly create->store->show
+	* redirect to action as opposed to route
 
 # Change History
 
@@ -162,5 +163,6 @@ URL Map
 * 14\_11\_15\_02\_01\_000: Added user_create form
 * 14\_11\_15\_02\_01\_001: Added saving user data
 * 14\_11\_15\_02\_02\_000: Added showing single user
+* 14\_11\_15\_02\_02\_001: Fixed routing from create to store to show
 
-cd /Applications/MAMP/htdocs/CSCI15P4; git add --all; git commit -m "Added saving user data"; git push origin master
+cd /Applications/MAMP/htdocs/CSCI15P4; git add --all; git commit -m "Added showing single user; Fixed routing from create to store to show"; git push origin master

@@ -55,7 +55,7 @@ class UserController extends \BaseController {
 
         // redirect to /user/{user_id}
 
-        return Redirect::route('user/'.$user->id);
+        return Redirect::action('UserController@show', array('user_id' => $user->id));
 	}
 
 
