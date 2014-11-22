@@ -113,7 +113,7 @@ URL Map
 		X Establish connection
 		X establish environment 
 		X Create position table
-		* Create user table (this might be coming from instructor)
+		X Create user table
 		* Create game table
 	* Create User Functonality
 		* Create Users DB Table
@@ -133,15 +133,18 @@ URL Map
 			* Delete position
 		* Delete {id} POST
 	* User CRUD
+	* 
 	* Game CRUD
 		* Game invitations: how to get two players to play a game
+			* User name search
+			* User name list
 	* Add navigation to the top of the master page
 	* Migrate to production
 	* Notes CRUD
 	* Migrate to production
     
 ## Bugs
-None known
+* User does not redirect correctly create->store->show
 
 # Change History
 
@@ -158,5 +161,6 @@ None known
 * 14\_11\_15\_02\_00\_000: Added users migration; added UserController, GameController, PositionController
 * 14\_11\_15\_02\_01\_000: Added user_create form
 * 14\_11\_15\_02\_01\_001: Added saving user data
+* 14\_11\_15\_02\_02\_000: Added showing single user
 
 cd /Applications/MAMP/htdocs/CSCI15P4; git add --all; git commit -m "Added saving user data"; git push origin master

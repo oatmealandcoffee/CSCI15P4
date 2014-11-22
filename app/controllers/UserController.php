@@ -2,8 +2,8 @@
 
 /*
  - Route::get('/user', 'UserController@index');
- > Route::get('/user/create', 'UserController@create');
- * Route::post('/user', 'UserController@store');
+ - Route::get('/user/create', 'UserController@create');
+ > Route::post('/user', 'UserController@store');
  * Route::get('/user/{user_id}', 'UserController@show');
  * Route::get('/user/{user_id}/edit', 'UserController@edit');
  * Route::put('/user/{user_id}', 'UserController@update');
@@ -12,6 +12,8 @@
 
 class UserController extends \BaseController {
 
+    use SoftDeletingTrait;
+
 	/**
 	 * Display a listing of the resource. $this->user->all();
 	 *
@@ -19,7 +21,7 @@ class UserController extends \BaseController {
 	 */
 	public function index()
 	{
-		// redirect to create
+        return Redirect::route('user.create');
 	}
 
 
@@ -47,17 +49,13 @@ class UserController extends \BaseController {
         $s->password = Hash::make(Input::get('password'));
         $s->save();
 
-        // validate save
+        // get the id
 
-        if($s->isSaved())
-        {
-            return Redirect::route('users.index')
-                ->with('flash', 'The new user has been created');
-        }
+        $user = User::where('email', '=', $s->email)->first();
 
-        return Redirect::route('users.create')
-            ->withInput()
-            ->withErrors($s->errors());
+        // redirect to /user/{user_id}
+
+        return Redirect::route('user/'.$user->id);
 	}
 
 
@@ -67,9 +65,10 @@ class UserController extends \BaseController {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function show($id)
+	public function show($user_id)
 	{
-		//
+        $user = User::where('id', '=', $user_id)->first();
+        return View::make('user_show')->with('user', $user);
 	}
 
 
