@@ -139,16 +139,16 @@ URL Map
 			* add server-side user input validation
  		X Route::post('/user', 'UserController@store');
  		X Route::get('/user/{user_id}', 'UserController@show');
- 			* Add user not found redirect to create
+ 			X Add user not found redirect to create
  		> Route::get('/user/{user_id}/edit', 'UserController@edit');
  			X add form to edit
  			X add prepopulation of form
  			* add client-side user input validation
 			* add server-side user input validation
  		> Route::put('/user/{user_id}', 'UserController@update');
- 			* add user not found redirect to create
- 		* Route::delete('/user/{user_id}', 'UserController@destroy'); 
- 			* add user not found redirect to create
+ 			X add user not found redirect to create
+ 		X Route::delete('/user/{user_id}', 'UserController@destroy'); 
+ 			X add user not found redirect to create
 	* Game CRUD
 		* Game invitations: how to get two players to play a game
 			* User name search
