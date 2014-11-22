@@ -11,6 +11,6 @@ Create User
 
 @section('body')
 
-<p>These are not the users you are looking for. You may move along.</p>
+<p>EDITING</p>
 
 @stop

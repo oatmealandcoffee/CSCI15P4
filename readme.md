@@ -133,15 +133,38 @@ URL Map
 			* Delete position
 		* Delete {id} POST
 	* User CRUD
-	* 
+		X Route::get('/user', 'UserController@index');
+ 		> Route::get('/user/create', 'UserController@create');
+ 			* add client-side user input validation
+			* add server-side user input validation
+ 		X Route::post('/user', 'UserController@store');
+ 		X Route::get('/user/{user_id}', 'UserController@show');
+ 		> Route::get('/user/{user_id}/edit', 'UserController@edit');
+ 			* add client-side user input validation
+			* add server-side user input validation
+ 		* Route::put('/user/{user_id}', 'UserController@update');
+ 		* Route::delete('/user/{user_id}', 'UserController@destroy'); 
+		* User create
+			* client-side user input validation
+			* server-side user input validation
 	* Game CRUD
 		* Game invitations: how to get two players to play a game
 			* User name search
 			* User name list
 	* Add navigation to the top of the master page
+	* Credentialing?
 	* Migrate to production
 	* Notes CRUD
 	* Migrate to production
+
+	* Foo CRUD
+		* get /foo - index
+		* get /foo/create - create
+		* post /foo - store // redirect::action
+		* get /foo/{foo_id} - show($foo_id)
+		* get /foo/{foo_id}/edit - edit($foo_id)
+		* put /foo/{foo_id} - update($foo_id) // redirect::action
+		* delete /foo/{foo_id} - destroy($foo_id) // redirect::action
     
 ## Bugs
 * [fixed] User does not redirect correctly create->store->show
@@ -164,5 +187,6 @@ URL Map
 * 14\_11\_15\_02\_01\_001: Added saving user data
 * 14\_11\_15\_02\_02\_000: Added showing single user
 * 14\_11\_15\_02\_02\_001: Fixed routing from create to store to show
+* 14\_11\_15\_02\_03\_000: Added routing to editing and deleting
 
-cd /Applications/MAMP/htdocs/CSCI15P4; git add --all; git commit -m "Added showing single user; Fixed routing from create to store to show"; git push origin master
+cd /Applications/MAMP/htdocs/CSCI15P4; git add --all; git commit -m "Added routing to editing and deleting"; git push origin master
