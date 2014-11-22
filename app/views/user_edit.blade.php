@@ -1,7 +1,7 @@
 @extends('_master')
 
 @section('title')
-Create User
+Update User
 @stop
 
 @section('head')
@@ -11,6 +11,32 @@ Create User
 
 @section('body')
 
-<p>EDITING</p>
+{{ Form::open(array('url'=>'/user'.$user->id, 'method'=>'PUT')) }}
+<table class="table">
+	<tr>
+		<td>
+			{{ Form::label('username', 'Username') }}
+		</td>
+		<td>
+			{{ Form::text('username', $user->username) }}
+		</td>
+	</tr>
+	<tr>
+         <td>
+         	{{ Form::label('', 'Email') }}
+		</td>
+		<td>
+         	{{ Form::text('email', $user->email) }}
+         </td>
+	</tr>
+	<tr>
+		<td>
+		</td>
+         <td>
+			{{ Form::submit('Update') }}
+         </td>
+	</tr>
+</table>
+{{ Form::close() }}
 
 @stop

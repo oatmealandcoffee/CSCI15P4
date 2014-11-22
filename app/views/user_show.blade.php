@@ -1,7 +1,7 @@
 @extends('_master')
 
 @section('title')
-Create User
+Show User
 @stop
 
 @section('head')
