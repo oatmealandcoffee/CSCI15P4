@@ -11,7 +11,7 @@ class UserController extends \BaseController {
 	 */
 	public function index()
 	{
-        return Redirect::route('user.create');
+        echo Pre::r(User::all());
 	}
 
 
@@ -43,6 +43,10 @@ class UserController extends \BaseController {
 
         $user = User::where('email', '=', $s->email)->first();
 
+        if (!$user) {
+            return Redirect::action('UserController@index');
+        }
+
         // redirect to /user/{user_id}
 
         return Redirect::action('UserController@show', array('user_id' => $user->id));
@@ -58,6 +62,11 @@ class UserController extends \BaseController {
 	public function show($user_id)
 	{
         $user = User::where('id', '=', $user_id)->first();
+
+        if (!$user) {
+            return Redirect::action('UserController@index');
+        }
+
         return View::make('user_show')->with('user', $user);
 	}
 
@@ -71,6 +80,11 @@ class UserController extends \BaseController {
 	public function edit($user_id)
 	{
         $user = User::where('id', '=', $user_id)->first();
+
+        if (!$user) {
+            return Redirect::action('UserController@index');
+        }
+
         return View::make('user_edit')->with('user', $user);
 	}
 
@@ -85,6 +99,10 @@ class UserController extends \BaseController {
 	{
         // get the user object
         $user = User::where('id', '=', $user_id)->first();
+
+        if (!$user) {
+            return Redirect::action('UserController@index');
+        }
 
         // set the properties to the new values
         $new_username = Input::get('username');
@@ -114,7 +132,18 @@ class UserController extends \BaseController {
 	 */
 	public function destroy($user_id)
 	{
-		echo 'DESTROY';
+        // get the user object
+        $user = User::where('id', '=', $user_id)->first();
+
+        if (!$user) {
+            return Redirect::action('UserController@index');
+        }
+
+        // delete the user object
+        $user->delete();
+
+        // redirect to the the new user page
+        return Redirect::action('UserController@create');
 	}
 
 

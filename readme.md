@@ -139,17 +139,16 @@ URL Map
 			* add server-side user input validation
  		X Route::post('/user', 'UserController@store');
  		X Route::get('/user/{user_id}', 'UserController@show');
+ 			* Add user not found redirect to create
  		> Route::get('/user/{user_id}/edit', 'UserController@edit');
  			X add form to edit
  			X add prepopulation of form
  			* add client-side user input validation
 			* add server-side user input validation
- 		X Route::put('/user/{user_id}', 'UserController@update');
- 			* add user found error-checking
+ 		> Route::put('/user/{user_id}', 'UserController@update');
+ 			* add user not found redirect to create
  		* Route::delete('/user/{user_id}', 'UserController@destroy'); 
-		* User create
-			* client-side user input validation
-			* server-side user input validation
+ 			* add user not found redirect to create
 	* Game CRUD
 		* Game invitations: how to get two players to play a game
 			* User name search
@@ -193,5 +192,6 @@ URL Map
 * 14\_11\_15\_02\_03\_000: Added routing to editing and deleting
 * 14\_11\_15\_02\_04\_000: Added user editing form
 * 14\_11\_15\_02\_05\_000: Added user updating
+* 14\_11\_15\_02\_06\_000: Added user deletion; added $user not found routing to index
 
-cd /Applications/MAMP/htdocs/CSCI15P4; git add --all; git commit -m "Added user updating"; git push origin master
+cd /Applications/MAMP/htdocs/CSCI15P4; git add --all; git commit -m "Added user deletion; added $user not found routing to index"; git push origin master
