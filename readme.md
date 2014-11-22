@@ -140,11 +140,12 @@ URL Map
  		X Route::post('/user', 'UserController@store');
  		X Route::get('/user/{user_id}', 'UserController@show');
  		> Route::get('/user/{user_id}/edit', 'UserController@edit');
- 			* add form to edit
- 			* add prepopulation of form
+ 			X add form to edit
+ 			X add prepopulation of form
  			* add client-side user input validation
 			* add server-side user input validation
- 		* Route::put('/user/{user_id}', 'UserController@update');
+ 		X Route::put('/user/{user_id}', 'UserController@update');
+ 			* add user found error-checking
  		* Route::delete('/user/{user_id}', 'UserController@destroy'); 
 		* User create
 			* client-side user input validation
@@ -191,5 +192,6 @@ URL Map
 * 14\_11\_15\_02\_02\_001: Fixed routing from create to store to show
 * 14\_11\_15\_02\_03\_000: Added routing to editing and deleting
 * 14\_11\_15\_02\_04\_000: Added user editing form
+* 14\_11\_15\_02\_05\_000: Added user updating
 
-cd /Applications/MAMP/htdocs/CSCI15P4; git add --all; git commit -m "Added user editing form"; git push origin master
+cd /Applications/MAMP/htdocs/CSCI15P4; git add --all; git commit -m "Added user updating"; git push origin master

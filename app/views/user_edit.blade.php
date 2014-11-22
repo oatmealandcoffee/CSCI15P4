@@ -11,7 +11,7 @@ Update User
 
 @section('body')
 
-{{ Form::open(array('url'=>'/user'.$user->id, 'method'=>'PUT')) }}
+{{ Form::open(array('url'=>'/user/'.$user->id, 'method'=>'PUT')) }}
 <table class="table">
 	<tr>
 		<td>

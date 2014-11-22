@@ -84,8 +84,23 @@ class UserController extends \BaseController {
 	public function update($user_id)
 	{
         // get the user object
+        $user = User::where('id', '=', $user_id)->first();
+
         // set the properties to the new values
+        $new_username = Input::get('username');
+        $new_email = Input::get('email');
+
+        if ( $new_username != $user->username ) {
+            $user->username = $new_username;
+        }
+
+        if ( $new_email != $user->email ) {
+            $user->email = $new_email;
+        }
+
         // save the user object
+        $user->save();
+
         // redirect to the edit screen
         return Redirect::action('UserController@show', array('user_id' => $user_id));
 	}
