@@ -23,12 +23,9 @@ class UserController extends \BaseController {
      * @return View
      */
     public function getSignup() {
-        /*array(
-            'before' => 'guest',
-            function() {*/
-                return View::make('user_signup');
-            /*}
-        );*/
+       if (!Auth::check()) {
+           return View::make('user_signup');
+       }
     }
 
     /**

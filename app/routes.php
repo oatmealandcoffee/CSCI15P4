@@ -23,7 +23,7 @@ Route::get('/', function()
 // REST
 Route::resource('user', 'UserController');
 
-// Explicit
+// Explicit to clean up URLs
 Route::get('/signup','UserController@getSignup' );
 Route::get('/login', 'UserController@getLogin' );
 Route::post('/signup', 'UserController@postSignup' );
@@ -35,29 +35,6 @@ Route::get('/logout', 'UserController@getLogout' );
  */
 
 Route::resource('position', 'PositionController');
-
-// Create position
-Route::post('/position/create/', function ( $id ) {
-
-});
-
-// Retrieve position {id} for updating and deleting
-Route::get('/position/{id}', function ( $position_id ) {
-
-
-
-
-});
-
-// Update position
-Route::post('/position/update/{id}', function ( $id ) {
-
-});
-
-// Delete position
-Route::post('/position/delete/{id}', function ( $id ) {
-
-});
 
 /*
  * TESTING ROUTES

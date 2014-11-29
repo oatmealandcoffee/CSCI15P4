@@ -72,7 +72,7 @@
             <a href='/signup'>Sign up</a> or <a href='/login'>Log in</a> |
         @endif
 
-    	<a href="/positions">Positions</a>
+    	<a href="/position">Positions</a>
     	</p>
         <p>Copyright &copy; 2014 Philip Regan. All Rights Reserved. All Wrongs Revenged.</p>
     </footer>

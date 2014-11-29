@@ -9,9 +9,13 @@ class PositionController extends \BaseController {
 	 */
 	public function index()
 	{
-        $positions = Position::all();
+        if ( Auth::check() ) {
+            $positions = Position::all();
 
-        return View::make('position_index')->with('positions', $positions);
+            return View::make('position_index')->with('positions', $positions);
+        } else {
+            return Redirect::guest('/');
+        }
 	}
 
 
@@ -45,15 +49,20 @@ class PositionController extends \BaseController {
 	 */
 	public function show( $position_id )
 	{
-        $positions = Position::all();
+        if ( Auth::check() ) {
 
-        if ( !is_numeric( $position_id ) || $position_id < 0 || $position_id > count( $positions ) ) {
-            return Redirect::to('/positions');
+                $positions = Position::all();
+
+                if ( !is_numeric( $position_id ) || $position_id < 0 || $position_id > count( $positions ) ) {
+                    return Redirect::to('/position');
+                }
+
+                $position = Position::find($position_id);
+
+                return View::make('position_show')->with('position', $position);
+        } else {
+            return Redirect::guest('/');
         }
-
-        $position = Position::find($position_id);
-
-        return View::make('position_show')->with('position', $position);
 
     }
 
