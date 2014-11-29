@@ -16,11 +16,6 @@ Route::get('/', function()
 	return View::make('index');
 });
 
-Route::get('/login', function()
-{
-    return View::make('login');
-});
-
 /*
  * User Routes
  */
@@ -36,51 +31,19 @@ Route::post('/login', 'UserController@postLogin' );
 Route::get('/logout', 'UserController@getLogout' );
 
 /*
- * GAME ROUTES
- */
-
-Route::get('/game/{id}', function ( $id ) {
-
-    // if the id does not exist, then create a new game
-
-    // if the id does exist, then retrieve the game
-
-});
-
-/*
  * POSITION ROUTES
  */
 
-// Create position
-Route::get('/position', function () {
-
-});
+Route::resource('position', 'PositionController');
 
 // Create position
 Route::post('/position/create/', function ( $id ) {
 
 });
 
-// Retrieve all positions
-Route::get('/positions', function () {
-
-    $positions = Position::all();
-
-    return View::make('position_retrieve_all')->with('positions', $positions);
-});
-
 // Retrieve position {id} for updating and deleting
 Route::get('/position/{id}', function ( $position_id ) {
 
-    $positions = Position::all();
-
-    if ( !is_numeric( $position_id ) || $position_id < 0 || $position_id > count( $positions ) ) {
-        return Redirect::to('/positions');
-    }
-
-    $position = Position::find($position_id);
-
-    return View::make('position_retrieve_one')->with('position', $position);
 
 
 

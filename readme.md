@@ -115,12 +115,12 @@ URL Map
 		X Create position table
 		X Create user table
 		* Create game table
-	* Create User Functonality
-		* Create Users DB Table
-		* Create UserController as RESTful
-		* Build credentialed access
+	X Create User Functonality
+		X Create Users DB Table
+		X Create UserController as RESTful
+		X Build credentialed access
 	> Position CRUD
-		* Update Position to RESTful Controller
+		> Update Position to RESTful Controller
 		* Create GET
 		* Create POST
 		X Retrieve all GET
@@ -154,7 +154,7 @@ URL Map
 			* User name search
 			* User name list
 	* Add navigation to the top of the master page
-	* Credentialing?
+	X Credentialing?
 	* Migrate to production
 	* Notes CRUD
 	* Migrate to production
@@ -194,5 +194,6 @@ URL Map
 * 14\_11\_15\_02\_05\_000: Added user updating
 * 14\_11\_15\_02\_06\_000: Added user deletion; added $user not found routing to index
 * 14\_11\_29\_02\_07\_000: Added initial user authentication
+* 14\_11\_29\_02\_08\_001: Started making positions RESTful; Added position index
 
-cd /Applications/MAMP/htdocs/CSCI15P4; git add --all; git commit -m "Added initial user authentication"; git push origin master
+cd /Applications/MAMP/htdocs/CSCI15P4; git add --all; git commit -m "Added position index"; git push origin master

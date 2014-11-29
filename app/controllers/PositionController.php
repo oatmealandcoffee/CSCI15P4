@@ -9,7 +9,9 @@ class PositionController extends \BaseController {
 	 */
 	public function index()
 	{
-		//
+        $positions = Position::all();
+
+        return View::make('position_index')->with('positions', $positions);
 	}
 
 
@@ -41,10 +43,19 @@ class PositionController extends \BaseController {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function show($id)
+	public function show( $position_id )
 	{
-		//
-	}
+        $positions = Position::all();
+
+        if ( !is_numeric( $position_id ) || $position_id < 0 || $position_id > count( $positions ) ) {
+            return Redirect::to('/positions');
+        }
+
+        $position = Position::find($position_id);
+
+        return View::make('position_show')->with('position', $position);
+
+    }
 
 
 	/**
