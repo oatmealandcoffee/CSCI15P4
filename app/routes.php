@@ -25,7 +25,15 @@ Route::get('/login', function()
  * User Routes
  */
 
+// REST
 Route::resource('user', 'UserController');
+
+// Explicit
+Route::get('/signup','UserController@getSignup' );
+Route::get('/login', 'UserController@getLogin' );
+Route::post('/signup', 'UserController@postSignup' );
+Route::post('/login', 'UserController@postLogin' );
+Route::get('/logout', 'UserController@getLogout' );
 
 /*
  * GAME ROUTES

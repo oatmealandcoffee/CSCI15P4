@@ -193,5 +193,6 @@ URL Map
 * 14\_11\_15\_02\_04\_000: Added user editing form
 * 14\_11\_15\_02\_05\_000: Added user updating
 * 14\_11\_15\_02\_06\_000: Added user deletion; added $user not found routing to index
+* 14\_11\_29\_02\_07\_000: Added initial user authentication
 
-cd /Applications/MAMP/htdocs/CSCI15P4; git add --all; git commit -m "Added user deletion; added $user not found routing to index"; git push origin master
+cd /Applications/MAMP/htdocs/CSCI15P4; git add --all; git commit -m "Added initial user authentication"; git push origin master

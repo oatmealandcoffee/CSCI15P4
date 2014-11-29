@@ -65,7 +65,15 @@
     <hr>
 
     <footer>
-    	<p><a href="/positions">Positions</a></p>
+    	<p>
+    	@if(Auth::check())
+            <a href='/logout'>Log out {{ Auth::user()->email; }}</a> |
+        @else
+            <a href='/signup'>Sign up</a> or <a href='/login'>Log in</a> |
+        @endif
+
+    	<a href="/positions">Positions</a>
+    	</p>
         <p>Copyright &copy; 2014 Philip Regan. All Rights Reserved. All Wrongs Revenged.</p>
     </footer>
 </div> <!-- /container -->

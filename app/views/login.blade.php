@@ -1,3 +1,7 @@
+/*
+	DEPRECATED
+*/
+
 @extends('_master')
 
 @section('title')
