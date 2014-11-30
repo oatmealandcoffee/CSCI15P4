@@ -5,7 +5,7 @@ Laravel Chess Server::{{$position->name}}
 @stop
 
 @section('head')
-<base href="http://localhost/" />
+
 @stop
 
 @section('body')

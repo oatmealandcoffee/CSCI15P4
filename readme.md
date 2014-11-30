@@ -197,5 +197,6 @@ URL Map
 * 14\_11\_29\_02\_08\_001: Started making positions RESTful; Added position index
 * 14\_11\_29\_02\_08\_002: Fixed authentication issues around positions
 * 14\_11\_29\_02\_08\_003: Added locking down of user-related urls
+* 14\_11\_29\_02\_09\_000: Added position creation; Updated interface with minor tweaks 
 
-cd /Applications/MAMP/htdocs/CSCI15P4; git add --all; git commit -m "Added position index"; git push origin master
+cd /Applications/MAMP/htdocs/CSCI15P4; git add --all; git commit -m "Added position creation; Updated interface with minor tweaks"; git push origin master

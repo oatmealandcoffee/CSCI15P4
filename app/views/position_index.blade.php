@@ -5,12 +5,19 @@
 @stop
 
 @section('title')
-Laravel Chess Server
+All Positions
 @stop
 
 @section('body')
 
 <table class="table">
+	<tr>
+		<td>
+			{{ Form::open(array('url'=>'/position/create', 'method' => 'GET')) }}
+            {{ Form::submit('Add New Position') }}
+            {{ Form::close() }}
+		</td>
+	</tr>
 	@foreach( $positions as $pos )
 		<tr>
 			<td>

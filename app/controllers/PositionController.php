@@ -26,7 +26,11 @@ class PositionController extends \BaseController {
 	 */
 	public function create()
 	{
-		//
+        if ( Auth::check() ) {
+            return View::make('position_create');
+        } else {
+            return Redirect::guest('/');
+        }
 	}
 
 

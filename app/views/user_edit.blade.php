@@ -5,7 +5,7 @@ Update User
 @stop
 
 @section('head')
-<base href="http://localhost/" />
+
 
 @stop
 

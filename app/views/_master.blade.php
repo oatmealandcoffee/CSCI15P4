@@ -13,6 +13,8 @@
         @yield('title')
     </title>
 
+    <base href="http://localhost/" />
+
 	<!-- BOOTSTRAP INCLUDE START -->
 
     <!-- Latest compiled and minified CSS -->
@@ -67,12 +69,11 @@
     <footer>
     	<p>
     	@if(Auth::check())
-            <a href='/logout'>Log out {{ Auth::user()->email; }}</a> |
+            <a href='/logout'>Log out {{ Auth::user()->email; }}</a> | <a href="/position">Positions</a>
         @else
-            <a href='/signup'>Sign up</a> or <a href='/login'>Log in</a> |
+            <a href='/signup'>Sign up</a> or <a href='/login'>Log in</a>
         @endif
 
-    	<a href="/position">Positions</a>
     	</p>
         <p>Copyright &copy; 2014 Philip Regan. All Rights Reserved. All Wrongs Revenged.</p>
     </footer>
