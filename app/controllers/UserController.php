@@ -25,6 +25,8 @@ class UserController extends \BaseController {
     public function getSignup() {
        if (!Auth::check()) {
            return View::make('user_signup');
+       } else {
+           return Redirect::route('/');
        }
     }
 
@@ -34,6 +36,7 @@ class UserController extends \BaseController {
      * @return Redirect
      */
     public function postSignup() {
+
         # Step 1) Define the rules
         $rules = array(
             'email' => 'required|email|unique:users,email',
@@ -61,7 +64,7 @@ class UserController extends \BaseController {
         }
         # Log in
         Auth::login($user);
-        return Redirect::to('/')->with('flash_message', 'Welcome to Foobooks!');
+        return Redirect::to('/');
     }
 
     /**
@@ -70,7 +73,12 @@ class UserController extends \BaseController {
      * @return View
      */
     public function getLogin() {
-        return View::make('user_login');
+        if ( !Auth::check()) {
+            return View::make('user_login');
+        } else {
+            return Redirect::route('/');
+        }
+
     }
 
     /**
@@ -114,7 +122,11 @@ class UserController extends \BaseController {
 	 */
 	public function index()
 	{
-        echo Pre::r(User::all());
+        if ( Auth::check()) {
+            echo Pre::r(User::all());
+        } else {
+            return Redirect::guest('/');
+        }
 	}
 
 
@@ -164,6 +176,10 @@ class UserController extends \BaseController {
 	 */
 	public function show($user_id)
 	{
+        if ( !Auth::check() || $user_id != Auth::id() ) {
+            return Redirect::guest('/');
+        }
+
         $user = User::where('id', '=', $user_id)->first();
 
         if (!$user) {
@@ -182,6 +198,10 @@ class UserController extends \BaseController {
 	 */
 	public function edit($user_id)
 	{
+        if ( !Auth::check() || $user_id != Auth::id() ) {
+            return Redirect::guest('/');
+        }
+
         $user = User::where('id', '=', $user_id)->first();
 
         if (!$user) {
@@ -200,6 +220,10 @@ class UserController extends \BaseController {
 	 */
 	public function update($user_id)
 	{
+        if ( !Auth::check() || $user_id != Auth::id() ) {
+            return Redirect::guest('/');
+        }
+
         // get the user object
         $user = User::where('id', '=', $user_id)->first();
 
@@ -235,6 +259,10 @@ class UserController extends \BaseController {
 	 */
 	public function destroy($user_id)
 	{
+        if ( !Auth::check() || $user_id != Auth::id() ) {
+            return Redirect::guest('/');
+        }
+
         // get the user object
         $user = User::where('id', '=', $user_id)->first();
 
