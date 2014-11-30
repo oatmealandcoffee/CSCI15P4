@@ -121,6 +121,9 @@ URL Map
 		X Build credentialed access
 	> Position CRUD
 		> Update Position to RESTful Controller
+			* Store new position
+			* Edit pre-existing position
+			* Update pre-existing position
 		* Create GET
 		* Create POST
 		X Retrieve all GET
