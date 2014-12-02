@@ -121,8 +121,8 @@ URL Map
 		X Build credentialed access
 	> Position CRUD
 		> Update Position to RESTful Controller
-			* Store new position
-				* Get FEN from board to form element
+			X Store new position
+				X Get FEN from board to form element
 			* Edit pre-existing position
 			* Update pre-existing position
 		* Create GET
@@ -205,6 +205,7 @@ URL Map
 * 14\_12\_01\_02\_09\_001: Added capture of position updates in position creation
 * 14\_12\_01\_02\_09\_002: Added creation of positions to database
 * 14\_12\_01\_02\_09\_003: Fixed bug where wrong value was being passed from position creation to show
+* 14\_12\_01\_02\_09\_004: Added authentication to position creation
 
 
-cd /Applications/MAMP/htdocs/CSCI15P4; git add --all; git commit -m "Fixed bug where wrong value was being passed from position creation to show"; git push origin master
+cd /Applications/MAMP/htdocs/CSCI15P4; git add --all; git commit -m "Added authentication to position creation"; git push origin master

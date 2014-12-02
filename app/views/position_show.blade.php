@@ -50,17 +50,17 @@ $(document).ready(init);
     </tr>
     <tr>
         <td>
-        	{{ Form::open(array('url'=>'/positions', 'method' => 'GET')) }}
+        	{{ Form::open(array('url'=>'/position', 'method' => 'GET')) }}
 			{{ Form::submit('Play') }}
         	{{ Form::close() }}
         </td>
         <td>
-            {{ Form::open(array('url'=>'/positions', 'method' => 'GET')) }}
+            {{ Form::open(array('url'=>'/position/'.$position->id.'/edit', 'method' => 'GET')) }}
             {{ Form::submit('Edit') }}
             {{ Form::close() }}
         </td>
         <td>
-			{{ Form::open(array('url'=>'/positions', 'method' => 'GET')) }}
+			{{ Form::open(array('url'=>'/position'/$position->id, 'method' => 'DELETE')) }}
 			{{ Form::submit('Delete') }}
         	{{ Form::close() }}
        	</td>
