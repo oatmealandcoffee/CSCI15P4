@@ -41,7 +41,7 @@ class PositionController extends \BaseController {
 	 */
 	public function store()
 	{
-        if ( Auth::check() ) {
+        //if ( Auth::check() ) {
 
             $s = new Position;
             $s->name = Input::get('name');
@@ -56,13 +56,13 @@ class PositionController extends \BaseController {
                 return Redirect::action('PositionController@index');
             }
 
-            // redirect to /user/{user_id}
+            // redirect to /position/{position_id}
 
             return Redirect::action('PositionController@show', array('$position' => $position));
 
-        } else {
-            return Redirect::guest('/');
-        }
+        //} else {
+            //return Redirect::guest('/');
+        //}
 	}
 
 

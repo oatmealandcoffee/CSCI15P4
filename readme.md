@@ -203,5 +203,6 @@ URL Map
 * 14\_11\_29\_02\_08\_003: Added locking down of user-related urls
 * 14\_11\_29\_02\_09\_000: Added position creation; Updated interface with minor tweaks 
 * 14\_12\_01\_02\_09\_001: Added capture of position updates in position creation
+* 14\_12\_01\_02\_09\_002: Added creation of positions to database
 
-cd /Applications/MAMP/htdocs/CSCI15P4; git add --all; git commit -m "Added capture of position updates in position creation"; git push origin master
+cd /Applications/MAMP/htdocs/CSCI15P4; git add --all; git commit -m "Added creation of positions to database"; git push origin master
