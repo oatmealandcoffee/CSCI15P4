@@ -58,7 +58,7 @@ class PositionController extends \BaseController {
 
             // redirect to /position/{position_id}
 
-            return Redirect::action('PositionController@show', array('$position' => $position));
+            return Redirect::action('PositionController@show', array('$position_id' => $position->id));
 
         //} else {
             //return Redirect::guest('/');
