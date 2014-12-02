@@ -115,13 +115,14 @@ URL Map
 		X Create position table
 		X Create user table
 		* Create game table
-	X Create User Functonality
+	X Create User Functionality
 		X Create Users DB Table
 		X Create UserController as RESTful
 		X Build credentialed access
 	> Position CRUD
 		> Update Position to RESTful Controller
 			* Store new position
+				* Get FEN from board to form element
 			* Edit pre-existing position
 			* Update pre-existing position
 		* Create GET
@@ -201,5 +202,6 @@ URL Map
 * 14\_11\_29\_02\_08\_002: Fixed authentication issues around positions
 * 14\_11\_29\_02\_08\_003: Added locking down of user-related urls
 * 14\_11\_29\_02\_09\_000: Added position creation; Updated interface with minor tweaks 
+* 14\_12\_01\_02\_09\_001: Added capture of position updates in position creation
 
-cd /Applications/MAMP/htdocs/CSCI15P4; git add --all; git commit -m "Added position creation; Updated interface with minor tweaks"; git push origin master
+cd /Applications/MAMP/htdocs/CSCI15P4; git add --all; git commit -m "Added capture of position updates in position creation"; git push origin master

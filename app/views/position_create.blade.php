@@ -19,11 +19,17 @@ var cfg = {
   draggable: true,
   dropOffBoard: 'trash',
   sparePieces: true,
-  position: 'start'
+  position: 'start',
+  onChange: onChange
 };
 var board = new ChessBoard('board', cfg);
 
 }; // end init()
+
+var onChange = function(oldPos, newPos) {
+	// passed object needs to be converted to FEN by ChessBoard for capturing
+	document.getElementById('fen').value = ChessBoard.objToFen(newPos);
+};
 // kick off the game
 $(document).ready(init);
 $('#startPositionBtn').on('click', init);
@@ -46,6 +52,7 @@ $('#startPositionBtn').on('click', init);
 	<tr>
 		<td>
 			{{ Form::label('name', 'Name of position') }}
+			{{ Form::hidden('fen', 'rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR', array('id' => 'fen')) }}
 		</td>
 		<td>
 			{{ Form::text('name') }}

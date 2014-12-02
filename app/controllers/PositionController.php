@@ -41,7 +41,28 @@ class PositionController extends \BaseController {
 	 */
 	public function store()
 	{
-		//
+        if ( Auth::check() ) {
+
+            $s = new Position;
+            $s->name = Input::get('name');
+            $s->fen = Input::get('fen');
+            $s->save();
+
+            // get the id
+
+            $position = Position::where('id', '=', $s->id)->first();
+
+            if (!$position) {
+                return Redirect::action('PositionController@index');
+            }
+
+            // redirect to /user/{user_id}
+
+            return Redirect::action('PositionController@show', array('$position' => $position));
+
+        } else {
+            return Redirect::guest('/');
+        }
 	}
 
 
