@@ -98,9 +98,22 @@ class PositionController extends \BaseController {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function edit($id)
+	public function edit( $position_id )
 	{
-		//
+        if ( Auth::check() ) {
+
+            $positions = Position::all();
+
+            if ( !is_numeric( $position_id ) || $position_id < 0 || $position_id > count( $positions ) ) {
+                return Redirect::to('/position');
+            }
+
+            $position = Position::find($position_id);
+
+            return View::make('position_edit')->with('position', $position);
+        } else {
+            return Redirect::guest('/');
+        }
 	}
 
 
@@ -110,9 +123,36 @@ class PositionController extends \BaseController {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function update($id)
+	public function update( $position_id )
 	{
-		//
+        if ( !Auth::check() ) {
+            return Redirect::guest('/');
+        }
+
+        // get the user object
+        $position = Position::where('id', '=', $position_id)->first();
+
+        if (!$position) {
+            return Redirect::action('PositionController@index');
+        }
+
+        // set the properties to the new values
+        $new_fen = Input::get('fen');
+        $new_name = Input::get('name');
+
+        if ( $new_fen != $position->fen ) {
+            $position->fen = $new_fen;
+        }
+
+        if ( $new_name != $position->name ) {
+            $position->name = $new_name;
+        }
+
+        // save the user object
+        $position->save();
+
+        // redirect to the edit screen
+        return Redirect::action('PositionController@show', array('position' => $position));
 	}
 
 

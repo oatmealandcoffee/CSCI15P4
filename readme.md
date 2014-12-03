@@ -120,11 +120,12 @@ URL Map
 		X Create UserController as RESTful
 		X Build credentialed access
 	> Position CRUD
-		> Update Position to RESTful Controller
+		X Update Position to RESTful Controller
 			X Store new position
 				X Get FEN from board to form element
-			* Edit pre-existing position
-			* Update pre-existing position
+			> Edit pre-existing position
+			> Update pre-existing position
+			* Delete position
 		* Create GET
 		* Create POST
 		X Retrieve all GET
@@ -146,7 +147,7 @@ URL Map
  			X Add user not found redirect to create
  		> Route::get('/user/{user_id}/edit', 'UserController@edit');
  			X add form to edit
- 			X add prepopulation of form
+ 			X add pre-population of form
  			* add client-side user input validation
 			* add server-side user input validation
  		> Route::put('/user/{user_id}', 'UserController@update');
@@ -175,6 +176,7 @@ URL Map
 ## Bugs
 * [fixed] User does not redirect correctly create->store->show
 	* redirect to action as opposed to route
+* Position Eedit page is not getting/using position data
 
 # Change History
 
@@ -206,6 +208,7 @@ URL Map
 * 14\_12\_01\_02\_09\_002: Added creation of positions to database
 * 14\_12\_01\_02\_09\_003: Fixed bug where wrong value was being passed from position creation to show
 * 14\_12\_01\_02\_09\_004: Added authentication to position creation
+* 14\_12\_01\_02\_10\_000: Added edit page for positions; Added update for positions
 
 
-cd /Applications/MAMP/htdocs/CSCI15P4; git add --all; git commit -m "Added authentication to position creation"; git push origin master
+cd /Applications/MAMP/htdocs/CSCI15P4; git add --all; git commit -m "Added edit page for positions; Added update for positions"; git push origin master
