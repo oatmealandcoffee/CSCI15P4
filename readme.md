@@ -177,7 +177,7 @@ URL Map
 * [fixed] User does not redirect correctly create->store->show
 	* redirect to action as opposed to route
 * [fixed] Position Edit page is not getting/using position data
-* Position index listing is incorrect after deleting a position
+* [fixed] Position index listing is incorrect after deleting a position
 	* last positions come back as invalid
 
 # Change History
@@ -213,6 +213,7 @@ URL Map
 * 14\_12\_01\_02\_10\_000: Added edit page for positions; Added update for positions
 * 14\_12\_01\_02\_11\_000: Added delete for positions
 * 14\_12\_01\_02\_11\_001: Fixed edit page not getting position and name data; fixed routing for updates
+* 14\_12\_01\_02\_11\_002: Fixed position index bug preventing position ids larger than number of rows in db table (no soft deletes. doh)
 
 
-cd /Applications/MAMP/htdocs/CSCI15P4; git add --all; git commit -m "Fixed edit page not getting position and name data; fixed routing for updates"; git push origin master
+cd /Applications/MAMP/htdocs/CSCI15P4; git add --all; git commit -m "Fixed position index bug preventing position ids larger than number of rows in db table (no soft deletes. doh)"; git push origin master

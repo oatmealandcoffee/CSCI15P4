@@ -18,13 +18,13 @@ All Positions
             {{ Form::close() }}
 		</td>
 	</tr>
-	@foreach( $positions as $pos )
+	@foreach( $positions as $position )
 		<tr>
 			<td>
-				<a href="/position/{{$pos->id}}" title="{{$pos->name}}">{{$pos->name}}</a>
+				<a href="/position/{{$position->id}}" title="{{$position->name}}">{{$position->name}}</a>
 			</td>
 			<td>
-				{{ Form::open(array('url'=>'/position/'.$pos->id, 'method' => 'GET')) }}
+				{{ Form::open(array('url'=>'/position/'.$position->id, 'method' => 'GET')) }}
                 {{ Form::submit('Show') }}
                 {{ Form::close() }}
 			</td>

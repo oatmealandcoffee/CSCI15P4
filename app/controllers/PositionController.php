@@ -78,7 +78,7 @@ class PositionController extends \BaseController {
 
             $positions = Position::all();
 
-            if ( !is_numeric( $position_id ) || $position_id < 0 || $position_id > count( $positions ) ) {
+            if ( !is_numeric( $position_id ) || $position_id < 0 ) {
                 return Redirect::to('/position');
             }
 
@@ -108,7 +108,7 @@ class PositionController extends \BaseController {
 
             $positions = Position::all();
 
-            if ( !is_numeric( $position_id ) || $position_id < 0 || $position_id > count( $positions ) ) {
+            if ( !is_numeric( $position_id ) || $position_id < 0 ) {
                 return Redirect::to('/position');
             }
 
