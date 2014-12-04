@@ -81,27 +81,6 @@ Bonus Features
 	* content
 	* timestamps
 
-URL Map
-
-	/							GET		default
-	/login						GET
-	/login						POST
-	/user						GET		create
-	/user/{id}				GET		retrieve
-	/user/{id}				POST	update
-	/user/{id}				POST	delete
-	/game						GET		create
-	/game/{id}				GET		retrieve
-	/game/{id}				POST	update, make move
-	/game/edit/{id}			GET		update position
-	/game/edit/{id}			POST	delete
-	/position					GET		create
-	/position/{id}			GET		retrieve
-	/position/update/{id}		POST	update
-	/position/delete/{id}		POST	delete
-	/note/{id}				GET		retrieve
-	/note/{id}				POST	update
-
 ## Roadmap
 
 	X Create project
@@ -119,45 +98,52 @@ URL Map
 		X Create Users DB Table
 		X Create UserController as RESTful
 		X Build credentialed access
-	> Position CRUD
+	X Position CRUD
 		X Update Position to RESTful Controller
 			X Store new position
 				X Get FEN from board to form element
-			> Edit pre-existing position
-			> Update pre-existing position
-			* Delete position
-		* Create GET
-		* Create POST
+			X Edit pre-existing position
+			X Update pre-existing position
+			X Delete position
+		X Create GET
+		X Create POST
 		X Retrieve all GET
-			* View -> Update
-		* Retrieve {id} GET
-		* Update {id} POST
-			* Change position
-			* Change title
-			* New game
-			* Delete position
+			X View -> Update
+		X Retrieve {id} GET
+		X Update {id} POST
+			X Change position
+			X Change title
+			X New game
+			X Delete position
 		* Delete {id} POST
-	* User CRUD
-		X Route::get('/user', 'UserController@index');
- 		> Route::get('/user/create', 'UserController@create');
- 			* add client-side user input validation
-			* add server-side user input validation
- 		X Route::post('/user', 'UserController@store');
- 		X Route::get('/user/{user_id}', 'UserController@show');
- 			X Add user not found redirect to create
- 		> Route::get('/user/{user_id}/edit', 'UserController@edit');
- 			X add form to edit
- 			X add pre-population of form
- 			* add client-side user input validation
-			* add server-side user input validation
- 		> Route::put('/user/{user_id}', 'UserController@update');
- 			X add user not found redirect to create
- 		X Route::delete('/user/{user_id}', 'UserController@destroy'); 
- 			X add user not found redirect to create
 	* Game CRUD
+		* get /game - index BY USER
+        * get /game/create - create SELECT OPPONENT
+        * post /game - store // redirect::action
+        * get /game/{game_id} - show($foo_id)
+        * get /game/{game_id}/edit - edit($foo_id) PLAYER MOVE
+        * put /game/{game_id} - update($foo_id) // redirect::action
+        * delete /game/{game_id} - destroy($foo_id) // redirect::action
 		* Game invitations: how to get two players to play a game
 			* User name search
 			* User name list
+	* User CRUD
+			X Route::get('/user', 'UserController@index');
+			> Route::get('/user/create', 'UserController@create');
+				* add client-side user input validation
+            	* add server-side user input validation
+            X Route::post('/user', 'UserController@store');
+            X Route::get('/user/{user_id}', 'UserController@show');
+            X Add user not found redirect to create
+            > Route::get('/user/{user_id}/edit', 'UserController@edit');
+             	X add form to edit
+             	X add pre-population of form
+             	* add client-side user input validation
+            	* add server-side user input validation
+             > Route::put('/user/{user_id}', 'UserController@update');
+             	X add user not found redirect to create
+             X Route::delete('/user/{user_id}', 'UserController@destroy'); 
+             	X add user not found redirect to create
 	* Add navigation to the top of the master page
 	X Credentialing?
 	* Migrate to production
@@ -210,10 +196,11 @@ URL Map
 * 14\_12\_01\_02\_09\_002: Added creation of positions to database
 * 14\_12\_01\_02\_09\_003: Fixed bug where wrong value was being passed from position creation to show
 * 14\_12\_01\_02\_09\_004: Added authentication to position creation
-* 14\_12\_01\_02\_10\_000: Added edit page for positions; Added update for positions
-* 14\_12\_01\_02\_11\_000: Added delete for positions
-* 14\_12\_01\_02\_11\_001: Fixed edit page not getting position and name data; fixed routing for updates
-* 14\_12\_01\_02\_11\_002: Fixed position index bug preventing position ids larger than number of rows in db table (no soft deletes. doh)
+* 14\_12\_03\_02\_10\_000: Added edit page for positions; Added update for positions
+* 14\_12\_03\_02\_11\_000: Added delete for positions
+* 14\_12\_03\_02\_11\_001: Fixed edit page not getting position and name data; fixed routing for updates
+* 14\_12\_03\_02\_11\_002: Fixed position index bug preventing position ids larger than number of rows in db table (no soft deletes. doh)
+* 14\_12\_03\_02\_11\_003: Updated home page with better content
 
 
-cd /Applications/MAMP/htdocs/CSCI15P4; git add --all; git commit -m "Fixed position index bug preventing position ids larger than number of rows in db table (no soft deletes. doh)"; git push origin master
+cd /Applications/MAMP/htdocs/CSCI15P4; git add --all; git commit -m "Updated home page with better content"; git push origin master
