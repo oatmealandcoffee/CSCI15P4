@@ -23,6 +23,11 @@ All Positions
 			<td>
 				<a href="/position/{{$pos->id}}" title="{{$pos->name}}">{{$pos->name}}</a>
 			</td>
+			<td>
+				{{ Form::open(array('url'=>'/position/'.$pos->id, 'method' => 'GET')) }}
+                {{ Form::submit('Show') }}
+                {{ Form::close() }}
+			</td>
 		</tr>
 	@endforeach
 </table>

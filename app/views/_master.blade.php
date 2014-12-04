@@ -10,7 +10,7 @@
     <link rel="icon" href="../../favicon.ico">
 
     <title>
-        @yield('title')
+        Laravel Chess::@yield('title')
     </title>
 
     <base href="http://localhost/" />

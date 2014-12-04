@@ -76,15 +76,19 @@ class PositionController extends \BaseController {
 	{
         if ( Auth::check() ) {
 
-                $positions = Position::all();
+            $positions = Position::all();
 
-                if ( !is_numeric( $position_id ) || $position_id < 0 || $position_id > count( $positions ) ) {
-                    return Redirect::to('/position');
-                }
+            if ( !is_numeric( $position_id ) || $position_id < 0 || $position_id > count( $positions ) ) {
+                return Redirect::to('/position');
+            }
 
-                $position = Position::find($position_id);
+            $position = Position::find($position_id);
 
-                return View::make('position_show')->with('position', $position);
+            if (!$position) {
+                return Redirect::action('PositionController@index');
+            }
+
+            return View::make('position_show')->with('position', $position);
         } else {
             return Redirect::guest('/');
         }
@@ -109,6 +113,10 @@ class PositionController extends \BaseController {
             }
 
             $position = Position::find($position_id);
+
+            if (!$position) {
+                return Redirect::action('PositionController@index');
+            }
 
             return View::make('position_edit')->with('position', $position);
         } else {
@@ -152,7 +160,7 @@ class PositionController extends \BaseController {
         $position->save();
 
         // redirect to the edit screen
-        return Redirect::action('PositionController@show', array('position' => $position));
+        return Redirect::to('/position/'.$position->id.'/edit');
 	}
 
 

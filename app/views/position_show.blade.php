@@ -1,7 +1,7 @@
 @extends('_master')
 
 @section('title')
-Laravel Chess Server::{{$position->name}}
+{{$position->name}}
 @stop
 
 @section('head')
@@ -42,7 +42,7 @@ $(document).ready(init);
     </tr>
     <tr>
     	<td>
-    		<b>FEN:</b> <tt>{{$position->fen}}</tt>
+    		<b>FEN:</b> {{$position->fen}}
     	</td>
     	<td></td>
     	<td></td>

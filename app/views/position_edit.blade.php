@@ -19,7 +19,7 @@ var cfg = {
   draggable: true,
   dropOffBoard: 'trash',
   sparePieces: true,
-  position: '{{$position->position}}',
+  position: '{{$position->fen}}',
   onChange: onChange
 };
 var board = new ChessBoard('board', cfg);
@@ -35,7 +35,7 @@ $(document).ready(init);
 $('#startPositionBtn').on('click', init);
 </script>
 
-{{ Form::open(array('url'=>'/position', 'method'=>'POST')) }}
+{{ Form::open(array('url'=>'/position/'.$position->id, 'method'=>'PUT')) }}
 <table class="table">
 	<tr>
 	<td>
@@ -52,10 +52,10 @@ $('#startPositionBtn').on('click', init);
 	<tr>
 		<td>
 			{{ Form::label('name', 'Name of position') }}
-			{{ Form::hidden('fen', $position->position, array('id' => 'fen')) }}
+			{{ Form::hidden('fen', $position->fen, array('id' => 'fen')) }}
 		</td>
 		<td>
-			{{ Form::text('name') }}
+			{{ Form::text('name', $position->name) }}
 		</td>
 	</tr>
 	<tr>
