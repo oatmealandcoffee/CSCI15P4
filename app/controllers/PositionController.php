@@ -162,10 +162,23 @@ class PositionController extends \BaseController {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function destroy($id)
+	public function destroy( $position_id )
 	{
-		//
-	}
+        if ( !Auth::check() ) {
+            return Redirect::guest('/');
+        }
+
+        // get the Position object
+        $position = Position::where( 'id', '=', $position_id )->first();
+
+        if ( $position ) {
+            // delete the position object
+            $position->delete();
+        }
+
+        // redirect to the the new user page
+        return Redirect::action('PositionController@index');
+    }
 
 
 }

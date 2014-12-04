@@ -60,7 +60,7 @@ $(document).ready(init);
             {{ Form::close() }}
         </td>
         <td>
-			{{ Form::open(array('url'=>'/position'/$position->id, 'method' => 'DELETE')) }}
+			{{ Form::open(array('url'=>'/position/'.$position->id, 'method' => 'DELETE')) }}
 			{{ Form::submit('Delete') }}
         	{{ Form::close() }}
        	</td>
