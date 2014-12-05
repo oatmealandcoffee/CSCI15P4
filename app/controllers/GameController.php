@@ -29,7 +29,27 @@ class GameController extends \BaseController {
 	public function create()
 	{
         if ( Auth::check() ) {
-            return View::make('game_create');
+
+            // get the player names
+
+            $user_names  = array();
+            $users = User::all();
+            foreach ( $users as $user ) {
+                array_push( $user_names, $user->name );
+            }
+
+            // get the positions
+
+            $position_names = array();
+            $positions = Position::all();
+            foreach ( $positions as $position ) {
+                array_push( $position_names, $position->name );
+            }
+
+            return View::make('game_create')
+                ->with( 'user_names', $user_names )
+                ->with( 'position_names', $position_names );
+
         } else {
             return Redirect::guest('/');
         }

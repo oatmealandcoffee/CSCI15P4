@@ -118,6 +118,10 @@ Bonus Features
 		X Delete {id} POST
 	* Game CRUD
 		> get /game/create - create SELECT OPPONENT
+			* create autocomplete text field
+				* white
+				* black
+				* position
 		* post /game - store // redirect::action
 		> get /game - index BY USER ONLY; DO NOT SHOW ALL GAMES
         * get /game/{game_id} - show($foo_id)
@@ -215,5 +219,6 @@ Bonus Features
 * 14\_12\_03\_02\_11\_003: Updated home page with better content
 * 14\_12\_04\_03\_00\_000: Added game database migration; Added Game Index Blade; Added Game Index Code
 * 14\_12\_04\_03\_01\_000: Added new game creation blade
+* 14\_12\_04\_03\_01\_001: Added jquery autocomplete
 
-cd /Applications/MAMP/htdocs/CSCI15P4; git add --all; git commit -m "Added new game creation blade"; git push origin master
+cd /Applications/MAMP/htdocs/CSCI15P4; git add --all; git commit -m "Added jquery autocomplete"; git push origin master

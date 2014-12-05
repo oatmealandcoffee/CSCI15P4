@@ -44,6 +44,12 @@
 
 	<!-- CHESS INCLUDE END -->
 
+	<!-- INTERFACE INCLUDE START -->
+
+	<script src="http://localhost/js/jquery.autocomplete.js"></script>
+
+	<!-- INTERFACE INCLUDE END-->
+
 	<link rel="stylesheet" href="http://localhost/css/styles.css">
 
 	@yield('head')
