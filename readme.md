@@ -117,9 +117,9 @@ Bonus Features
 			X Delete position
 		X Delete {id} POST
 	* Game CRUD
+		> get /game/create - create SELECT OPPONENT
+		* post /game - store // redirect::action
 		> get /game - index BY USER ONLY; DO NOT SHOW ALL GAMES
-        * get /game/create - create SELECT OPPONENT
-        * post /game - store // redirect::action
         * get /game/{game_id} - show($foo_id)
         * get /game/{game_id}/edit - edit($foo_id) PLAYER MOVE
         * put /game/{game_id} - update($foo_id) // redirect::action
