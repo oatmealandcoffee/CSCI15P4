@@ -9,7 +9,15 @@ class GameController extends \BaseController {
 	 */
 	public function index()
 	{
-		//
+
+        if ( !Auth::check() ) {
+            return Redirect::guest('/');
+        }
+
+        $games = Position::where( 'white_id', '=', Auth::id() );
+
+        return View::make('game_index')->with('games', $games);
+
 	}
 
 

@@ -64,7 +64,7 @@ class UserController extends \BaseController {
         }
         # Log in
         Auth::login($user);
-        return Redirect::to('/');
+        return Redirect::to('/game');
     }
 
     /**
@@ -90,7 +90,7 @@ class UserController extends \BaseController {
         $credentials = Input::only('email', 'password');
         # Note we don't have to hash the password before attempting to auth - Auth::attempt will take care of that for us
         if (Auth::attempt($credentials, $remember = false)) {
-            return Redirect::intended('/')->with('flash_message', 'Welcome Back!');
+            return Redirect::intended('/game');
         }
         else {
             return Redirect::to('/login')

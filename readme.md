@@ -43,7 +43,7 @@ Essential Features
 		* black_user (id)
 		* position
 		* player_turn
-		* result -> WWIN, BWIN, DRAW
+		* result -> PLAY, WWIN, BWIN, DRAW
 		* timestamps
 	* Create a game
 		* Select an opponent
@@ -145,10 +145,12 @@ Bonus Features
              X Route::delete('/user/{user_id}', 'UserController@destroy'); 
              	X add user not found redirect to create
     * User
+    	* Landing page
+    		* Redirect from login
+            * Link in footer
     	* Deletion impact on game?
     		* Check if user exists. If not, then game throws an error
-    	* Landing page
-    		* Link in footer
+    	
 	* Game
 		* Landing page
 		* Game (Position) State
@@ -156,8 +158,8 @@ Bonus Features
 	* Add navigation to footer
 	* Enable backups on Digital Ocean Droplet
 	* Migrate to production
-	* Notes CRUD
-	* Migrate to production
+		/ do not make tables beforehand
+		/ php artisan migrate
 	X Credentialing?
 
 	* Foo CRUD
@@ -211,6 +213,6 @@ Bonus Features
 * 14\_12\_03\_02\_11\_001: Fixed edit page not getting position and name data; fixed routing for updates
 * 14\_12\_03\_02\_11\_002: Fixed position index bug preventing position ids larger than number of rows in db table (no soft deletes. doh)
 * 14\_12\_03\_02\_11\_003: Updated home page with better content
+* 14\_12\_04\_03\_00\_000: Added game database migration; Added Game Index Blade; Added Game Index Code
 
-
-cd /Applications/MAMP/htdocs/CSCI15P4; git add --all; git commit -m "Updated roadmap"; git push origin master
+cd /Applications/MAMP/htdocs/CSCI15P4; git add --all; git commit -m "* 14\_12\_04\_03\_00\_000: Added game database migration; Added Game Index Blade; Added Game Index Code"; git push origin master

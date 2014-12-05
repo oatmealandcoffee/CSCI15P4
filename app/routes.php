@@ -37,6 +37,12 @@ Route::get('/logout', 'UserController@getLogout' );
 Route::resource('position', 'PositionController');
 
 /*
+ * GAME ROUTES
+ */
+
+Route::resource('game', 'GameController');
+
+/*
  * TESTING ROUTES
  */
 
