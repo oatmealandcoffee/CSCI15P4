@@ -115,9 +115,9 @@ Bonus Features
 			X Change title
 			X New game
 			X Delete position
-		* Delete {id} POST
+		X Delete {id} POST
 	* Game CRUD
-		* get /game - index BY USER
+		* get /game - index BY USER ONLY; DO NOT SHOW ALL GAMES
         * get /game/create - create SELECT OPPONENT
         * post /game - store // redirect::action
         * get /game/{game_id} - show($foo_id)
@@ -144,11 +144,21 @@ Bonus Features
              	X add user not found redirect to create
              X Route::delete('/user/{user_id}', 'UserController@destroy'); 
              	X add user not found redirect to create
-	* Add navigation to the top of the master page
-	X Credentialing?
+    * User
+    	* Deletion impact on game?
+    		* Check if user exists. If not, then game throws an error
+    	* Landing page
+    		* Link in footer
+	* Game
+		* Landing page
+		* Game (Position) State
+			* Playable vs Win vs Draw
+	* Add navigation to footer
+	* Enable backups on Digital Ocean Droplet
 	* Migrate to production
 	* Notes CRUD
 	* Migrate to production
+	X Credentialing?
 
 	* Foo CRUD
 		* get /foo - index
@@ -203,4 +213,4 @@ Bonus Features
 * 14\_12\_03\_02\_11\_003: Updated home page with better content
 
 
-cd /Applications/MAMP/htdocs/CSCI15P4; git add --all; git commit -m "Updated home page with better content"; git push origin master
+cd /Applications/MAMP/htdocs/CSCI15P4; git add --all; git commit -m "Updated roadmap"; git push origin master
