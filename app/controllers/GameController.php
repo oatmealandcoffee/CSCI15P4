@@ -28,7 +28,11 @@ class GameController extends \BaseController {
 	 */
 	public function create()
 	{
-		//
+        if ( Auth::check() ) {
+            return View::make('game_create');
+        } else {
+            return Redirect::guest('/');
+        }
 	}
 
 
