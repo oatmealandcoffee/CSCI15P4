@@ -15,15 +15,33 @@ Create Game
 <table class="table">
 	<tr>
 		<td><b>White</b></td>
-		<td>insert player selection here</td>
+		<td>
+			<select>
+				@foreach( $users as $user )
+				<option value="{{$user->username}}">{{$user->username}}</option>
+				@endforeach
+			</select>
+		</td>
 	</tr>
 	<tr>
 		<td><b>Black</b></td>
-		<td>Insert player selection here</td>
+		<td>
+        	<select>
+        		@foreach( $users as $user )
+        		<option value="{{$user->username}}">{{$user->username}}</option>
+        		@endforeach
+        	</select>
+        </td>
 	</tr>
 	<tr>
 		<td><b>Opening Position</b></td>
-		<td>Insert position selection here</td>
+		<td>
+			<select>
+                @foreach( $positions as $position )
+                <option value="{{$position->name}}">{{$position->name}}</option>
+               	@endforeach
+            </select>
+		</td>
 	</tr>
 	<tr>
 		<td>Insert reset button</td>

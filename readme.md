@@ -220,5 +220,6 @@ Bonus Features
 * 14\_12\_04\_03\_00\_000: Added game database migration; Added Game Index Blade; Added Game Index Code
 * 14\_12\_04\_03\_01\_000: Added new game creation blade
 * 14\_12\_04\_03\_01\_001: Added jquery autocomplete
+* 14\_12\_04\_03\_01\_002: Deprecated jquery autocomplete; Added pull down menus for game creation
 
-cd /Applications/MAMP/htdocs/CSCI15P4; git add --all; git commit -m "Added jquery autocomplete"; git push origin master
+cd /Applications/MAMP/htdocs/CSCI15P4; git add --all; git commit -m "Deprecated jquery autocomplete; Added pull down menus for game creation"; git push origin master
