@@ -22,6 +22,7 @@ $('#resetSettingsButton').on('click', reset);
 
 <h2>Create Game</h2>
 
+{{ Form::open(array('url'=>'/game', 'method'=>'POST')) }}
 <table class="table">
 	<tr>
 		<td><b>White</b></td>
@@ -56,8 +57,9 @@ $('#resetSettingsButton').on('click', reset);
 	</tr>
 	<tr>
 		<td>{{ Form::button('Reset', array('id'=>'resetSettingsButton', 'onClick' => '$(reset);')) }}</td>
-		<td>Insert create button</td>
+		<td>{{ Form::submit('Create') }}</td>
 	</tr>
 </table>
+{{ Form::close() }}
 
 @stop

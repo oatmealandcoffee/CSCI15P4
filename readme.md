@@ -224,5 +224,6 @@ Bonus Features
 * 14\_12\_04\_03\_01\_003: Added username to user signup form
 * 14\_12\_04\_03\_01\_004: Added link to user show page
 * 14\_12\_04\_03\_01\_005: Added reset button to game create page
+* 14\_12\_04\_03\_02\_000: Added game create; Added game show
 
-cd /Applications/MAMP/htdocs/CSCI15P4; git add --all; git commit -m "Added reset button to game create page"; git push origin master
+cd /Applications/MAMP/htdocs/CSCI15P4; git add --all; git commit -m "Added game create; Added game show"; git push origin master

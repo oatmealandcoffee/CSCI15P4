@@ -12,7 +12,9 @@ All Games
 
 <h2>Your Games</h2>
 
-Insert New Game Button Here
+{{ Form::open(array('url'=>'/game/create', 'method'=>'GET')) }}
+{{ Form::submit('New Game') }}
+{{ Form::close() }}
 
 <table class="table">
 	<tr></tr>
