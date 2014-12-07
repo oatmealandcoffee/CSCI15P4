@@ -222,5 +222,6 @@ Bonus Features
 * 14\_12\_04\_03\_01\_001: Added jquery autocomplete
 * 14\_12\_04\_03\_01\_002: Deprecated jquery autocomplete; Added pull down menus for game creation
 * 14\_12\_04\_03\_01\_003: Added username to user signup form
+* 14\_12\_04\_03\_01\_004: Added link to user show page
 
-cd /Applications/MAMP/htdocs/CSCI15P4; git add --all; git commit -m "Added username to user signup form"; git push origin master
+cd /Applications/MAMP/htdocs/CSCI15P4; git add --all; git commit -m "Added link to user show page"; git push origin master
