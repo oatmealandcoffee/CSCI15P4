@@ -52,6 +52,7 @@ class UserController extends \BaseController {
                 ->withErrors($validator);
         }
         $user = new User;
+        $user->username = Input::get('username');
         $user->email    = Input::get('email');
         $user->password = Hash::make(Input::get('password'));
         try {

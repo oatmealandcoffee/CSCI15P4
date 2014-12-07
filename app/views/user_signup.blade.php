@@ -18,6 +18,9 @@ Sign Up
 <p>
 {{ Form::open(array('url' => '/signup')) }}
 
+{{ Form::label('username') }}
+{{ Form::text('username') }}
+
 {{ Form::label('email') }}
 {{ Form::text('email') }}
 
