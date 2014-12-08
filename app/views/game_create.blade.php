@@ -27,7 +27,7 @@ $('#resetSettingsButton').on('click', reset);
 	<tr>
 		<td><b>White</b></td>
 		<td>
-			<select id="white_player">
+			<select name="white_player">
 				@foreach( $users as $user )
 				<option value="{{$user->username}}">{{$user->username}}</option>
 				@endforeach
@@ -37,7 +37,7 @@ $('#resetSettingsButton').on('click', reset);
 	<tr>
 		<td><b>Black</b></td>
 		<td>
-        	<select id="black_player">
+        	<select name="black_player">
         		@foreach( $users as $user )
         		<option value="{{$user->username}}">{{$user->username}}</option>
         		@endforeach
@@ -47,7 +47,7 @@ $('#resetSettingsButton').on('click', reset);
 	<tr>
 		<td><b>Opening Position</b></td>
 		<td>
-			<select id="opening_position">
+			<select name="opening_position">
 				<option value="Standard Opening">Standard Opening</option>
                 @foreach( $positions as $position )
                 <option value="{{$position->name}}">{{$position->name}}</option>
@@ -56,8 +56,8 @@ $('#resetSettingsButton').on('click', reset);
 		</td>
 	</tr>
 	<tr>
-		<td>{{ Form::button('Reset', array('id'=>'resetSettingsButton', 'onClick' => '$(reset);')) }}</td>
-		<td>{{ Form::submit('Create') }}</td>
+		<td></td>
+		<td>{{ Form::button('Reset', array('id'=>'resetSettingsButton', 'onClick' => '$(reset);')) }}   {{ Form::submit('Create') }}</td>
 	</tr>
 </table>
 {{ Form::close() }}

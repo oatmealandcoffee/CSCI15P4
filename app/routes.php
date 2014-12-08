@@ -46,6 +46,10 @@ Route::resource('game', 'GameController');
  * TESTING ROUTES
  */
 
+Route::get('/getuserbyname', function() {
+    return User::where('username', '=', 'pregan')->first();
+});
+
 // testing for chess engine integration
 Route::get('/randomchess', function()
 {
