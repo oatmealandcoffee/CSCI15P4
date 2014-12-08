@@ -22,7 +22,9 @@ class GameController extends \BaseController {
             return Redirect::guest('/');
         }
 
-        $games = Game::where( 'white_id', '=', Auth::id() );
+        $games = Game::where( 'white_id', '=', Auth::id() )
+            ->orWhere( 'black_id', '=', Auth::id() )
+                ->get();
 
         return View::make('game_index')->with('games', $games);
 

@@ -176,7 +176,7 @@ Bonus Features
 		* delete /foo/{foo_id} - destroy($foo_id) // redirect::action
     
 ## Bugs
-* User's games do not appear in the user's game listing
+* [fixed] User's games do not appear in the user's game listing
 * [fixed] User does not redirect correctly create->store->show
 	* redirect to action as opposed to route
 * [fixed] Position Edit page is not getting/using position data
@@ -229,5 +229,7 @@ Bonus Features
 * 14\_12\_07\_03\_02\_001: Fixed various bugs
 * 14\_12\_08\_03\_02\_002: Fixed bug in game create form preventing data to be posted to server
 * 14\_12\_08\_03\_03\_000: Added game creation in database
+* 14\_12\_08\_03\_03\_001: Fixed bug where games were not being retrieved for a user on their games page
 
-cd /Applications/MAMP/htdocs/CSCI15P4; git add --all; git commit -m "Added game creation in database"; git push origin master
+
+cd /Applications/MAMP/htdocs/CSCI15P4; git add --all; git commit -m "Fixed bug where games were not being retrieved for a user on their games page"; git push origin master
