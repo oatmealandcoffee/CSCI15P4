@@ -74,8 +74,11 @@ class GameController extends \BaseController {
             $table->integer('black_id'); - black_player
             */
 
-            $s->white_id = User::where('username', '=', Input::get('white_player'))->first();
-            $s->black_id = User::where('username', '=', Input::get('black_player'))->first();
+            $white_player = User::where('username', '=', Input::get('white_player'))->first();
+            $s->white_id = $white_player->id;
+
+            $black_player = User::where('username', '=', Input::get('black_player'))->first();
+            $s->black_id = $black_player->id;
 
             // fen
 
@@ -83,7 +86,9 @@ class GameController extends \BaseController {
             $table->string('fen'); - opening_position
             */
 
-            $s->fen = Input::get('opening_position');
+            $position = Position::where('name', '=', Input::get('opening_position'))->first();
+
+            $s->fen = $position->fen;
 
             // remaining
 

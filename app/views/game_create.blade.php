@@ -48,7 +48,6 @@ $('#resetSettingsButton').on('click', reset);
 		<td><b>Opening Position</b></td>
 		<td>
 			<select name="opening_position">
-				<option value="Standard Opening">Standard Opening</option>
                 @foreach( $positions as $position )
                 <option value="{{$position->name}}">{{$position->name}}</option>
                	@endforeach

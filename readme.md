@@ -117,12 +117,12 @@ Bonus Features
 			X Delete position
 		X Delete {id} POST
 	> Game CRUD
-		> get /game/create - create SELECT OPPONENT
+		X get /game/create - create SELECT OPPONENT
 			- create autocomplete text field
 				X white
 				X black
 				X position
-		* post /game - store // redirect::action
+		X post /game - store // redirect::action
 		> get /game - index BY USER ONLY; DO NOT SHOW ALL GAMES
         * get /game/{game_id} - show($foo_id)
         * get /game/{game_id}/edit - edit($foo_id) PLAYER MOVE
@@ -176,6 +176,7 @@ Bonus Features
 		* delete /foo/{foo_id} - destroy($foo_id) // redirect::action
     
 ## Bugs
+* User's games do not appear in the user's game listing
 * [fixed] User does not redirect correctly create->store->show
 	* redirect to action as opposed to route
 * [fixed] Position Edit page is not getting/using position data
@@ -227,5 +228,6 @@ Bonus Features
 * 14\_12\_07\_03\_02\_000: Added game create; Added game show
 * 14\_12\_07\_03\_02\_001: Fixed various bugs
 * 14\_12\_08\_03\_02\_002: Fixed bug in game create form preventing data to be posted to server
+* 14\_12\_08\_03\_03\_000: Added game creation in database
 
-cd /Applications/MAMP/htdocs/CSCI15P4; git add --all; git commit -m "Fixed bug in game create form preventing data to be posted to server"; git push origin master
+cd /Applications/MAMP/htdocs/CSCI15P4; git add --all; git commit -m "Added game creation in database"; git push origin master
