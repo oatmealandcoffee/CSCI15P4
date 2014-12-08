@@ -22,7 +22,7 @@ class GameController extends \BaseController {
             return Redirect::guest('/');
         }
 
-        $games = Position::where( 'white_id', '=', Auth::id() );
+        $games = Game::where( 'white_id', '=', Auth::id() );
 
         return View::make('game_index')->with('games', $games);
 
@@ -92,8 +92,8 @@ class GameController extends \BaseController {
             $table->integer('result');
              */
 
-            $s->turn_id = ID_WHITE;
-            $s->result = PLAY;
+            $s->turn_id = self::ID_WHITE;
+            $s->result = self::PLAY;
 
             $s->save();
 
@@ -125,8 +125,6 @@ class GameController extends \BaseController {
 	public function show($game_id)
 	{
         if ( Auth::check() ) {
-
-            $games = Game::all();
 
             if ( !is_numeric( $game_id ) || $game_id < 0 ) {
                 return Redirect::to('/game');
