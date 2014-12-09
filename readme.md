@@ -24,63 +24,6 @@
 
 # Project Notes
 
-Essential Features
-* User (TABLE)
-	* Fields
-		* id
-		* email
-		* username
-		* password
-		* timestamps
-	* Create new account
-	* Retrieve account information
-	* Update account information -> AJAX
-	* Delete (soft) account
-* Game (TABLE)
-	* Fields
-		* id
-		* white_user (id)
-		* black_user (id)
-		* position
-		* player_turn
-		* result -> PLAY, WWIN, BWIN, DRAW
-		* timestamps
-	* Create a game
-		* Select an opponent
-		* Select an opening position
-		* Select White vs Black
-	* Retrieve a game
-	* Update a game -> AJAX
-		* Submit a move
-		* Ping for move
-	* Delete (soft) a game
-* Openings (TABLE)
-	* Fields
-		* id
-		* timestamps
-		* name
-		* fen
-		* player_turn
-		* comments
-	* preloaded
-	
-Bonus Features
-
-* Game
-	* Update a game
-		* Edit the position (add/remove/move pieces without making a move)
-* Openings (TABLE, req editing an already-existing position)
-	* Create a position
-	* Retrieve a position
-	* Update a position -> AJAX
-	* Delete (soft) a position
-* Notes (TABLE)
-	* id
-	* user_id
-	* game_id
-	* content
-	* timestamps
-
 ## Roadmap
 
 	X Create project
@@ -116,6 +59,19 @@ Bonus Features
 			X New game
 			X Delete position
 		X Delete {id} POST
+	X User CRUD
+    	X Route::get('/user', 'UserController@index');
+    	X Route::get('/user/create', 'UserController@create');
+        X Route::post('/user', 'UserController@store');
+        X Route::get('/user/{user_id}', 'UserController@show');
+        X Add user not found redirect to create
+        X Route::get('/user/{user_id}/edit', 'UserController@edit');
+            X add form to edit
+            X add pre-population of form
+        X Route::put('/user/{user_id}', 'UserController@update');
+            X add user not found redirect to create
+        X Route::delete('/user/{user_id}', 'UserController@destroy'); 
+            X add user not found redirect to create
 	> Game CRUD
 		X get /game/create - create SELECT OPPONENT
 			- create autocomplete text field
@@ -124,47 +80,78 @@ Bonus Features
 				X position
 		X post /game - store // redirect::action
 		> get /game - index BY USER ONLY; DO NOT SHOW ALL GAMES
-        * get /game/{game_id} - show($foo_id)
+			* Add Game Info
+				* White
+				* Black
+				* Move
+				* Result
+			* Add "Play" button
+				* redirect to /game/{game_id}/edit
+        > get /game/{game_id} - show($foo_id)
+			* redirect to /game/{game_id}/edit
         * get /game/{game_id}/edit - edit($foo_id) PLAYER MOVE
-        * put /game/{game_id} - update($foo_id) // redirect::action
-        * delete /game/{game_id} - destroy($foo_id) // redirect::action
-		* Game invitations: how to get two players to play a game
-			* User name search
-			* User name list
-	* User CRUD
-			X Route::get('/user', 'UserController@index');
-			> Route::get('/user/create', 'UserController@create');
-				* add client-side user input validation
-            	* add server-side user input validation
-            X Route::post('/user', 'UserController@store');
-            X Route::get('/user/{user_id}', 'UserController@show');
-            X Add user not found redirect to create
-            > Route::get('/user/{user_id}/edit', 'UserController@edit');
-             	X add form to edit
-             	X add pre-population of form
-             	* add client-side user input validation
-            	* add server-side user input validation
-             > Route::put('/user/{user_id}', 'UserController@update');
-             	X add user not found redirect to create
-             X Route::delete('/user/{user_id}', 'UserController@destroy'); 
-             	X add user not found redirect to create
-    * User
-    	* Landing page
-    		* Redirect from login
-            * Link in footer
-    	* Deletion impact on game?
-    		* Check if user exists. If not, then game throws an error
-    	
-	* Game
-		* Landing page
-		* Game (Position) State
-			* Playable vs Win vs Draw
-	* Add navigation to footer
+        	* Add Game Info
+        		* White
+        		* Black
+        		* Move
+        		* Result
+        	* Make board editable
+        		* legal moves only
+       		* Add "Submit Move" button
+       			* redirect to put /game/{game_id}
+        * put /game/{game_id} - update($foo_id)
+        	* game/{game_id}/edit
+        * delete /game/{game_id} - destroy($foo_id)
+        	* redirect to /game
+		- Game invitations: how to get two players to play a game
+			- User name search
+			- User name list
+	* Game play
+		* get player turn from server
+		* if opponent turn
+			* 1/sec ajax ping server until new position received
+			* update board
+			* set to user turn
+		* else (if user turn)
+			* update board
+			* submit new position to server
+			* set to opponent turn
+			* 1/sec ajax ping server until new position received
+    * Validation
+    	* User Create
+    		* Unique username
+    		* Unique email
+    	* User Edit
+    		* Unique username
+    		* Unique email
+    		* User not found
+    	* User Delete
+    		* Update games to opponent winning
+    		* User not found
+    	* Position Create
+    		* Unique Name
+    		* Unique FEN
+    	* Position Edit
+    		* Unique name
+    		* Unique FEN
+    		* Position not found
+    	* Game Create
+    		* User is white or black
+    	* Game Edit
+    		* Move is different from server
+    		* Game not found
+    	* Game delete
+    		- Update to opponent to winner
+    		* Game not found
 	* Enable backups on Digital Ocean Droplet
 	* Migrate to production
-		/ do not make tables beforehand
-		/ php artisan migrate
-	X Credentialing?
+		/ do not make tables beforehand; just use php artisan migrate
+	X Credentialing
+	X Footer navigation
+		X login
+		X account
+		X games
+		X positions
 
 	* Foo CRUD
 		* get /foo - index
@@ -232,4 +219,4 @@ Bonus Features
 * 14\_12\_08\_03\_03\_001: Fixed bug where games were not being retrieved for a user on their games page
 
 
-cd /Applications/MAMP/htdocs/CSCI15P4; git add --all; git commit -m "Fixed bug where games were not being retrieved for a user on their games page"; git push origin master
+cd /Applications/MAMP/htdocs/CSCI15P4; git add --all; git commit -m "Updated roadmap"; git push origin master
