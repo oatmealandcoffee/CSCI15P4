@@ -30,6 +30,12 @@ All Games
 					</script>
 				</div>
 			</td>
+			<td>
+				{{ Form::open(array('url'=>'/game/'.$game->id.'/edit', 'method' => 'GET')) }}
+                {{ Form::submit('Play') }}
+               	{{ Form::close() }}
+
+			</td>
 		</tr>
 
 	@endforeach

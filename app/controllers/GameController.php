@@ -133,17 +133,7 @@ class GameController extends \BaseController {
 	{
         if ( Auth::check() ) {
 
-            if ( !is_numeric( $game_id ) || $game_id < 0 ) {
-                return Redirect::to('/game');
-            }
-
-            $game = Game::find($game_id);
-
-            if (!$game) {
-                return Redirect::action('GameController@index');
-            }
-
-            return View::make('game_show')->with('game', $game);
+            return Redirect::action('GameController@edit', array('$game_id' => $game_id ));
         } else {
             return Redirect::guest('/');
         }
@@ -156,9 +146,34 @@ class GameController extends \BaseController {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function edit($id)
+	public function edit($game_id)
 	{
-		//
+        if ( Auth::check() ) {
+
+            if ( !is_numeric( $game_id ) || $game_id < 0 ) {
+                return Redirect::to('/game');
+            }
+
+            $game = Game::find($game_id);
+
+            if (!$game) {
+                return Redirect::action('GameController@index');
+            }
+
+            $white_player = User::find( $game->white_id );
+            $black_player = User::find( $game->black_id );
+
+            if ( !$white_player || $black_player ) {
+                // redirect to error page
+            }
+
+            return View::make('game_edit')
+                ->with('game', $game)
+                ->with('white_player', $white_player)
+                ->with('black_player', $black_player);
+        } else {
+            return Redirect::guest('/');
+        }
 	}
 
 

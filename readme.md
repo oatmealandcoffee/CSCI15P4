@@ -110,6 +110,9 @@
 		* get player turn from server
 		* if opponent turn
 			* 1/sec ajax ping server until new position received
+				* get fen from server -> Route::get('/game/{$game_id}/fen')
+				* verify login 
+				* verify game participation
 			* update board
 			* set to user turn
 		* else (if user turn)
@@ -117,6 +120,7 @@
 			* submit new position to server
 			* set to opponent turn
 			* 1/sec ajax ping server until new position received
+				* get fen from server -> Route::get('/game/{$game_id}/fen')
     * Validation
     	* User Create
     		* Unique username
@@ -217,6 +221,6 @@
 * 14\_12\_08\_03\_02\_002: Fixed bug in game create form preventing data to be posted to server
 * 14\_12\_08\_03\_03\_000: Added game creation in database
 * 14\_12\_08\_03\_03\_001: Fixed bug where games were not being retrieved for a user on their games page
+* 14\_12\_09\_03\_04\_000: Added game edit
 
-
-cd /Applications/MAMP/htdocs/CSCI15P4; git add --all; git commit -m "Updated roadmap"; git push origin master
+cd /Applications/MAMP/htdocs/CSCI15P4; git add --all; git commit -m "Added game edit"; git push origin master
