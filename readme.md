@@ -222,5 +222,6 @@
 * 14\_12\_08\_03\_03\_000: Added game creation in database
 * 14\_12\_08\_03\_03\_001: Fixed bug where games were not being retrieved for a user on their games page
 * 14\_12\_09\_03\_04\_000: Added game edit
+* 14\_12\_09\_03\_04\_001: Updated game edit to submit FEN and submitting user ID; Fixed a layout bug
 
-cd /Applications/MAMP/htdocs/CSCI15P4; git add --all; git commit -m "Added game edit"; git push origin master
+cd /Applications/MAMP/htdocs/CSCI15P4; git add --all; git commit -m "Updated game edit to submit FEN and submitting user ID; Fixed a layout bug"; git push origin master

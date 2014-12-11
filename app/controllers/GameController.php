@@ -99,7 +99,7 @@ class GameController extends \BaseController {
             $table->integer('result');
              */
 
-            $s->turn_id = self::ID_WHITE;
+            $s->turn_id = Input::get('white_player');
             $s->result = self::PLAY;
 
             $s->save();

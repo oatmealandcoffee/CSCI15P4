@@ -27,6 +27,7 @@ var onChange = function(oldPos, newPos) {
 	// passed object needs to be converted to FEN by ChessBoard for capturing
 	document.getElementById('fen').value = ChessBoard.objToFen(newPos);
 };
+
 // kick off the game
 $(document).ready(init);
 $('#startPositionBtn').on('click', init);
@@ -35,6 +36,7 @@ $('#startPositionBtn').on('click', init);
 <!-- container for the board; id is arbitrary -->
 
 <h2>Game Show</h2>
+{{ Form::open(array('url'=>'/game/'.$game->id, 'method'=>'PUT')) }}
 <table class="table">
 	<tr>
 		<td>White: {{ $white_player->username }}<br>Black: {{ $black_player->username }}</td>
@@ -42,16 +44,24 @@ $('#startPositionBtn').on('click', init);
 		<td></td>
 	</tr>
 	<tr>
+		<td>
+			<div id="board" style="width: 400px"></div>
+			{{ Form::hidden('fen', $game->fen, array('id' => 'fen')) }}
+			{{ Form::hidden('turn_id', $game->turn_id, array('id' => 'fen')) }}
+		</td>
+		<td></td>
+		<td></td>
+	</tr>
+	<tr>
     	<td>
-			<div id="board" style="width: 200px"></div>
-    	</td>
-    	<td>
-        	Insert button for reset
-        </td>
+			{{ Form::button('Reset Position', array('id'=>'startPositionBtn', 'onClick' => '$(init);')) }}
+		</td>
         <td>
-            Insert button for submit
+			{{ Form::submit('Submit Move') }}
         </td>
+		<td></td>
     </tr>
 </table>
+{{ Form::close() }}
 
 @stop
