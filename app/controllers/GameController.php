@@ -2,13 +2,30 @@
 
 class GameController extends \BaseController {
 
-    const ID_WHITE = 0;
-    const ID_BLACK = 0;
-
     const PLAY = -1;
     const WWIN = 0;
     const BWIN = 1;
     const DRAW = 2;
+
+
+    /*
+     * Get the FEN string for a game
+     */
+
+    public function getFen($game_id) {
+
+        if ( !Auth::check() ) {
+            return Redirect::guest('/');
+        }
+
+        $game = Game::find($game_id);
+
+        if ( !$game ) {
+            Redirect::action('GameController@index');
+        }
+
+        return $game->fen;
+    }
 
 	/**
 	 * Display a listing of the resource.
@@ -163,14 +180,16 @@ class GameController extends \BaseController {
             $white_player = User::find( $game->white_id );
             $black_player = User::find( $game->black_id );
 
-            if ( !$white_player || $black_player ) {
-                // redirect to error page
-            }
+            $white_username = $white_player->username;
+            $black_username = $black_player->username;
+
+            //return Pre::render(array ( 'game fen' => $game->fen, 'game id' => $game->id, 'game turn id' => $game->turn_id, 'id' => Auth::id(), 'white' => $white_username, 'black' => $black_username ) );
 
             return View::make('game_edit')
                 ->with('game', $game)
-                ->with('white_player', $white_player)
-                ->with('black_player', $black_player);
+                ->with('submitter_id', Auth::id() )
+                ->with('white_username', $white_username)
+                ->with('black_username', $black_username);
         } else {
             return Redirect::guest('/');
         }
@@ -192,6 +211,7 @@ class GameController extends \BaseController {
             }
 
             // save the game
+            // capture values with Input::get('foo')
 
             return Redirect::action('GameController@edit', array('$game_id' => $game_id ));
 

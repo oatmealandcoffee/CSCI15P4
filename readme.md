@@ -106,23 +106,27 @@
 		- Game invitations: how to get two players to play a game
 			- User name search
 			- User name list
-	* Game play
-		* player inventory
-			* viewing player
-			* turn ID (the ID of the player submitting)
-		* if opponent turn
-			* 1/sec ajax ping server until new position received
-				* get fen from server -> Route::get('/game/{$game_id}/fen')
-				* verify login 
-				* verify game participation
-			* update board
-			* set to user turn
-		* else (if user turn)
-			* update board
-			* submit new position to server
-			* set to opponent turn
-			* 1/sec ajax ping server until new position received
-				* get fen from server -> Route::get('/game/{$game_id}/fen')
+	* Game Play
+		* pregan:mac, philipr:gmail
+    	* Init
+    		* FEN
+    		* player_id
+    		* turn_id // id of the player whose turn it is
+    	* if ( player_id == turn_id ) // it's the player's turn
+    		* update board
+    		* submit new position to server
+    			* game ID
+    			* board FEN
+    			* player_id
+    		* reload page
+    	* if ( player_id != turn_id ) // opponent's turn
+    		* 1/sec ajax ping server until new position received
+    			* get fen from server -> Route::get('/game/{$game_id}/fen')
+    			* verify login 
+    			* verify game participation
+    		* if ( board FEN != server FEN ) 
+    			* update board
+    			* set to player's turn
     * Validation
     	* User Create
     		* Unique username
@@ -226,5 +230,6 @@
 * 14\_12\_09\_03\_04\_000: Added game edit
 * 14\_12\_11\_03\_04\_001: Updated game edit to submit FEN and submitting user ID; Fixed a layout bug
 * 14\_12\_11\_03\_04\_002: Added game move submission round trip
+* 14\_12\_11\_03\_04\_003: Updated to latest game turn components
 
-cd /Applications/MAMP/htdocs/CSCI15P4; git add --all; git commit -m "Added game move submission round trip"; git push origin master
+cd /Applications/MAMP/htdocs/CSCI15P4; git add --all; git commit -m "Updated to latest game turn components"; git push origin master

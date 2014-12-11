@@ -39,15 +39,16 @@ $('#startPositionBtn').on('click', init);
 {{ Form::open(array('url'=>'/game/'.$game->id, 'method'=>'PUT')) }}
 <table class="table">
 	<tr>
-		<td>White: {{ $white_player->username }}<br>Black: {{ $black_player->username }}</td>
+		<td>White: {{ $white_username }}<br>Black: {{ $black_username }}</td>
 		<td></td>
 		<td></td>
 	</tr>
 	<tr>
 		<td>
 			<div id="board" style="width: 400px"></div>
-			{{ Form::hidden('fen', $game->fen, array('id' => 'fen')) }}
-			{{ Form::hidden('turn_id', $game->turn_id, array('id' => 'fen')) }}
+			{{ Form::hidden('fen', $game->fen) }}
+			{{ Form::hidden('turn_id', $game->turn_id) }}
+			{{ Form::hidden('submitter_id', $submitter_id) }}
 		</td>
 		<td></td>
 		<td></td>
