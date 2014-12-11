@@ -183,9 +183,21 @@ class GameController extends \BaseController {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function update($id)
+	public function update( $game_id )
 	{
-		//
+        if ( Auth::check() ) {
+
+            if ( !is_numeric( $game_id ) || $game_id < 0 ) {
+                return Redirect::to('/game');
+            }
+
+            // save the game
+
+            return Redirect::action('GameController@edit', array('$game_id' => $game_id ));
+
+        } else {
+            return Redirect::guest('/');
+        }
 	}
 
 

@@ -107,7 +107,9 @@
 			- User name search
 			- User name list
 	* Game play
-		* get player turn from server
+		* player inventory
+			* viewing player
+			* turn ID (the ID of the player submitting)
 		* if opponent turn
 			* 1/sec ajax ping server until new position received
 				* get fen from server -> Route::get('/game/{$game_id}/fen')
@@ -222,6 +224,7 @@
 * 14\_12\_08\_03\_03\_000: Added game creation in database
 * 14\_12\_08\_03\_03\_001: Fixed bug where games were not being retrieved for a user on their games page
 * 14\_12\_09\_03\_04\_000: Added game edit
-* 14\_12\_09\_03\_04\_001: Updated game edit to submit FEN and submitting user ID; Fixed a layout bug
+* 14\_12\_11\_03\_04\_001: Updated game edit to submit FEN and submitting user ID; Fixed a layout bug
+* 14\_12\_11\_03\_04\_002: Added game move submission round trip
 
-cd /Applications/MAMP/htdocs/CSCI15P4; git add --all; git commit -m "Updated game edit to submit FEN and submitting user ID; Fixed a layout bug"; git push origin master
+cd /Applications/MAMP/htdocs/CSCI15P4; git add --all; git commit -m "Added game move submission round trip"; git push origin master
