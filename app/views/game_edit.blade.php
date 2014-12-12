@@ -17,7 +17,7 @@ var init = function() {
 var cfg = {
   draggable: true,
   position: '{{$game->fen}}',
-  onChange: onChange
+	onChange: onChange
 };
 var board = new ChessBoard('board', cfg);
 
@@ -44,34 +44,6 @@ var handleTurn = function() {
 	}
 }
 
-function pingForFEN (){
-	$.ajax(
-			{
-				type: "GET",
-				url: "/fen/{{$game->id}}",
-				async: true,
-				cache: false,
-				success: function (response) {
-
-					alert( response );
-					// if server FEN != board FEN
-					if ( document.getElementById('fen').value != response ) {
-						// update board
-						document.getElementById('fen').value = ChessBoard.objToFen(response);
-						// enable submit button
-						document.getElementById("submitBtn").disabled = false;
-						// turn off pinging
-						clearInterval(intervalID);
-					}
-				},
-				error: function (x, e) {
-					// a game with the passed id cannot be found so stop pinging
-					alert( this.url + "\r" + x + "\r" + e );
-					clearInterval(intervalID);
-				}
-			});
-}
-
 // kick off the game
 $(document).ready( function() {
 	$(init);
@@ -93,7 +65,7 @@ $('#startPositionBtn').on('click', init);
 	<tr>
 		<td>
 			<div id="board" style="width: 400px"></div>
-			{{ Form::hidden('fen', $game->fen) }}
+			{{ Form::hidden('fen', $game->fen, array('id' => 'fen')) }}
 			{{ Form::hidden('turn_id', $game->turn_id) }}
 			{{ Form::hidden('submitter_id', $submitter_id) }}
 		</td>

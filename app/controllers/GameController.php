@@ -210,8 +210,21 @@ class GameController extends \BaseController {
                 return Redirect::to('/game');
             }
 
-            // save the game
-            // capture values with Input::get('foo')
+            // get the game
+            $game = Game::find( $game_id );
+
+            // update the position
+            $game->fen = Input::get('fen');
+
+            // switch turns
+            if ( $game->turn_id == $game->white_id ) {
+                $game->turn_id == $game->black_id;
+            } else {
+                $game->turn_id == $game->white_id;
+            }
+
+            // save
+            $game->save();
 
             return Redirect::action('GameController@edit', array('$game_id' => $game_id ));
 

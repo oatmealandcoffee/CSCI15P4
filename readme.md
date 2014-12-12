@@ -235,5 +235,6 @@
 * 14\_12\_11\_03\_04\_004: Added turn handling framework to game edit
 * 14\_12\_11\_03\_05\_000: Added pinging framework
 * 14\_12\_11\_03\_05\_001: Disabled ajax; Added move indicator
+* 14\_12\_11\_03\_05\_002: Fixed bug where boards weren't editing
 
-cd /Applications/MAMP/htdocs/CSCI15P4; git add --all; git commit -m "Disabled ajax; Added move indicator"; git push origin master
+cd /Applications/MAMP/htdocs/CSCI15P4; git add --all; git commit -m "Fixed bug where boards weren't editing"; git push origin master
