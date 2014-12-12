@@ -218,9 +218,9 @@ class GameController extends \BaseController {
 
             // switch turns
             if ( $game->turn_id == $game->white_id ) {
-                $game->turn_id == $game->black_id;
-            } else {
-                $game->turn_id == $game->white_id;
+                $game->turn_id = $game->black_id;
+            } elseif ( $game->turn_id == $game->black_id ) {
+                $game->turn_id = $game->white_id;
             }
 
             // save

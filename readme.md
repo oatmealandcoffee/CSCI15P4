@@ -236,5 +236,6 @@
 * 14\_12\_11\_03\_05\_000: Added pinging framework
 * 14\_12\_11\_03\_05\_001: Disabled ajax; Added move indicator
 * 14\_12\_11\_03\_05\_002: Fixed bug where boards weren't editing
+* 14\_12\_11\_03\_05\_003: Fixed bug where turns were not being completely swapped
 
-cd /Applications/MAMP/htdocs/CSCI15P4; git add --all; git commit -m "Fixed bug where boards weren't editing"; git push origin master
+cd /Applications/MAMP/htdocs/CSCI15P4; git add --all; git commit -m "Fixed bug where turns were not being completely swapped"; git push origin master
