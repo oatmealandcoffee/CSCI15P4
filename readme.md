@@ -112,6 +112,7 @@
     		X FEN
     		X player_id
     		X turn_id // id of the player whose turn it is
+    	> Handle checking for turn manually, disable ajax pings
     	* if ( player_id == turn_id ) // it's the player's turn
     		* update board
     		* submit new position to server
@@ -233,5 +234,6 @@
 * 14\_12\_11\_03\_04\_003: Updated to latest game turn components
 * 14\_12\_11\_03\_04\_004: Added turn handling framework to game edit
 * 14\_12\_11\_03\_05\_000: Added pinging framework
+* 14\_12\_11\_03\_05\_001: Disabled ajax; Added move indicator
 
-cd /Applications/MAMP/htdocs/CSCI15P4; git add --all; git commit -m "Added pinging framework"; git push origin master
+cd /Applications/MAMP/htdocs/CSCI15P4; git add --all; git commit -m "Disabled ajax; Added move indicator"; git push origin master

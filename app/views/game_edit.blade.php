@@ -34,13 +34,13 @@ var handleTurn = function() {
 		// enable the submit button
 		document.getElementById("submitBtn").disabled = false;
 		// turn off the pinging
-		clearInterval(intervalID);
+		//clearInterval(intervalID);
 	} else {
 		// opponent's turn
 		// disable the submit button
 		document.getElementById("submitBtn").disabled = true;
 		// turn on the pinging
-		intervalID = setInterval(handleTurn, 1000); //try again
+		//intervalID = setInterval(handleTurn, 1000); //try again
 	}
 }
 
@@ -52,6 +52,8 @@ function pingForFEN (){
 				async: true,
 				cache: false,
 				success: function (response) {
+
+					alert( response );
 					// if server FEN != board FEN
 					if ( document.getElementById('fen').value != response ) {
 						// update board
@@ -84,7 +86,7 @@ $('#startPositionBtn').on('click', init);
 {{ Form::open(array('url'=>'/game/'.$game->id, 'method'=>'PUT')) }}
 <table class="table">
 	<tr>
-		<td>White: {{ $white_username }}<br>Black: {{ $black_username }}</td>
+		<td>{{ ( $game->turn_id == $game->white_id ? '*' : '' ) }}White: {{ $white_username }}<br>{{ ( $game->turn_id == $game->black_id ? '*' : '' ) }}Black: {{ $black_username }}</td>
 		<td></td>
 		<td></td>
 	</tr>
