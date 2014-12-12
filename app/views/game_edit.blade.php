@@ -31,19 +31,43 @@ var onChange = function(oldPos, newPos) {
 var handleTurn = function() {
 	if ( '{{ $submitter_id }}' === '{{ $game->turn_id }}' ) {
 		// this player's turn
-
 		// enable the submit button
 		document.getElementById("submitBtn").disabled = false;
-
 		// turn off the pinging
-
+		clearInterval(intervalID);
 	} else {
 		// opponent's turn
 		// disable the submit button
 		document.getElementById("submitBtn").disabled = true;
 		// turn on the pinging
-
+		intervalID = setInterval(handleTurn, 1000); //try again
 	}
+}
+
+function pingForFEN (){
+	$.ajax(
+			{
+				type: "GET",
+				url: "/fen/{{$game->id}}",
+				async: true,
+				cache: false,
+				success: function (response) {
+					// if server FEN != board FEN
+					if ( document.getElementById('fen').value != response ) {
+						// update board
+						document.getElementById('fen').value = ChessBoard.objToFen(response);
+						// enable submit button
+						document.getElementById("submitBtn").disabled = false;
+						// turn off pinging
+						clearInterval(intervalID);
+					}
+				},
+				error: function (x, e) {
+					// a game with the passed id cannot be found so stop pinging
+					alert( this.url + "\r" + x + "\r" + e );
+					clearInterval(intervalID);
+				}
+			});
 }
 
 // kick off the game

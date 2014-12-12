@@ -107,11 +107,11 @@
 			- User name search
 			- User name list
 	* Game Play
-		* pregan:mac, philipr:gmail
-    	* Init
-    		* FEN
-    		* player_id
-    		* turn_id // id of the player whose turn it is
+		/ pregan:mac, philipr:gmail
+    	X Init
+    		X FEN
+    		X player_id
+    		X turn_id // id of the player whose turn it is
     	* if ( player_id == turn_id ) // it's the player's turn
     		* update board
     		* submit new position to server
@@ -232,5 +232,6 @@
 * 14\_12\_11\_03\_04\_002: Added game move submission round trip
 * 14\_12\_11\_03\_04\_003: Updated to latest game turn components
 * 14\_12\_11\_03\_04\_004: Added turn handling framework to game edit
+* 14\_12\_11\_03\_05\_000: Added pinging framework
 
-cd /Applications/MAMP/htdocs/CSCI15P4; git add --all; git commit -m "Updated to latest game turn components"; git push origin master
+cd /Applications/MAMP/htdocs/CSCI15P4; git add --all; git commit -m "Added pinging framework"; git push origin master
