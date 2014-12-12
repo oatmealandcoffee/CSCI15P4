@@ -231,5 +231,6 @@
 * 14\_12\_11\_03\_04\_001: Updated game edit to submit FEN and submitting user ID; Fixed a layout bug
 * 14\_12\_11\_03\_04\_002: Added game move submission round trip
 * 14\_12\_11\_03\_04\_003: Updated to latest game turn components
+* 14\_12\_11\_03\_04\_004: Added turn handling framework to game edit
 
 cd /Applications/MAMP/htdocs/CSCI15P4; git add --all; git commit -m "Updated to latest game turn components"; git push origin master

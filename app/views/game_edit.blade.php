@@ -28,8 +28,29 @@ var onChange = function(oldPos, newPos) {
 	document.getElementById('fen').value = ChessBoard.objToFen(newPos);
 };
 
+var handleTurn = function() {
+	if ( '{{ $submitter_id }}' === '{{ $game->turn_id }}' ) {
+		// this player's turn
+
+		// enable the submit button
+		document.getElementById("submitBtn").disabled = false;
+
+		// turn off the pinging
+
+	} else {
+		// opponent's turn
+		// disable the submit button
+		document.getElementById("submitBtn").disabled = true;
+		// turn on the pinging
+
+	}
+}
+
 // kick off the game
-$(document).ready(init);
+$(document).ready( function() {
+	$(init);
+	$(handleTurn);
+});
 $('#startPositionBtn').on('click', init);
 </script>
 
@@ -58,7 +79,7 @@ $('#startPositionBtn').on('click', init);
 			{{ Form::button('Reset Position', array('id'=>'startPositionBtn', 'onClick' => '$(init);')) }}
 		</td>
         <td>
-			{{ Form::submit('Submit Move') }}
+			{{ Form::submit('Submit Move', array('id'=>'submitBtn')) }}
         </td>
 		<td></td>
     </tr>
