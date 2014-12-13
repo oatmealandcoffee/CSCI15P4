@@ -106,6 +106,8 @@
 		- Game invitations: how to get two players to play a game
 			- User name search
 			- User name list
+	* Deployment
+		* Fix URLs
     > Validation
     	X User Create
     		X Unique username
@@ -241,6 +243,7 @@
 * 14\_12\_14\_04\_00\_000: Added validation to user create form
 * 14\_12\_14\_04\_00\_001: Updated user creation and edit forms to be aligned
 * 14\_12\_14\_04\_00\_002: Updated user migration to include non-admin accounts
+* 14\_12\_14\_04\_00\_003: Updated user update to manually handle username validation
 
 
-cd /Applications/MAMP/htdocs/CSCI15P4; git add --all; git commit -m "Updated user migration to include non-admin accounts"; git push origin master
+cd /Applications/MAMP/htdocs/CSCI15P4; git add --all; git commit -m "Updated user update to manually handle username validation"; git push origin master

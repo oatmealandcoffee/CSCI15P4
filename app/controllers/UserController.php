@@ -53,6 +53,7 @@ class UserController extends \BaseController {
                 ->withInput()
                 ->withErrors($validator);
         }
+
         $user = new User;
         $user->username = Input::get('username');
         $user->email    = Input::get('email');
@@ -227,33 +228,28 @@ class UserController extends \BaseController {
             return Redirect::guest('/');
         }
 
-/*        # Step 1) Define the rules
-        $rules = array(
-            'username' => 'required|unique:users,username',
-            'email' => 'required|email|unique:users,email',
-            'password' => 'required|min:6'
-        );
-        # Step 2)
-        $validator = Validator::make(Input::all(), $rules);
-
-        # Step 3
-        if($validator->fails()) {
-            return Redirect::to('/user/'.$user_id )
-                ->with('flash_message', 'Sign up failed; please fix the errors listed below.')
-                ->withInput()
-                ->withErrors($validator);
-        }*/
-
-        // get the user object
+        $new_username = Input::get('username');
+        $new_email = Input::get('email');
         $user = User::where('id', '=', $user_id)->first();
+
+        // nothing changed
+        if ( $new_username == $user->username || $new_email == $user->email ) {
+            return Redirect::action('UserController@show', array('user_id' => $user_id));
+        }
+
+        // given validator isn't working as expected
+        // validate username
+        $user_by_name = User::where('username', '=', $new_username)->first();
+        if ( $user_by_name ) {
+            return Redirect::action('UserController@edit', array('user_id' => $user_id, 'flash_message' => 'Username must be unique'));
+        }
 
         if (!$user) {
             return Redirect::action('UserController@index');
         }
 
         // set the properties to the new values
-        $new_username = Input::get('username');
-        $new_email = Input::get('email');
+
 
         if ( $new_username != $user->username ) {
             $user->username = $new_username;
