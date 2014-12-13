@@ -55,7 +55,9 @@ class GameController extends \BaseController {
 	 */
 	public function create()
 	{
-        if ( Auth::check() ) {
+        if ( !Auth::check() ) {
+            return Redirect::guest('/');
+        }
 
             // get the player names
 
@@ -69,9 +71,6 @@ class GameController extends \BaseController {
                 ->with( 'users', $users )
                 ->with( 'positions', $positions);
 
-        } else {
-            return Redirect::guest('/');
-        }
 	}
 
 
@@ -82,7 +81,9 @@ class GameController extends \BaseController {
 	 */
 	public function store()
 	{
-        if ( Auth::check() ) {
+        if ( !Auth::check() ) {
+            return Redirect::guest('/');
+        }
 
             $s = new Game;
 
@@ -133,10 +134,6 @@ class GameController extends \BaseController {
 
             return Redirect::action('GameController@show', array('$game_id' => $game->id));
 
-        } else {
-            return Redirect::guest('/');
-        }
-
 	}
 
 
@@ -148,12 +145,12 @@ class GameController extends \BaseController {
 	 */
 	public function show($game_id)
 	{
-        if ( Auth::check() ) {
-
-            return Redirect::action('GameController@edit', array('$game_id' => $game_id ));
-        } else {
+        if ( !Auth::check() ) {
             return Redirect::guest('/');
         }
+
+            return Redirect::action('GameController@edit', array('$game_id' => $game_id ));
+
 	}
 
 
@@ -165,7 +162,9 @@ class GameController extends \BaseController {
 	 */
 	public function edit($game_id)
 	{
-        if ( Auth::check() ) {
+        if ( !Auth::check() ) {
+            return Redirect::guest('/');
+        }
 
             if ( !is_numeric( $game_id ) || $game_id < 0 ) {
                 return Redirect::to('/game');
@@ -190,9 +189,7 @@ class GameController extends \BaseController {
                 ->with('submitter_id', Auth::id() )
                 ->with('white_username', $white_username)
                 ->with('black_username', $black_username);
-        } else {
-            return Redirect::guest('/');
-        }
+
 	}
 
 
@@ -204,7 +201,9 @@ class GameController extends \BaseController {
 	 */
 	public function update( $game_id )
 	{
-        if ( Auth::check() ) {
+        if ( !Auth::check() ) {
+            return Redirect::guest('/');
+        }
 
             if ( !is_numeric( $game_id ) || $game_id < 0 ) {
                 return Redirect::to('/game');
@@ -228,9 +227,7 @@ class GameController extends \BaseController {
 
             return Redirect::action('GameController@edit', array('$game_id' => $game_id ));
 
-        } else {
-            return Redirect::guest('/');
-        }
+
 	}
 
 
@@ -242,7 +239,9 @@ class GameController extends \BaseController {
 	 */
 	public function destroy($id)
 	{
-		//
+        if ( !Auth::check() ) {
+            return Redirect::guest('/');
+        }
 	}
 
 

@@ -252,5 +252,6 @@
 * 14\_12\_14\_04\_01\_000: Updated img path in chessboard.js to align with Laravel URL map; Fixed bug in position edit where user id was not being grabbed
 * 14\_12\_14\_04\_02\_000: Added validation to position create and edit
 * 14\_12\_14\_04\_02\_001: Updated authorization in position edit; Remove extraneous code in position edit
+* 14\_12\_14\_04\_03\_000: Updated authentication checks in GameController to be aligned
 
-cd /Applications/MAMP/htdocs/CSCI15P4; git add --all; git commit -m "Updated authorization in position edit; Remove extraneous code in position edit"; git push origin master
+cd /Applications/MAMP/htdocs/CSCI15P4; git add --all; git commit -m "Updated authentication checks in GameController to be aligned"; git push origin master
