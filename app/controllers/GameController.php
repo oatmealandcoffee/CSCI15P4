@@ -117,7 +117,7 @@ class GameController extends \BaseController {
             $table->integer('result');
              */
 
-            $s->turn_id = Input::get('white_player');
+            $s->turn_id = $white_player->id;
             $s->result = self::PLAY;
 
             $s->save();
@@ -149,7 +149,9 @@ class GameController extends \BaseController {
             return Redirect::guest('/');
         }
 
-            return Redirect::action('GameController@edit', array('$game_id' => $game_id ));
+        // there is little point in simply showing a game; if a user is
+        // viewing it, then they are likely playing it
+        return Redirect::action('GameController@edit', array('$game_id' => $game_id ));
 
 	}
 
