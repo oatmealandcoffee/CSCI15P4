@@ -80,63 +80,65 @@
 				X position
 		X post /game - store // redirect::action
 		> get /game - index BY USER ONLY; DO NOT SHOW ALL GAMES
-			* Add Game Info
-				* White
-				* Black
-				* Move
+			X Add Game Info
+				X White
+				X Black
+				X Move
 				* Result
 			* Add "Play" button
 				* redirect to /game/{game_id}/edit
-        > get /game/{game_id} - show($foo_id)
-			* redirect to /game/{game_id}/edit
-        * get /game/{game_id}/edit - edit($foo_id) PLAYER MOVE
-        	* Add Game Info
-        		* White
-        		* Black
-        		* Move
+        X get /game/{game_id} - show($foo_id)
+			X redirect to /game/{game_id}/edit
+        > get /game/{game_id}/edit - edit($foo_id) PLAYER MOVE
+        	> Add Game Info
+        		X White
+        		X Black
+        		X Move
         		* Result
-        	* Make board editable
-        		* legal moves only
-       		* Add "Submit Move" button
-       			* redirect to put /game/{game_id}
-        * put /game/{game_id} - update($foo_id)
+        	> Make board editable
+        		> legal moves only
+       		X Add "Submit Move" button
+       			X redirect to put /game/{game_id}
+        X put /game/{game_id} - update($foo_id)
         	* game/{game_id}/edit
         * delete /game/{game_id} - destroy($foo_id)
         	* redirect to /game
 		- Game invitations: how to get two players to play a game
 			- User name search
 			- User name list
-	* Deployment
-		* Fix URLs
+	*! Deployment
+		X Fix URLs
+		* Migrate
+			/ do not make tables beforehand; just use php artisan migrate
     > Validation
     	X User Create
     		X Unique username
     		X Unique email
-    	* User Edit
-    		* Unique username
-    		* Unique email
-    		* User not found
-    	* User Delete
-    		* Update games to opponent winning
-    		* User not found
     	* Position Create
-    		* Unique Name
-    		* Unique FEN
-    	* Position Edit
-    		* Unique name
-    		* Unique FEN
-    		* Position not found
-    	* Game Create
-    		* User is white or black
+        	*! Unique Name
+        	*! Unique FEN
+        * Position Edit
+        	*! Position not found
+        	*? Unique name
+        	*? Unique FEN
+    	* User Edit
+    	    *! User not found
+    		*? Unique username
+    		*? Unique email
+    	* User Delete
+    		* User not found
+    		*? Update games to opponent winning
+    	X Game Create
+    		X User is white or black
     	* Game Edit
+    		*! Game not found
+    		* Highlight player's own side in addition to turn
     		* Move is different from server
-    		* Game not found
     	* Game delete
-    		- Update to opponent to winner
     		* Game not found
-	* Enable backups on Digital Ocean Droplet
-	* Migrate to production
-		/ do not make tables beforehand; just use php artisan migrate
+    		- Update to opponent to winner
+    	* Error handling to home
+	*? Enable backups on Digital Ocean Droplet
 	X Credentialing
 	X Footer navigation
 		X login
