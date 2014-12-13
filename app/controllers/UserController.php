@@ -39,11 +39,13 @@ class UserController extends \BaseController {
 
         # Step 1) Define the rules
         $rules = array(
+            'username' => 'required|unique:users,username',
             'email' => 'required|email|unique:users,email',
             'password' => 'required|min:6'
         );
         # Step 2)
         $validator = Validator::make(Input::all(), $rules);
+
         # Step 3
         if($validator->fails()) {
             return Redirect::to('/signup')

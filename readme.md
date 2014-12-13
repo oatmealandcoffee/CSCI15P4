@@ -106,32 +106,10 @@
 		- Game invitations: how to get two players to play a game
 			- User name search
 			- User name list
-	* Game Play
-		/ pregan:mac, philipr:gmail
-    	X Init
-    		X FEN
-    		X player_id
-    		X turn_id // id of the player whose turn it is
-    	> Handle checking for turn manually, disable ajax pings
-    	* if ( player_id == turn_id ) // it's the player's turn
-    		* update board
-    		* submit new position to server
-    			* game ID
-    			* board FEN
-    			* player_id
-    		* reload page
-    	* if ( player_id != turn_id ) // opponent's turn
-    		* 1/sec ajax ping server until new position received
-    			* get fen from server -> Route::get('/game/{$game_id}/fen')
-    			* verify login 
-    			* verify game participation
-    		* if ( board FEN != server FEN ) 
-    			* update board
-    			* set to player's turn
-    * Validation
-    	* User Create
-    		* Unique username
-    		* Unique email
+    > Validation
+    	X User Create
+    		X Unique username
+    		X Unique email
     	* User Edit
     		* Unique username
     		* Unique email
@@ -163,6 +141,29 @@
 		X account
 		X games
 		X positions
+	- Game Play (core CRUD operations work; validation to come)
+    		/ pregan:mac, philipr:gmail
+    		* Validate moves
+        	X Init
+        		X FEN
+        		X player_id
+        		X turn_id // id of the player whose turn it is
+        	> Handle checking for turn manually, disable ajax pings
+        	* if ( player_id == turn_id ) // it's the player's turn
+        		* update board
+        		* submit new position to server
+        			* game ID
+        			* board FEN
+        			* player_id
+        		* reload page
+        	* if ( player_id != turn_id ) // opponent's turn
+        		* 1/sec ajax ping server until new position received
+        			* get fen from server -> Route::get('/game/{$game_id}/fen')
+        			* verify login 
+        			* verify game participation
+        		* if ( board FEN != server FEN ) 
+        			* update board
+        			* set to player's turn
 
 	* Foo CRUD
 		* get /foo - index
@@ -237,5 +238,6 @@
 * 14\_12\_11\_03\_05\_001: Disabled ajax; Added move indicator
 * 14\_12\_11\_03\_05\_002: Fixed bug where boards weren't editing
 * 14\_12\_11\_03\_05\_003: Fixed bug where turns were not being completely swapped
+* 14\_12\_14\_04\_00\_000: Added validation to user create form
 
-cd /Applications/MAMP/htdocs/CSCI15P4; git add --all; git commit -m "Fixed bug where turns were not being completely swapped"; git push origin master
+cd /Applications/MAMP/htdocs/CSCI15P4; git add --all; git commit -m "Added validation to user create form"; git push origin master
