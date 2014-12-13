@@ -129,24 +129,21 @@ class PositionController extends \BaseController {
 	 */
 	public function edit( $position_id )
 	{
-        if ( Auth::check() ) {
-
-            $positions = Position::all();
-
-            if ( !is_numeric( $position_id ) || $position_id < 0 ) {
-                return Redirect::to('/position');
-            }
-
-            $position = Position::find($position_id);
-
-            if (!$position) {
-                return Redirect::action('PositionController@index');
-            }
-
-            return View::make('position_edit')->with('position', $position);
-        } else {
+        if ( !Auth::check() ) {
             return Redirect::guest('/');
         }
+
+        if ( !is_numeric( $position_id ) || $position_id < 0 ) {
+            return Redirect::to('/position');
+        }
+
+        $position = Position::find($position_id);
+
+        if (!$position) {
+            return Redirect::action('PositionController@index');
+        }
+
+        return View::make('position_edit')->with('position', $position);
 	}
 
 

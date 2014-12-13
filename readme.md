@@ -115,13 +115,13 @@
     	X User Create
     		X Unique username
     		X Unique email
-    	* Position Create
-        	*! Unique Name
-        	*! Unique FEN
-        * Position Edit
+    	X Position Create
+        	X Unique Name
+        	X Unique FEN
+        X Position Edit
         	*! Position not found
-        	*? Unique name
-        	*? Unique FEN
+        	X Unique name
+        	X Unique FEN
     	* User Edit
     	    *! User not found
     		*? Unique username
@@ -180,6 +180,8 @@
 		* delete /foo/{foo_id} - destroy($foo_id) // redirect::action
     
 ## Bugs
+* [] Play button does not behave as expected in position show
+* [] FEN is not applied to board in position edit when there is an error
 * [fixed] User's games do not appear in the user's game listing
 * [fixed] User does not redirect correctly create->store->show
 	* redirect to action as opposed to route
@@ -249,5 +251,6 @@
 * 14\_12\_14\_04\_00\_003: Updated user update to manually handle username validation
 * 14\_12\_14\_04\_01\_000: Updated img path in chessboard.js to align with Laravel URL map; Fixed bug in position edit where user id was not being grabbed
 * 14\_12\_14\_04\_02\_000: Added validation to position create and edit
+* 14\_12\_14\_04\_02\_001: Updated authorization in position edit; Remove extraneous code in position edit
 
-cd /Applications/MAMP/htdocs/CSCI15P4; git add --all; git commit -m "Added validation to position create and edit"; git push origin master
+cd /Applications/MAMP/htdocs/CSCI15P4; git add --all; git commit -m "Updated authorization in position edit; Remove extraneous code in position edit"; git push origin master
