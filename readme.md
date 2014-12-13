@@ -248,4 +248,4 @@
 * 14\_12\_14\_04\_00\_003: Updated user update to manually handle username validation
 * 14\_12\_14\_04\_01\_000: Updated img path in chessboard.js to align with Laravel URL map; Fixed bug in position edit where user id was not being grabbed
 
-cd /Applications/MAMP/htdocs/CSCI15P4; git add --all; git commit -m "Updated roadmap"; git push origin master
+cd /Applications/MAMP/htdocs/CSCI15P4; git add --all; git commit -m "Updated gitignore"; git push origin master
