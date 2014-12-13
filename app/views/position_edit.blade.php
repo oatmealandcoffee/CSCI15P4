@@ -48,7 +48,14 @@ $('#startPositionBtn').on('click', init);
                 	<li>Moving any piece off the board deletes that piece from the position.</li>
                 	<li>Pieces on the sides of the board are added when dragged onto the board.</li>
                 </ul>
-             </td>
+
+		@if ( Session::has('flash_message') )
+			<div class="alert {{ Session::get('flash_type') }}">
+				{{ Session::get('flash_message') }}
+			</div>
+		@endif
+
+	</td>
 	</tr>
 	<tr>
 		<td>

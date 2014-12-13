@@ -43,6 +43,31 @@ class PositionController extends \BaseController {
 	{
         if ( Auth::check() ) {
 
+            # Step 1) Define the rules
+            $rules = array(
+                'name' => 'required|unique:positions,name',
+                'fen' => 'required|unique:positions,fen'
+            );
+            # Step 2)
+            $validator = Validator::make(Input::all(), $rules);
+
+            # Step 3
+            if($validator->fails()) {
+
+                // build flash message
+                $flash_message = '<p>Creation failed. Please fix the following errors:</p>';
+                $messages = $validator->messages();
+                foreach ($messages->all('<div class=\"error\">:message</div><br>') as $message)
+                {
+                    $flash_message .= $message;
+                }
+
+                return Redirect::to('/position/create')
+                    ->with('flash_message', $flash_message)
+                    ->withInput()
+                    ->withErrors($validator);
+            }
+
             $s = new Position;
             $s->name = Input::get('name');
             $s->fen = Input::get('fen');
@@ -135,6 +160,31 @@ class PositionController extends \BaseController {
 	{
         if ( !Auth::check() ) {
             return Redirect::guest('/');
+        }
+
+        # Step 1) Define the rules
+        $rules = array(
+            'name' => 'required|unique:positions,name',
+            'fen' => 'required|unique:positions,fen'
+        );
+        # Step 2)
+        $validator = Validator::make(Input::all(), $rules);
+
+        # Step 3
+        if($validator->fails()) {
+
+            // build flash message
+            $flash_message = '<p>Editing failed. Please fix the following errors:</p>';
+            $messages = $validator->messages();
+            foreach ($messages->all('<div class=\"error\">:message</div><br>') as $message)
+            {
+                $flash_message .= $message;
+            }
+
+            return Redirect::to('/position/create')
+                ->with('flash_message', $flash_message)
+                ->withInput()
+                ->withErrors($validator);
         }
 
         // get the user object

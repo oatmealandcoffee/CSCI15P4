@@ -106,10 +106,11 @@
 		- Game invitations: how to get two players to play a game
 			- User name search
 			- User name list
-	> Deployment
+	X Deployment
 		X Fix URLs
 		X Migrate
 			/ do not make tables beforehand; just use php artisan migrate
+	* Clean up authorization handling
     > Validation
     	X User Create
     		X Unique username
@@ -247,5 +248,6 @@
 * 14\_12\_14\_04\_00\_002: Updated user migration to include non-admin accounts
 * 14\_12\_14\_04\_00\_003: Updated user update to manually handle username validation
 * 14\_12\_14\_04\_01\_000: Updated img path in chessboard.js to align with Laravel URL map; Fixed bug in position edit where user id was not being grabbed
+* 14\_12\_14\_04\_02\_000: Added validation to position create and edit
 
-cd /Applications/MAMP/htdocs/CSCI15P4; git add --all; git commit -m "sync test"; git push origin master
+cd /Applications/MAMP/htdocs/CSCI15P4; git add --all; git commit -m "Added validation to position create and edit"; git push origin master

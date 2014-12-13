@@ -36,23 +36,28 @@ $('#startPositionBtn').on('click', init);
 </script>
 
 {{ Form::open(array('url'=>'/position', 'method'=>'POST')) }}
+{{ Form::label('name', 'Name of position') }}
+{{ Form::hidden('fen', 'rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR', array('id' => 'fen')) }}
 <table class="table">
 	<tr>
 	<td>
 		<b>Instructions</b>
 	</td>
 	<td>
-    			<ul>
-                	<li>Drag the pieces on the board to the desired position.</li>
-                	<li>Moving any piece off the board deletes that piece from the position.</li>
-                	<li>Pieces on the sides of the board are added when dragged onto the board.</li>
-                </ul>
-             </td>
+		<ul>
+			<li>Drag the pieces on the board to the desired position.</li>
+			<li>Moving any piece off the board deletes that piece from the position.</li>
+			<li>Pieces on the sides of the board are added when dragged onto the board.</li>
+		</ul>
+		@if ( Session::has('flash_message') )
+			<div class="alert {{ Session::get('flash_type') }}">
+				{{ Session::get('flash_message') }}
+			</div>
+		@endif
+	</td>
 	</tr>
 	<tr>
 		<td>
-			{{ Form::label('name', 'Name of position') }}
-			{{ Form::hidden('fen', 'rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR', array('id' => 'fen')) }}
 		</td>
 		<td>
 			{{ Form::text('name') }}
