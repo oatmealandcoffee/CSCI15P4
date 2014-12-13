@@ -11,7 +11,7 @@ Edit Position
 @section('body')
 
 <script>
-	var player_id = {{}};
+	var player_id = {{ Auth::id() }};
 var init = function() {
 
 //--- start example JS ---

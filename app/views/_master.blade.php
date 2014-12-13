@@ -13,8 +13,6 @@
         Laravel Chess::@yield('title')
     </title>
 
-    <base href="http://localhost/" />
-
 	<!-- BOOTSTRAP INCLUDE START -->
 
     <!-- Latest compiled and minified CSS -->
@@ -38,15 +36,14 @@
 
 	<!-- CHESS INCLUDE START -->
 
-	<script src="http://localhost/js/chess.js"></script>
-	<script src="http://localhost/js/chessboard-0.3.0.js"></script>
-	<link rel="stylesheet" href="http://localhost/css/chessboard-0.3.0.css" />
+	<script src="/js/chess.js"></script>
+	<script src="/js/chessboard-0.3.0.js"></script>
+	<link rel="stylesheet" href="/css/chessboard-0.3.0.css" />
 
 	<!-- CHESS INCLUDE END -->
 
 	<!-- INTERFACE INCLUDE START -->
-	<link rel="stylesheet" href="http://localhost/css/styles.css">
-	<script src="http://localhost/js/jquery.autocomplete.js"></script>
+	<link rel="stylesheet" href="/css/styles.css">
 
 	<!-- INTERFACE INCLUDE END-->
 
