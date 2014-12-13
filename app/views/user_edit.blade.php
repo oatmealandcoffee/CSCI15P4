@@ -6,7 +6,6 @@ Update User
 
 @section('head')
 
-
 @stop
 
 @section('body')
@@ -23,11 +22,19 @@ Update User
 	</tr>
 	<tr>
          <td>
-         	{{ Form::label('', 'Email') }}
+         	{{ Form::label('email', 'Email') }}
 		</td>
 		<td>
          	{{ Form::text('email', $user->email) }}
          </td>
+	</tr>
+	<tr>
+		<td>
+			{{ Form::label('password', 'Password') }}
+		</td>
+		<td>
+			{{ Form::password('password') }}
+		</td>
 	</tr>
 	<tr>
 		<td>

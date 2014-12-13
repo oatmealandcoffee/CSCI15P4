@@ -6,7 +6,6 @@ Create User
 
 @section('head')
 
-
 @stop
 
 @section('body')
@@ -23,7 +22,7 @@ Create User
 	</tr>
 	<tr>
          <td>
-         	{{ Form::label('', 'Email') }}
+         	{{ Form::label('email', 'Email') }}
 		</td>
 		<td>
          	{{ Form::text('email') }}

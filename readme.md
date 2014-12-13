@@ -239,5 +239,6 @@
 * 14\_12\_11\_03\_05\_002: Fixed bug where boards weren't editing
 * 14\_12\_11\_03\_05\_003: Fixed bug where turns were not being completely swapped
 * 14\_12\_14\_04\_00\_000: Added validation to user create form
+* 14\_12\_14\_04\_00\_001: Updated user creation and edit forms to be aligned
 
-cd /Applications/MAMP/htdocs/CSCI15P4; git add --all; git commit -m "Added validation to user create form"; git push origin master
+cd /Applications/MAMP/htdocs/CSCI15P4; git add --all; git commit -m "Updated user creation and edit forms to be aligned"; git push origin master

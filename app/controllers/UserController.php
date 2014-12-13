@@ -227,6 +227,23 @@ class UserController extends \BaseController {
             return Redirect::guest('/');
         }
 
+/*        # Step 1) Define the rules
+        $rules = array(
+            'username' => 'required|unique:users,username',
+            'email' => 'required|email|unique:users,email',
+            'password' => 'required|min:6'
+        );
+        # Step 2)
+        $validator = Validator::make(Input::all(), $rules);
+
+        # Step 3
+        if($validator->fails()) {
+            return Redirect::to('/user/'.$user_id )
+                ->with('flash_message', 'Sign up failed; please fix the errors listed below.')
+                ->withInput()
+                ->withErrors($validator);
+        }*/
+
         // get the user object
         $user = User::where('id', '=', $user_id)->first();
 
