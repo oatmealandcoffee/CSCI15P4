@@ -99,7 +99,7 @@ class PositionController extends \BaseController {
 	 */
 	public function show( $position_id )
 	{
-        if ( Auth::check() ) {
+        if ( !Auth::check() ) {
             return Redirect::guest('/');
         }
 

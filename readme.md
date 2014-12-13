@@ -254,5 +254,6 @@
 * 14\_12\_14\_04\_02\_001: Updated authorization in position edit; Remove extraneous code in position edit
 * 14\_12\_14\_04\_03\_000: Updated authentication checks in GameController to be aligned
 * 14\_12\_14\_04\_04\_000: Updated authentication checks in PositionController to be aligned
+* 14\_12\_14\_04\_04\_001: Fixed authentication check in position show
 
-cd /Applications/MAMP/htdocs/CSCI15P4; git add --all; git commit -m "Updated authentication checks in PositionController to be aligned"; git push origin master
+cd /Applications/MAMP/htdocs/CSCI15P4; git add --all; git commit -m "Fixed authentication check in position show"; git push origin master
