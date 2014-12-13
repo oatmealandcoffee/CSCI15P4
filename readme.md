@@ -122,15 +122,15 @@
         	X Position not found
         	X Unique name
         	X Unique FEN
-    	> User Edit
+    	* User Edit
     	    X User not found
     		*? Unique username
     		*? Unique email
     	* User Delete
-    		* User not found
+    		X User not found
     		*? Update games to opponent winning
-    	* User Index
-    		* Do something with it
+    	X User Index
+    		X Do something with it
     	X Game Create
     		X User is white or black
     	* Game Edit
@@ -149,6 +149,25 @@
 		X games
 		X positions
 	- Game Play (core CRUD operations work; validation to come)
+		* for the engine to know if a move is valid, it needs the state before and after the move
+			* init engine with fen
+			* if ( move valid v. engine)
+				* prevent further moves
+			* else
+				* snapback
+			* submit move
+				* extract fen string
+				* get turn from engine
+		* init
+			* create engine object
+			* build valid, stateless fen
+				/ [FEN] w KQkq - 0 1
+				0 board fen
+				1 player turn: {b, w}
+				2 castle string {KQkq}
+				3 e.p.: {-}
+				4 half moves: {n >= 0}
+				5 full moves: {n > 0}
     		/ pregan:mac, philipr:gmail
     		* Validate moves
     		* Switch board based on side (black side down if black)
@@ -263,5 +282,7 @@
 * 14\_12\_14\_04\_06\_000: Updated PositionController and UserController to better handle unfound objects
 * 14\_12\_14\_04\_07\_000: Updated game edit form to be more organized; Updates game show code to better show intent; Fixed bug in game create preventing both players from submitting moves
 * 14\_12\_14\_04\_07\_001: Updated game edit to change board orientation based on user login
+* 14\_12\_14\_05\_00\_000: Starting enhanced game logic validating moves at time of play
 
-cd /Applications/MAMP/htdocs/CSCI15P4; git add --all; git commit -m "Updated game edit to change board orientation based on user login"; git push origin master
+
+cd /Applications/MAMP/htdocs/CSCI15P4; git add --all; git commit -m "Starting enhanced game logic validating moves at time of play"; git push origin master

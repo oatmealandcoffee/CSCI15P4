@@ -31,18 +31,44 @@ var onChange = function(oldPos, newPos) {
 
 var handleTurn = function() {
 	if ( '{{ $submitter_id }}' === '{{ $game->turn_id }}' ) {
-		// this player's turn
-		// enable the submit button
+
 		document.getElementById("submitBtn").disabled = false;
-		// turn off the pinging
-		//clearInterval(intervalID);
+
 	} else {
-		// opponent's turn
-		// disable the submit button
+
 		document.getElementById("submitBtn").disabled = true;
-		// turn on the pinging
-		//intervalID = setInterval(handleTurn, 1000); //try again
+
 	}
+}
+
+function buildStatelessFen ( aFen ) {
+
+	/*
+	In the LCS, FEN exists in two formats:
+		* initial position only derived from the board
+		* position + game state derived from the chess engine
+
+	This appends a default game state for those positions that do not
+	have one.
+	*/
+
+	// we need a value for the FEN else the engine will barf, so might as
+	// well go with the standard opening position. The chances of this
+	// happening are minimal and if happening is symptomatic of problems
+	// elsewhere.
+	if ( typeof aFen == 'undefined' || aFen == '' ) {
+		return 'rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1';
+	}
+
+	// split the FEN
+	var tokens = fen.split(/\s+/);
+	// if the FEN is only the position, add the state
+	if (tokens.length == 1) {
+		return aFen + ' w KQkq - 0 1';
+	}
+	// fen has everything we need already
+	return aFen;
+
 }
 
 // kick off the game
