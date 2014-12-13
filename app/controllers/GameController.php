@@ -184,13 +184,12 @@ class GameController extends \BaseController {
             $white_username = $white_player->username;
             $black_username = $black_player->username;
 
-            //return Pre::render(array ( 'game fen' => $game->fen, 'game id' => $game->id, 'game turn id' => $game->turn_id, 'id' => Auth::id(), 'white' => $white_username, 'black' => $black_username ) );
-
             return View::make('game_edit')
                 ->with('game', $game)
                 ->with('submitter_id', Auth::id() )
                 ->with('white_username', $white_username)
-                ->with('black_username', $black_username);
+                ->with('black_username', $black_username)
+                ->with('orientation', ( Auth::id() == $game->white_id ? 'white' : 'black') );
 
 	}
 

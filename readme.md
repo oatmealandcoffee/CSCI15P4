@@ -262,6 +262,6 @@
 * 14\_12\_14\_04\_05\_000: Updated authentication checks in UserController to be aligned
 * 14\_12\_14\_04\_06\_000: Updated PositionController and UserController to better handle unfound objects
 * 14\_12\_14\_04\_07\_000: Updated game edit form to be more organized; Updates game show code to better show intent; Fixed bug in game create preventing both players from submitting moves
+* 14\_12\_14\_04\_07\_001: Updated game edit to change board orientation based on user login
 
-
-cd /Applications/MAMP/htdocs/CSCI15P4; git add --all; git commit -m "Updated game edit form to be more organized; Updates game show code to better show intent; Fixed bug in game create preventing both players from submitting moves"; git push origin master
+cd /Applications/MAMP/htdocs/CSCI15P4; git add --all; git commit -m "Updated game edit to change board orientation based on user login"; git push origin master

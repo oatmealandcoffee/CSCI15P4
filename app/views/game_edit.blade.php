@@ -15,8 +15,9 @@ var init = function() {
 //--- start example JS ---
 
 var cfg = {
-  draggable: true,
-  position: '{{$game->fen}}',
+	draggable: true,
+	position: '{{$game->fen}}',
+	orientation: '{{ $orientation }}',
 	onChange: onChange
 };
 var board = new ChessBoard('board', cfg);
