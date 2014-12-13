@@ -25,9 +25,8 @@ class UserController extends \BaseController {
     public function getSignup() {
        if (!Auth::check()) {
            return View::make('user_signup');
-       } else {
-           return Redirect::route('/');
        }
+        return Redirect::route('/');
     }
 
     /**
@@ -79,10 +78,8 @@ class UserController extends \BaseController {
     public function getLogin() {
         if ( !Auth::check()) {
             return View::make('user_login');
-        } else {
-            return Redirect::route('/');
         }
-
+            return Redirect::route('/');
     }
 
     /**
@@ -126,11 +123,11 @@ class UserController extends \BaseController {
 	 */
 	public function index()
 	{
-        if ( Auth::check()) {
-            echo Pre::r(User::all());
-        } else {
+        if ( !Auth::check()) {
             return Redirect::guest('/');
         }
+
+        echo Pre::render(User::all());
 	}
 
 

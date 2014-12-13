@@ -129,6 +129,8 @@
     	* User Delete
     		* User not found
     		*? Update games to opponent winning
+    	* User Index
+    		* Do something with it
     	X Game Create
     		X User is white or black
     	* Game Edit
@@ -255,5 +257,6 @@
 * 14\_12\_14\_04\_03\_000: Updated authentication checks in GameController to be aligned
 * 14\_12\_14\_04\_04\_000: Updated authentication checks in PositionController to be aligned
 * 14\_12\_14\_04\_04\_001: Fixed authentication check in position show
+* 14\_12\_14\_04\_05\_000: Updated authentication checks in UserController to be aligned
 
-cd /Applications/MAMP/htdocs/CSCI15P4; git add --all; git commit -m "Fixed authentication check in position show"; git push origin master
+cd /Applications/MAMP/htdocs/CSCI15P4; git add --all; git commit -m "Updated authentication checks in UserController to be aligned"; git push origin master
