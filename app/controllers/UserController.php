@@ -126,8 +126,8 @@ class UserController extends \BaseController {
         if ( !Auth::check()) {
             return Redirect::guest('/');
         }
-
-        echo Pre::render(User::all());
+        return Redirect::action('GameController@index');
+        //echo Pre::render(User::all());
 	}
 
 

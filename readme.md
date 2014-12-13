@@ -119,11 +119,11 @@
         	X Unique Name
         	X Unique FEN
         X Position Edit
-        	*! Position not found
+        	X Position not found
         	X Unique name
         	X Unique FEN
-    	* User Edit
-    	    *! User not found
+    	> User Edit
+    	    X User not found
     		*? Unique username
     		*? Unique email
     	* User Delete
@@ -151,6 +151,7 @@
 	- Game Play (core CRUD operations work; validation to come)
     		/ pregan:mac, philipr:gmail
     		* Validate moves
+    		* Switch board based on side (black side down if black)
         	X Init
         		X FEN
         		X player_id
@@ -182,6 +183,7 @@
 		* delete /foo/{foo_id} - destroy($foo_id) // redirect::action
     
 ## Bugs
+* [] New games aren't editable by either player
 * [] Play button does not behave as expected in position show
 * [] FEN is not applied to board in position edit when there is an error
 * [fixed] User's games do not appear in the user's game listing
@@ -258,5 +260,7 @@
 * 14\_12\_14\_04\_04\_000: Updated authentication checks in PositionController to be aligned
 * 14\_12\_14\_04\_04\_001: Fixed authentication check in position show
 * 14\_12\_14\_04\_05\_000: Updated authentication checks in UserController to be aligned
+* 14\_12\_14\_04\_06\_000: Updated PositionController and UserController to better handle unfound objects
 
-cd /Applications/MAMP/htdocs/CSCI15P4; git add --all; git commit -m "Updated authentication checks in UserController to be aligned"; git push origin master
+
+cd /Applications/MAMP/htdocs/CSCI15P4; git add --all; git commit -m "Updated PositionController and UserController to better handle unfound objects"; git push origin master
