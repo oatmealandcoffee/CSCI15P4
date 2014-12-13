@@ -9,13 +9,14 @@ class PositionController extends \BaseController {
 	 */
 	public function index()
 	{
-        if ( Auth::check() ) {
+        if ( !Auth::check() ) {
+            return Redirect::guest('/');
+        }
+
             $positions = Position::all();
 
             return View::make('position_index')->with('positions', $positions);
-        } else {
-            return Redirect::guest('/');
-        }
+
 	}
 
 
@@ -26,11 +27,11 @@ class PositionController extends \BaseController {
 	 */
 	public function create()
 	{
-        if ( Auth::check() ) {
-            return View::make('position_create');
-        } else {
+        if ( !Auth::check() ) {
             return Redirect::guest('/');
         }
+            return View::make('position_create');
+
 	}
 
 
@@ -41,7 +42,9 @@ class PositionController extends \BaseController {
 	 */
 	public function store()
 	{
-        if ( Auth::check() ) {
+        if ( !Auth::check() ) {
+            return Redirect::guest('/');
+        }
 
             # Step 1) Define the rules
             $rules = array(
@@ -85,9 +88,6 @@ class PositionController extends \BaseController {
 
             return Redirect::action('PositionController@show', array('$position_id' => $position->id));
 
-        } else {
-            return Redirect::guest('/');
-        }
 	}
 
 
@@ -100,6 +100,8 @@ class PositionController extends \BaseController {
 	public function show( $position_id )
 	{
         if ( Auth::check() ) {
+            return Redirect::guest('/');
+        }
 
             $positions = Position::all();
 
@@ -114,9 +116,6 @@ class PositionController extends \BaseController {
             }
 
             return View::make('position_show')->with('position', $position);
-        } else {
-            return Redirect::guest('/');
-        }
 
     }
 
