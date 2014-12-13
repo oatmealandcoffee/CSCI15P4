@@ -283,6 +283,7 @@
 * 14\_12\_14\_04\_07\_000: Updated game edit form to be more organized; Updates game show code to better show intent; Fixed bug in game create preventing both players from submitting moves
 * 14\_12\_14\_04\_07\_001: Updated game edit to change board orientation based on user login
 * 14\_12\_14\_05\_00\_000: Starting enhanced game logic validating moves at time of play
+* 14\_12\_14\_05\_01\_000: Added chess logic hooks
 
 
-cd /Applications/MAMP/htdocs/CSCI15P4; git add --all; git commit -m "Starting enhanced game logic validating moves at time of play"; git push origin master
+cd /Applications/MAMP/htdocs/CSCI15P4; git add --all; git commit -m "Added chess logic hooks"; git push origin master
