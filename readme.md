@@ -125,15 +125,29 @@
     	X Game delete (game index; admin only?)
     		X Game not found
     		- Update to opponent to winner
-    	> Game Show
+    	X Game Show
     		X Remove status
-    		* Disable moving pieces once legal move is made
-    		* Enable moving pieces when reset position button is pressed
-    	> Buttons
+    		X Disable moving pieces once legal move is made
+    		X Enable moving pieces when reset position button is pressed
+    	X Buttons
     		X Align form buttons
     		X Fix button style
     			X Clear/Reset: class="btn btn-default" (white)
     			X Action: class="btn btn-primary" (blue)
+    	* Validation/Security
+    		* User
+    			* Create
+    			* Edit
+			* Position
+				* Create
+				* Edit
+    	* Game Create
+            * User is white or black before submitting
+        * Game Edit
+            *! Game not found
+            * Highlight player's own side in addition to turn
+            * Move is different from server
+        * Validate Object IDs
     	* Login failure -> add flash messaging
     	* User Edit
     	    X User not found
@@ -144,13 +158,6 @@
     		*? Update games to opponent winning
     	X User Index
     		X Do something with it
-    	* Game Create
-    		* User is white or black before submitting
-    	* Game Edit
-    		*! Game not found
-    		* Highlight player's own side in addition to turn
-    		* Move is different from server
-    	* Error handling to home
 	*? Enable backups on Digital Ocean Droplet
 	X Credentialing
 	X Footer navigation
@@ -159,7 +166,7 @@
 		X games
 		X positions
 	- Game Play (core CRUD operations work; validation to come)
-		* for the engine to know if a move is valid, it needs the state before and after the move
+		X for the engine to know if a move is valid, it needs the state before and after the move
 			X init engine with fen
 			X if ( move valid v. engine)
 				X prevent further moves
@@ -186,13 +193,13 @@
         		X player_id
         		X turn_id // id of the player whose turn it is
         	> Handle checking for turn manually, disable ajax pings
-        	* if ( player_id == turn_id ) // it's the player's turn
-        		* update board
-        		* submit new position to server
-        			* game ID
-        			* board FEN
-        			* player_id
-        		* reload page
+        	X if ( player_id == turn_id ) // it's the player's turn
+        		X update board
+        		X submit new position to server
+        			X game ID
+        			X board FEN
+        			X player_id
+        		X reload page
         	* if ( player_id != turn_id ) // opponent's turn
         		* 1/sec ajax ping server until new position received
         			* get fen from server -> Route::get('/game/{$game_id}/fen')
@@ -213,6 +220,7 @@
     
 ## Bugs
 * [] User edit/store is not capturing and displaying errors
+* [] User edit is not saving changes
 * [] Play button does not behave as expected in position show
 	* Needs to take fen and init the game create interface
 * [fixed] New games aren't editable by either player
@@ -307,5 +315,6 @@
 * 14\_12\_14\_06\_00\_002: Updated button to make them consistent
 * 14\_12\_14\_06\_01\_000: Updated game edit to prevent player from making more than one move
 * 14\_12\_14\_06\_01\_001: Updated position index to align link text with button
+* 14\_12\_14\_06\_01\_002: Fixed routing issue in position edit; Updated user edit to recognize the submitter
 
-cd /Applications/MAMP/htdocs/CSCI15P4; git add --all; git commit -m "Updated position index to align link text with button"; git push origin master
+cd /Applications/MAMP/htdocs/CSCI15P4; git add --all; git commit -m "Fixed routing issue in position edit; Updated user edit to recognize the submitter"; git push origin master

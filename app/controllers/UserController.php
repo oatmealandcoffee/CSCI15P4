@@ -54,7 +54,13 @@ class UserController extends \BaseController {
         }
 
         $user = new User;
-        $user->username = Input::get('username');
+
+        $username = Input::get('username');
+        // sanitize username
+        $username = trim( $username );
+        $username = stripslashes( $username );
+        $username = htmlentities( $username );
+        $user->username = $username;
         $user->email    = Input::get('email');
         $user->password = Hash::make(Input::get('password'));
         try {
@@ -150,7 +156,12 @@ class UserController extends \BaseController {
 	public function store()
 	{
         $s = new User;
-        $s->username = Input::get('username');
+        // sanitize username
+        $username = Input::get('username');
+        $username = trim( $username );
+        $username = stripslashes( $username );
+        $username = htmlentities( $username );
+        $s->username = $username;
         $s->email = Input::get('email');
         $s->password = Hash::make(Input::get('password'));
         $s->save();
@@ -226,20 +237,50 @@ class UserController extends \BaseController {
         }
 
         $new_username = Input::get('username');
+        $new_username = trim( $new_username );
+        $new_username = stripslashes( $new_username );
+        $new_username = htmlentities( $new_username );
         $new_email = Input::get('email');
+
         $user = User::where('id', '=', $user_id)->first();
 
         // nothing changed
-        if ( $new_username == $user->username || $new_email == $user->email ) {
-            return Redirect::action('UserController@show', array('user_id' => $user_id));
+        if ( $new_username == $user->username && $new_email == $user->email ) {
+            return Redirect::action('UserController@edit', array('user_id' => $user_id))->with('flash_message', '<div class=\'error\'>The username and email have already been taken.</div>');
         }
 
-        // given validator isn't working as expected
-        // validate username
+        /*
+         * The supplied validator does not meet needs here. Either the username
+         * or the email could be the same as the submitting user
+         *
+         * if ( user found with property )
+         *      if ( found user is not submitting user )
+         *          throw an error
+         *      end if
+         * end if
+         *
+         * if ( error thrown )
+         *      return to edit with flash message
+         * end if
+         */
+
         $user_by_name = User::where('username', '=', $new_username)->first();
-        if ( $user_by_name ) {
-            return Redirect::action('UserController@edit', array('user_id' => $user_id, 'flash_message' => 'Username must be unique'));
+        $user_by_email = User::where('email', '=', $new_email)->first();
+
+        $error_str = '';
+
+        if ( $user_by_name && $user_by_name->id != Auth::user()->id ) {
+            $error_str .= '<div class=\'error\'>The username has already been taken.</div>';
         }
+
+        if ( $user_by_email && $user_by_email->id != Auth::user()->id ) {
+            $error_str .= '<div class=\'error\'>The email has already been taken.</div>';
+        }
+
+        if ( $error_str != '' ) {
+            return Redirect::action('UserController@edit', array('user_id' => $user_id))->with('flash_message', $error_str );
+        }
+
 
         if (!$user) {
             return Redirect::action('UserController@index');

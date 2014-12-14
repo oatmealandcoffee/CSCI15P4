@@ -72,7 +72,11 @@ class PositionController extends \BaseController {
             }
 
             $s = new Position;
-            $s->name = Input::get('name');
+            $name = Input::get('name');
+            $name = trim( $name );
+            $name = stripslashes( $name );
+            $name = htmlentities( $name );
+            $s->name = $name;
             $s->fen = Input::get('fen');
             $s->save();
 
@@ -177,7 +181,7 @@ class PositionController extends \BaseController {
                 $flash_message .= $message;
             }
 
-            return Redirect::to('/position/create')
+            return Redirect::to('/position/'.$position_id.'/edit')
                 ->with('flash_message', $flash_message)
                 ->withInput()
                 ->withErrors($validator);
@@ -193,6 +197,9 @@ class PositionController extends \BaseController {
         // set the properties to the new values
         $new_fen = Input::get('fen');
         $new_name = Input::get('name');
+        $new_name = trim( $new_name );
+        $new_name = stripslashes( $new_name );
+        $new_name = htmlentities( $new_name );
 
         if ( $new_fen != $position->fen ) {
             $position->fen = $new_fen;
