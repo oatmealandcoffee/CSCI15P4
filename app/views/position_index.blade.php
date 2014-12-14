@@ -22,7 +22,9 @@ All Positions
 	@foreach( $positions as $position )
 		<tr>
 			<td>
-				<a href="/position/{{$position->id}}" title="{{$position->name}}">{{$position->name}}</a>
+				{{ Form::open(array('url'=>'/position/'.$position->id, 'method' => 'GET')) }}
+				{{ Form::submit($position->name, array('class' => 'btn btn-link')) }}
+				{{ Form::close() }}
 			</td>
 			<td>
 				{{ Form::open(array('url'=>'/position/'.$position->id, 'method' => 'GET')) }}

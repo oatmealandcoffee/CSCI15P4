@@ -306,5 +306,6 @@
 * 14\_12\_14\_06\_00\_001: Updated interfaces in positions to make them consistent
 * 14\_12\_14\_06\_00\_002: Updated button to make them consistent
 * 14\_12\_14\_06\_01\_000: Updated game edit to prevent player from making more than one move
+* 14\_12\_14\_06\_01\_001: Updated position index to align link text with button
 
-cd /Applications/MAMP/htdocs/CSCI15P4; git add --all; git commit -m "Updated game edit to prevent player from making more than one move"; git push origin master
+cd /Applications/MAMP/htdocs/CSCI15P4; git add --all; git commit -m "Updated position index to align link text with button"; git push origin master
