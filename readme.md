@@ -122,9 +122,17 @@
         	X Position not found
         	X Unique name
         	X Unique FEN
-    	* Game delete (game index; admin only?)
-    		* Game not found
+    	X Game delete (game index; admin only?)
+    		X Game not found
     		- Update to opponent to winner
+    	* Game Show
+    		* Remove status
+    		* Disable moving pieces once legal move is made
+    		* Enable moving pieces when reset position button is pressed
+    	* Buttons
+    		* Fix button style
+    			* Clear/Reset: class="btn btn-default" (white)
+    			* Action: class="btn btn-primary" (blue)
     	* Login failure -> add flash messaging
     	* User Edit
     	    X User not found
@@ -288,6 +296,7 @@
 * 14\_12\_14\_05\_01\_001: Fixed parsing bugs preventing board drawing
 * 14\_12\_14\_05\_02\_000: Fixed bug preventing board from being found in DOM which prevented game state lifecycle to complete
 * 14\_12\_14\_05\_02\_000: Added game delete
+* 14\_12\_14\_05\_03\_000: Updated buttons in position index
 
 
-cd /Applications/MAMP/htdocs/CSCI15P4; git add --all; git commit -m "Added game delete"; git push origin master
+cd /Applications/MAMP/htdocs/CSCI15P4; git add --all; git commit -m "Updated buttons in position index"; git push origin master

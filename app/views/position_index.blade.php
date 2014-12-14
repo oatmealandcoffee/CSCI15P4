@@ -9,15 +9,10 @@ All Positions
 @stop
 
 @section('body')
-
+	{{ Form::open(array('url'=>'/position/create', 'method' => 'GET')) }}
+	{{ Form::submit('Add New Position', array('class' => 'btn btn-primary')) }}
+	{{ Form::close() }}
 <table class="table">
-	<tr>
-		<td>
-			{{ Form::open(array('url'=>'/position/create', 'method' => 'GET')) }}
-            {{ Form::submit('Add New Position') }}
-            {{ Form::close() }}
-		</td>
-	</tr>
 	@foreach( $positions as $position )
 		<tr>
 			<td>
@@ -25,7 +20,7 @@ All Positions
 			</td>
 			<td>
 				{{ Form::open(array('url'=>'/position/'.$position->id, 'method' => 'GET')) }}
-                {{ Form::submit('Show') }}
+                {{ Form::submit('Show', array('class' => 'btn btn-default')) }}
                 {{ Form::close() }}
 			</td>
 		</tr>
