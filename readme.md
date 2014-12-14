@@ -122,6 +122,10 @@
         	X Position not found
         	X Unique name
         	X Unique FEN
+    	* Game delete (game index; admin only?)
+    		* Game not found
+    		- Update to opponent to winner
+    	* Login failure -> add flash messaging
     	* User Edit
     	    X User not found
     		*? Unique username
@@ -137,9 +141,6 @@
     		*! Game not found
     		* Highlight player's own side in addition to turn
     		* Move is different from server
-    	* Game delete
-    		* Game not found
-    		- Update to opponent to winner
     	* Error handling to home
 	*? Enable backups on Digital Ocean Droplet
 	X Credentialing
@@ -202,9 +203,9 @@
 		* delete /foo/{foo_id} - destroy($foo_id) // redirect::action
     
 ## Bugs
-* [] New games aren't editable by either player
 * [] Play button does not behave as expected in position show
-* [] FEN is not applied to board in position edit when there is an error
+* [fixed] New games aren't editable by either player
+* [fixed] FEN is not applied to board in position edit when there is an error
 * [fixed] User's games do not appear in the user's game listing
 * [fixed] User does not redirect correctly create->store->show
 	* redirect to action as opposed to route
