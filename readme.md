@@ -158,9 +158,9 @@
 			* submit move
 				* extract fen string
 				* get turn from engine
-		* init
-			* create engine object
-			* build valid, stateless fen
+		X init
+			X create engine object
+			X build valid, stateless fen
 				/ [FEN] w KQkq - 0 1
 				0 board fen
 				1 player turn: {b, w}
@@ -169,8 +169,8 @@
 				4 half moves: {n >= 0}
 				5 full moves: {n > 0}
     		/ pregan:mac, philipr:gmail
-    		* Validate moves
-    		* Switch board based on side (black side down if black)
+    		> Validate moves
+    		X Switch board based on side (black side down if black)
         	X Init
         		X FEN
         		X player_id
@@ -284,6 +284,7 @@
 * 14\_12\_14\_04\_07\_001: Updated game edit to change board orientation based on user login
 * 14\_12\_14\_05\_00\_000: Starting enhanced game logic validating moves at time of play
 * 14\_12\_14\_05\_01\_000: Added chess logic hooks
+* 14\_12\_14\_05\_01\_001: Fixed parsing bugs preventing board drawing
 
 
-cd /Applications/MAMP/htdocs/CSCI15P4; git add --all; git commit -m "Added chess logic hooks"; git push origin master
+cd /Applications/MAMP/htdocs/CSCI15P4; git add --all; git commit -m "Fixed parsing bugs preventing board drawing"; git push origin master

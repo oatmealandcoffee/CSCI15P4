@@ -13,12 +13,16 @@
 
 		engine = new Chess();
 
+		/* INIT STACK */
+
 		var init = function() {
+
+			fen = prepFen( '{{ $game->fen }}' );
 
 			// create the settings
 			var cfg = {
 				draggable: true,
-				position: parseFen( '{{ $game->fen }}' ),
+				position: fen,
 				orientation: '{{ $orientation }}',
 				onChange: onChange,
 				onDragStart: onDragStart,
@@ -28,11 +32,12 @@
 			// init the board with the settings
 			var board = new ChessBoard('board', cfg);
 			// start the engine with the FEN
-			engine.load( parseFen( {{ $game->fen }} ) );
+			engine.load( fen );
 
-		}; // end init()
+		};
 
-		function parseFen ( aFen ) {
+		// preps the passed fen string for play
+		function prepFen ( aFen ) {
 
 			/*
 			 In the LCS, FEN exists in two states:
@@ -52,8 +57,8 @@
 			}
 
 			// split the FEN
-			var tokens = fen.split(/\s+/);
-			// if the FEN is only the position, add the state
+			var tokens = aFen.split(" ");
+			// if the FEN contains only the position, add the state for the engine
 			if (tokens.length == 1) {
 				return aFen + ' w KQkq - 0 1';
 			}
