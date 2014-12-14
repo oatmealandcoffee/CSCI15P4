@@ -19,6 +19,9 @@ Show User
 		<td>
 			{{ $user->username; }}
 		</td>
+		<td>
+
+		</td>
 	</tr>
 	<tr>
          <td>
@@ -27,18 +30,25 @@ Show User
 		<td>
          	{{ $user->email; }}
          </td>
+		<td>
+
+		</td>
 	</tr>
 	<tr>
-		<td></td>
 		<td>
-			<p>
 			{{ Form::open(array('url'=>'/user/'.$user->id.'/edit/', 'method'=>'GET')) }}
 			{{ Form::submit('Edit', array('class' => 'btn btn-default')) }}
 			{{ Form::close() }}
+		</td>
+		<td>
+			{{ Form::open(array('url'=>'/game', 'method'=>'GET')) }}
+			{{ Form::submit('View Games', array('class' => 'btn btn-primary')) }}
+			{{ Form::close() }}
+		</td>
+		<td>
 			{{ Form::open(array('url'=>'/user/'.$user->id, 'method'=>'DELETE')) }}
             {{ Form::submit('Delete', array('class' => 'btn btn-default')) }}
             {{ Form::close() }}
-            </p>
 		</td>
 	</tr>
 </table>

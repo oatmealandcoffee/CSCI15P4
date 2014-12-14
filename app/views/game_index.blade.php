@@ -12,20 +12,24 @@ All Games
 
 <h2>Your Games</h2>
 
-{{ Form::open(array('url'=>'/game/create', 'method'=>'GET')) }}
-{{ Form::submit('New Game', array('class' => 'btn btn-default')) }}
-{{ Form::close() }}
+
 
 <table class="table">
-	<tr></tr>
+	<tr>
+		<td>
+		{{ Form::open(array('url'=>'/game/create', 'method'=>'GET')) }}
+		{{ Form::submit('New Game', array('class' => 'btn btn-primary')) }}
+		{{ Form::close() }}
+		</td>
+		<td></td>
+		<td></td>
+	</tr>
 	@foreach( $games as $game )
 
 		<tr>
 			<td>
 				<div id="board{{$game->id}}" style="width: 200px">
 					<script>
-						var board;
-                        var game = new Chess();
                         board = new ChessBoard('board{{$game->id}}', '{{$game->fen}}');
 					</script>
 				</div>

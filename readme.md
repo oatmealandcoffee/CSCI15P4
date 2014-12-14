@@ -129,10 +129,11 @@
     		* Remove status
     		* Disable moving pieces once legal move is made
     		* Enable moving pieces when reset position button is pressed
-    	* Buttons
-    		* Fix button style
-    			* Clear/Reset: class="btn btn-default" (white)
-    			* Action: class="btn btn-primary" (blue)
+    	> Buttons
+    		X Align form buttons
+    		X Fix button style
+    			X Clear/Reset: class="btn btn-default" (white)
+    			X Action: class="btn btn-primary" (blue)
     	* Login failure -> add flash messaging
     	* User Edit
     	    X User not found
@@ -143,8 +144,8 @@
     		*? Update games to opponent winning
     	X User Index
     		X Do something with it
-    	X Game Create
-    		X User is white or black
+    	* Game Create
+    		* User is white or black before submitting
     	* Game Edit
     		*! Game not found
     		* Highlight player's own side in addition to turn
@@ -178,7 +179,7 @@
 				4 half moves: {n >= 0}
 				5 full moves: {n > 0}
     		/ pregan:mac, philipr:gmail
-    		> Validate moves
+    		X Validate moves
     		X Switch board based on side (black side down if black)
         	X Init
         		X FEN
@@ -211,7 +212,9 @@
 		* delete /foo/{foo_id} - destroy($foo_id) // redirect::action
     
 ## Bugs
+* [] User edit/store is not capturing and displaying errors
 * [] Play button does not behave as expected in position show
+	* Needs to take fen and init the game create interface
 * [fixed] New games aren't editable by either player
 * [fixed] FEN is not applied to board in position edit when there is an error
 * [fixed] User's games do not appear in the user's game listing
@@ -299,6 +302,7 @@
 * 14\_12\_14\_05\_03\_000: Updated buttons in position index to use bootstrap
 * 14\_12\_14\_05\_04\_000: Updated buttons in all forms to use bootstrap
 * 14\_12\_14\_05\_05\_000: Updated text areas in all forms to use bootstrap; Fixed a couple interface inconsistencies
+* 14\_12\_14\_06\_00\_000: Updated layouts in all forms to make them consistent
 
 
-cd /Applications/MAMP/htdocs/CSCI15P4; git add --all; git commit -m "Updated text areas in all forms to use bootstrap; Fixed a couple interface inconsistencies"; git push origin master
+cd /Applications/MAMP/htdocs/CSCI15P4; git add --all; git commit -m "Updated layouts in all forms to make them consistent"; git push origin master

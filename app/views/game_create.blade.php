@@ -22,7 +22,8 @@ $('#resetSettingsButton').on('click', reset);
 
 <h2>Create Game</h2>
 
-{{ Form::open(array('url'=>'/game', 'method'=>'POST')) }}
+{{ Form::open(array('url'=>'/game', 'method'=>'POST', 'class'=>'form-inline', 'role'=>'form')) }}
+
 <table class="table">
 	<tr>
 		<td><b>White</b></td>
@@ -55,8 +56,12 @@ $('#resetSettingsButton').on('click', reset);
 		</td>
 	</tr>
 	<tr>
+		<!--
+			Layout tweak because submit and non-submit buttons have different
+			yet unresolvable vertical alignments
+		-->
 		<td></td>
-		<td>{{ Form::button('Reset', array('class' => 'btn btn-default', 'id'=>'resetSettingsButton', 'onClick' => '$(reset);')) }}   {{ Form::submit('Create', array('class' => 'btn btn-default')) }}</td>
+		<td><p>{{ Form::submit('Create', array('class' => 'btn btn-primary')) }}</p><p>{{ Form::button('Reset', array('class' => 'btn btn-default', 'id'=>'resetSettingsButton', 'onClick' => '$(reset);')) }}</p></td>
 	</tr>
 </table>
 {{ Form::close() }}

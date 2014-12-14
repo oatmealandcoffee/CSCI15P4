@@ -15,7 +15,6 @@ Sign Up
 <div class='error'>{{ $message }}</div>
 @endforeach
 
-<p>
 {{ Form::open(array('url' => '/signup')) }}
 
 {{ Form::label('username') }}
@@ -25,13 +24,10 @@ Sign Up
 {{ Form::text('email', '', array('class' => 'form-control')) }}
 
 {{ Form::label('password') }}
-{{ Form::password('password', array('class' => 'form-control')) }}
 <small>Min 6 characters</small>
+{{ Form::password('password', array('class' => 'form-control')) }}
 
 {{ Form::submit('Submit', array('class' => 'btn btn-default')) }}
-
 {{ Form::close() }}
-</p>
-
 
 @stop

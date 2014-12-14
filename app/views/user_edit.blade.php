@@ -18,39 +18,18 @@ Update User
 	</div>
 
 @endif
-<table class="table">
-	<tr>
-		<td>
-			{{ Form::label('username', 'Username') }}
-		</td>
-		<td>
-			{{ Form::text('username', $user->username, array('class' => 'form-control')) }}
-		</td>
-	</tr>
-	<tr>
-         <td>
-         	{{ Form::label('email', 'Email') }}
-		</td>
-		<td>
-         	{{ Form::text('email', $user->email, array('class' => 'form-control')) }}
-         </td>
-	</tr>
-	<tr>
-		<td>
-			{{ Form::label('password', 'Password') }}
-		</td>
-		<td>
-			{{ Form::password('password', array('class' => 'form-control')) }}
-		</td>
-	</tr>
-	<tr>
-		<td>
-		</td>
-         <td>
-			{{ Form::submit('Update', array('class' => 'btn btn-default')) }}
-         </td>
-	</tr>
-</table>
+
+{{ Form::label('username', 'Username') }}
+{{ Form::text('username', $user->username, array('class' => 'form-control')) }}
+
+{{ Form::label('email', 'Email') }}
+{{ Form::text('email', $user->email, array('class' => 'form-control')) }}
+
+{{ Form::label('password', 'Password') }}
+{{ Form::password('password', array('class' => 'form-control')) }}
+
+{{ Form::submit('Update', array('class' => 'btn btn-default')) }}
+
 {{ Form::close() }}
 
 @stop

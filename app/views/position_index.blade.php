@@ -9,10 +9,16 @@ All Positions
 @stop
 
 @section('body')
-	{{ Form::open(array('url'=>'/position/create', 'method' => 'GET')) }}
-	{{ Form::submit('Add New Position', array('class' => 'btn btn-primary')) }}
-	{{ Form::close() }}
+
 <table class="table">
+	<tr>
+		<td>
+			{{ Form::open(array('url'=>'/position/create', 'method' => 'GET')) }}
+			{{ Form::submit('Add New Position', array('class' => 'btn btn-primary')) }}
+			{{ Form::close() }}
+		</td>
+		<td></td>
+	</tr>
 	@foreach( $positions as $position )
 		<tr>
 			<td>

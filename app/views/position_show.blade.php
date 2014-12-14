@@ -38,34 +38,24 @@ $(document).ready(init);
     	</td>
     	<td></td>
     	<td></td>
-    	<td></td>
-    </tr>
-    <tr>
-    	<td>
-    		<b>FEN:</b> {{$position->fen}}
-    	</td>
-    	<td></td>
-    	<td></td>
-    	<td></td>
     </tr>
     <tr>
         <td>
         	{{ Form::open(array('url'=>'/position', 'method' => 'GET')) }}
-			{{ Form::submit('Play', array('class' => 'btn btn-default')) }}
-        	{{ Form::close() }}
-        </td>
-        <td>
-            {{ Form::open(array('url'=>'/position/'.$position->id.'/edit', 'method' => 'GET')) }}
-            {{ Form::submit('Edit', array('class' => 'btn btn-default')) }}
-            {{ Form::close() }}
-        </td>
-        <td>
-			{{ Form::open(array('url'=>'/position/'.$position->id, 'method' => 'DELETE')) }}
-			{{ Form::submit('Delete', array('class' => 'btn btn-default')) }}
+			{{ Form::submit('New game with this position', array('class' => 'btn btn-primary')) }}
         	{{ Form::close() }}
        	</td>
-       	<td></td>
-    </tr>
+		<td>
+			{{ Form::open(array('url'=>'/position/'.$position->id.'/edit', 'method' => 'GET')) }}
+			{{ Form::submit('Edit', array('class' => 'btn btn-default')) }}
+			{{ Form::close() }}
+		</td>
+		<td>
+			{{ Form::open(array('url'=>'/position/'.$position->id, 'method' => 'DELETE')) }}
+			{{ Form::submit('Delete', array('class' => 'btn btn-default')) }}
+			{{ Form::close() }}
+		</td>
+	</tr>
 </table>
 
 @stop

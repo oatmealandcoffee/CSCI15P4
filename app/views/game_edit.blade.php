@@ -148,17 +148,9 @@
 					status += ', ' + moveColor + ' is in check';
 				}
 			}
-
-			statusEl.html(status);
-			fenEl.html(engine.fen());
-			pgnEl.html(engine.pgn());
 		};
 
 		var handleInterface = function() {
-
-			statusEl = $('#status');
-			fenEl = $('#fenstr');
-			pgnEl = $('#pgn');
 
 			if ( '{{ $submitter_id }}' === '{{ $game->turn_id }}' ) {
 				document.getElementById("submitBtn").disabled = false;
@@ -193,20 +185,23 @@
 				<div id="board" style="width: 400px"></div>
 
 			</td>
-			<td>
-				<p>Status: <span id="status"></span></p>
-				<p>FEN: <span id="fenstr"></span></p>
-				<p>PGN: <span id="pgn"></span></p>
-			</td>
+			<td></td>
 			<td></td>
 		</tr>
 		<tr>
+			<!--
+				Layout tweak because submit and non-submit buttons have different
+				yet unresolvable vertical alignments
+			-->
 			<td>
-				{{ Form::button('Reset Position', array('class' => 'btn btn-default', 'id'=>'startPositionBtn', 'onClick' => '$(init);')) }}
+				<p>
+					{{ Form::submit('Submit Move', array('class' => 'btn btn-primary', 'id'=>'submitBtn')) }}
+				</p>
+				<p>
+					{{ Form::button('Reset Position', array('class' => 'btn btn-default', 'id'=>'startPositionBtn', 'onClick' => '$(init);')) }}
+				</p>
 			</td>
-			<td>
-				{{ Form::submit('Submit Move', array('class' => 'btn btn-default', 'id'=>'submitBtn')) }}
-			</td>
+			<td></td>
 			<td></td>
 		</tr>
 	</table>
