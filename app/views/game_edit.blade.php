@@ -23,6 +23,7 @@
 		// board to be inited later
 		var board;
 		engine = new Chess();
+		var moveMade = false;
 
 		/* INIT STACK */
 
@@ -44,6 +45,7 @@
 			board = new ChessBoard('board', cfg);
 			// start the engine with the FEN
 			engine.load( fen );
+			moveMade = false;
 
 		};
 
@@ -83,16 +85,16 @@
 		// do not pick up pieces if the game is over
 		// only pick up pieces for the side to move
 		var onDragStart = function(source, piece, position, orientation) {
-			console.log('onDragStart');
+			console.log('moveMade: ' + moveMade);
 			if (engine.game_over() === true ||
 					(engine.turn() === 'w' && piece.search(/^b/) !== -1) ||
-					(engine.turn() === 'b' && piece.search(/^w/) !== -1)) {
+					(engine.turn() === 'b' && piece.search(/^w/) !== -1) ||
+					( moveMade == true )) {
 				return false;
 			}
 		};
 
 		var onDrop = function(source, target) {
-			console.log('onDrop');
 			// see if the move is legal
 			var move = engine.move({
 				from: source,
@@ -109,14 +111,12 @@
 		// update the board position after the piece snap
 		// for castling, en passant, pawn promotion
 		var onSnapEnd = function() {
-			console.log('onSnapEnd');
 			efen = engine.fen();
 			board.position(efen);
 		};
 
 		// this and onSnapEnd might be redundant
 		var onChange = function(oldPos, newPos) {
-			console.log('onChange');
 			// passed object needs to be converted to FEN by ChessBoard for capturing
 			document.getElementById('fen').value = engine.fen();
 		};
@@ -148,6 +148,8 @@
 					status += ', ' + moveColor + ' is in check';
 				}
 			}
+
+			moveMade = true;
 		};
 
 		var handleInterface = function() {
@@ -155,6 +157,7 @@
 			if ( '{{ $submitter_id }}' === '{{ $game->turn_id }}' ) {
 				document.getElementById("submitBtn").disabled = false;
 			} else {
+				moveMade = true;
 				document.getElementById("submitBtn").disabled = true;
 			}
 		};

@@ -160,14 +160,14 @@
 		X positions
 	- Game Play (core CRUD operations work; validation to come)
 		* for the engine to know if a move is valid, it needs the state before and after the move
-			* init engine with fen
-			* if ( move valid v. engine)
-				* prevent further moves
-			* else
-				* snapback
-			* submit move
-				* extract fen string
-				* get turn from engine
+			X init engine with fen
+			X if ( move valid v. engine)
+				X prevent further moves
+			X else
+				X snapback
+			X submit move
+				X extract fen string
+				X get turn from engine
 		X init
 			X create engine object
 			X build valid, stateless fen
@@ -305,6 +305,6 @@
 * 14\_12\_14\_06\_00\_000: Updated layouts in all forms to make them consistent
 * 14\_12\_14\_06\_00\_001: Updated interfaces in positions to make them consistent
 * 14\_12\_14\_06\_00\_002: Updated button to make them consistent
+* 14\_12\_14\_06\_01\_000: Updated game edit to prevent player from making more than one move
 
-
-cd /Applications/MAMP/htdocs/CSCI15P4; git add --all; git commit -m "Updated button to make them consistent"; git push origin master
+cd /Applications/MAMP/htdocs/CSCI15P4; git add --all; git commit -m "Updated game edit to prevent player from making more than one move"; git push origin master
