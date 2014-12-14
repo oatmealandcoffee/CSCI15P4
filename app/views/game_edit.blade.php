@@ -10,7 +10,8 @@
 
 @section('body')
 	<script>
-
+		// board is undefined in the debugger
+		board = 'undefined';
 		engine = new Chess();
 
 		/* INIT STACK */
@@ -72,6 +73,7 @@
 		// do not pick up pieces if the game is over
 		// only pick up pieces for the side to move
 		var onDragStart = function(source, piece, position, orientation) {
+			console.log('onDragStart');
 			if (engine.game_over() === true ||
 					(engine.turn() === 'w' && piece.search(/^b/) !== -1) ||
 					(engine.turn() === 'b' && piece.search(/^w/) !== -1)) {
@@ -80,6 +82,7 @@
 		};
 
 		var onDrop = function(source, target) {
+			console.log('onDrop');
 			// see if the move is legal
 			var move = engine.move({
 				from: source,
@@ -96,11 +99,14 @@
 		// update the board position after the piece snap
 		// for castling, en passant, pawn promotion
 		var onSnapEnd = function() {
-			board.position(engine.fen());
+			console.log('onSnapEnd');
+			efen = engine.fen();
+			board.position(efen);
 		};
 
 		// this and onSnapEnd might be redundant
 		var onChange = function(oldPos, newPos) {
+			console.log('onChange');
 			// passed object needs to be converted to FEN by ChessBoard for capturing
 			document.getElementById('fen').value = engine.fen();
 		};
@@ -135,7 +141,7 @@
 
 			statusEl.html(status);
 			fenEl.html(engine.fen());
-			pgnEl.html(game.pgn());
+			pgnEl.html(engine.pgn());
 		};
 
 		var handleInterface = function() {
