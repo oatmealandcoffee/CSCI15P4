@@ -141,6 +141,7 @@
 			* Position
 				* Create
 				* Edit
+		* Position Create layout needs to be fixed
     	* Game Create
             * User is white or black before submitting
         * Game Edit
@@ -316,5 +317,7 @@
 * 14\_12\_14\_06\_01\_000: Updated game edit to prevent player from making more than one move
 * 14\_12\_14\_06\_01\_001: Updated position index to align link text with button
 * 14\_12\_14\_06\_01\_002: Fixed routing issue in position edit; Updated user edit to recognize the submitter
+* 14\_12\_14\_06\_02\_000: Updated UserController and PositionController to sanitize text fields
 
-cd /Applications/MAMP/htdocs/CSCI15P4; git add --all; git commit -m "Fixed routing issue in position edit; Updated user edit to recognize the submitter"; git push origin master
+
+cd /Applications/MAMP/htdocs/CSCI15P4; git add --all; git commit -m "Updated UserController and PositionController to sanitize text fields"; git push origin master

@@ -36,7 +36,6 @@ $('#startPositionBtn').on('click', init);
 </script>
 
 {{ Form::open(array('url'=>'/position', 'method'=>'POST')) }}
-{{ Form::label('name', 'Name of position') }}
 {{ Form::hidden('fen', 'rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR', array('id' => 'fen')) }}
 <table class="table">
 	<tr>
@@ -58,9 +57,10 @@ $('#startPositionBtn').on('click', init);
 	</tr>
 	<tr>
 		<td>
+			{{ Form::label('name', 'Name of position') }}
 		</td>
 		<td>
-			{{ Form::text('name', array('class' => 'form-control')) }}
+			{{ Form::text('name', '', array('class' => 'form-control')) }}
 		</td>
 	</tr>
 	<tr>
