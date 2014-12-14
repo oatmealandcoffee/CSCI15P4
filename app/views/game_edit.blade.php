@@ -10,8 +10,18 @@
 
 @section('body')
 	<script>
-		// board is undefined in the debugger
-		board = 'undefined';
+
+		/*
+		This Javascript code is a an amalgamation of example code from the
+		chessboard and chess (engine) projects.
+
+		For the engine to know if a move is valid, it needs the state before
+		and after the move. The form stores the state in a hidden field and
+		the Javascript updates the state as needed.
+		*/
+
+		// board to be inited later
+		var board;
 		engine = new Chess();
 
 		/* INIT STACK */
@@ -31,7 +41,7 @@
 				onSnapEnd: onSnapEnd
 			};
 			// init the board with the settings
-			var board = new ChessBoard('board', cfg);
+			board = new ChessBoard('board', cfg);
 			// start the engine with the FEN
 			engine.load( fen );
 
@@ -68,7 +78,7 @@
 
 		}
 
-		/* BOARD EVENTS */
+		/* BOARD EVENT STACK */
 
 		// do not pick up pieces if the game is over
 		// only pick up pieces for the side to move
