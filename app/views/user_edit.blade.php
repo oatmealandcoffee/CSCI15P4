@@ -28,7 +28,7 @@ Update User
 {{ Form::label('password', 'Password') }}
 {{ Form::password('password', array('class' => 'form-control')) }}
 
-{{ Form::submit('Update', array('class' => 'btn btn-default')) }}
+{{ Form::submit('Update', array('class' => 'btn btn-primary')) }}
 
 {{ Form::close() }}
 

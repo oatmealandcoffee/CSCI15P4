@@ -36,7 +36,7 @@ All Games
 			</td>
 			<td>
 				{{ Form::open(array('url'=>'/game/'.$game->id.'/edit', 'method' => 'GET')) }}
-                {{ Form::submit('Play', array('class' => 'btn btn-default')) }}
+                {{ Form::submit('Play', array('class' => 'btn btn-success')) }}
                	{{ Form::close() }}
 			</td>
 			<td>

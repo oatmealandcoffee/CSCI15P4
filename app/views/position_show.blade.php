@@ -40,14 +40,9 @@ $(document).ready(init);
     	<td></td>
     </tr>
     <tr>
-        <td>
-        	{{ Form::open(array('url'=>'/position', 'method' => 'GET')) }}
-			{{ Form::submit('New game with this position', array('class' => 'btn btn-primary')) }}
-        	{{ Form::close() }}
-       	</td>
 		<td>
 			{{ Form::open(array('url'=>'/position/'.$position->id.'/edit', 'method' => 'GET')) }}
-			{{ Form::submit('Edit', array('class' => 'btn btn-default')) }}
+			{{ Form::submit('Edit', array('class' => 'btn btn-primary')) }}
 			{{ Form::close() }}
 		</td>
 		<td>
@@ -55,6 +50,7 @@ $(document).ready(init);
 			{{ Form::submit('Delete', array('class' => 'btn btn-default')) }}
 			{{ Form::close() }}
 		</td>
+		<td></td>
 	</tr>
 </table>
 

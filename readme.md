@@ -125,8 +125,8 @@
     	X Game delete (game index; admin only?)
     		X Game not found
     		- Update to opponent to winner
-    	* Game Show
-    		* Remove status
+    	> Game Show
+    		X Remove status
     		* Disable moving pieces once legal move is made
     		* Enable moving pieces when reset position button is pressed
     	> Buttons
@@ -303,6 +303,8 @@
 * 14\_12\_14\_05\_04\_000: Updated buttons in all forms to use bootstrap
 * 14\_12\_14\_05\_05\_000: Updated text areas in all forms to use bootstrap; Fixed a couple interface inconsistencies
 * 14\_12\_14\_06\_00\_000: Updated layouts in all forms to make them consistent
+* 14\_12\_14\_06\_00\_001: Updated interfaces in positions to make them consistent
+* 14\_12\_14\_06\_00\_002: Updated button to make them consistent
 
 
-cd /Applications/MAMP/htdocs/CSCI15P4; git add --all; git commit -m "Updated layouts in all forms to make them consistent"; git push origin master
+cd /Applications/MAMP/htdocs/CSCI15P4; git add --all; git commit -m "Updated button to make them consistent"; git push origin master

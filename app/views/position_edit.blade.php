@@ -60,7 +60,7 @@ $('#startPositionBtn').on('click', init);
 	</tr>
 	<tr>
 		<td>
-			{{ Form::label('name', 'Name of position') }}
+			<b>Name of Position</b>
 		</td>
 		<td>
 			{{ Form::text('name', $position->name, array('class' => 'form-control')) }}
@@ -80,7 +80,8 @@ $('#startPositionBtn').on('click', init);
 
 		</td>
          <td>
-			{{ Form::button('Reset Position', array('class' => 'btn btn-default', 'id'=>'startPositionBtn', 'onClick' => '$(init);')) }}   {{ Form::submit('Update', array('class' => 'btn btn-default')) }}
+			 <p>{{ Form::submit('Update', array('class' => 'btn btn-primary')) }}</p>
+			 <p>{{ Form::button('Reset', array('class' => 'btn btn-default', 'id'=>'startPositionBtn', 'onClick' => '$(init);')) }}<p></p>
          </td>
 	</tr>
 </table>
