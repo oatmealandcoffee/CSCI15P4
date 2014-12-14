@@ -238,11 +238,22 @@ class GameController extends \BaseController {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function destroy($id)
+	public function destroy($game_id)
 	{
         if ( !Auth::check() ) {
             return Redirect::guest('/');
         }
+
+        // get the Game object
+        $game = Game::where( 'id', '=', $game_id )->first();
+
+        if ( $game ) {
+            // delete the Game object
+            $game->delete();
+        }
+
+        // redirect to the the game index page
+        return Redirect::action('GameController@index');
 	}
 
 

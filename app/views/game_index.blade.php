@@ -34,7 +34,11 @@ All Games
 				{{ Form::open(array('url'=>'/game/'.$game->id.'/edit', 'method' => 'GET')) }}
                 {{ Form::submit('Play') }}
                	{{ Form::close() }}
-
+			</td>
+			<td>
+				{{ Form::open(array('url'=>'/game/'.$game->id, 'method' => 'DELETE')) }}
+				{{ Form::submit('Delete') }}
+				{{ Form::close() }}
 			</td>
 		</tr>
 

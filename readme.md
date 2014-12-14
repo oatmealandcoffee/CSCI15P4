@@ -287,6 +287,7 @@
 * 14\_12\_14\_05\_01\_000: Added chess logic hooks
 * 14\_12\_14\_05\_01\_001: Fixed parsing bugs preventing board drawing
 * 14\_12\_14\_05\_02\_000: Fixed bug preventing board from being found in DOM which prevented game state lifecycle to complete
+* 14\_12\_14\_05\_02\_000: Added game delete
 
 
-cd /Applications/MAMP/htdocs/CSCI15P4; git add --all; git commit -m "Fixed bug preventing board from being found in DOM which prevented game state lifecycle to complete"; git push origin master
+cd /Applications/MAMP/htdocs/CSCI15P4; git add --all; git commit -m "Added game delete"; git push origin master
