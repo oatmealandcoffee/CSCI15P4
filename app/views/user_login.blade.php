@@ -11,10 +11,10 @@
 {{ Form::open(array('url' => '/login')) }}
 
     {{ Form::label('email') }}
-    {{ Form::text('email') }}
+    {{ Form::text('email', '', array('class' => 'form-control')) }}
 
     {{ Form::label('password') }}
-    {{ Form::password('password') }}
+    {{ Form::password('password', array('class' => 'form-control')) }}
 
     {{ Form::submit('Submit', array('class' => 'btn btn-default')) }}
 

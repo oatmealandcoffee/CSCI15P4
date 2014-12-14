@@ -17,7 +17,7 @@ Create User
 			{{ Form::label('username', 'Username') }}
 		</td>
 		<td>
-			{{ Form::text('username') }}
+			{{ Form::text('username', array('class' => 'form-control')) }}
 		</td>
 	</tr>
 	<tr>
@@ -25,7 +25,7 @@ Create User
          	{{ Form::label('email', 'Email') }}
 		</td>
 		<td>
-         	{{ Form::text('email') }}
+         	{{ Form::text('email', array('class' => 'form-control')) }}
          </td>
 	</tr>
 	<tr>
@@ -33,7 +33,7 @@ Create User
          	{{ Form::label('password', 'Password') }}
 		</td>
 		<td>
-         	{{ Form::password('password') }}
+         	{{ Form::password('password', array('class' => 'form-control')) }}
          </td>
 	</tr>
 	<tr>

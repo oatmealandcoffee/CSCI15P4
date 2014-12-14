@@ -19,13 +19,13 @@ Sign Up
 {{ Form::open(array('url' => '/signup')) }}
 
 {{ Form::label('username') }}
-{{ Form::text('username') }}
+{{ Form::text('username', '', array('class' => 'form-control')) }}
 
 {{ Form::label('email') }}
-{{ Form::text('email') }}
+{{ Form::text('email', '', array('class' => 'form-control')) }}
 
 {{ Form::label('password') }}
-{{ Form::password('password') }}
+{{ Form::password('password', array('class' => 'form-control')) }}
 <small>Min 6 characters</small>
 
 {{ Form::submit('Submit', array('class' => 'btn btn-default')) }}

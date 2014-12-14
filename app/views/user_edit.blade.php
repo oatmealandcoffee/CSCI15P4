@@ -24,7 +24,7 @@ Update User
 			{{ Form::label('username', 'Username') }}
 		</td>
 		<td>
-			{{ Form::text('username', $user->username) }}
+			{{ Form::text('username', $user->username, array('class' => 'form-control')) }}
 		</td>
 	</tr>
 	<tr>
@@ -32,7 +32,7 @@ Update User
          	{{ Form::label('email', 'Email') }}
 		</td>
 		<td>
-         	{{ Form::text('email', $user->email) }}
+         	{{ Form::text('email', $user->email, array('class' => 'form-control')) }}
          </td>
 	</tr>
 	<tr>
@@ -40,7 +40,7 @@ Update User
 			{{ Form::label('password', 'Password') }}
 		</td>
 		<td>
-			{{ Form::password('password') }}
+			{{ Form::password('password', array('class' => 'form-control')) }}
 		</td>
 	</tr>
 	<tr>

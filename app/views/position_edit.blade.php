@@ -63,7 +63,7 @@ $('#startPositionBtn').on('click', init);
 			{{ Form::label('name', 'Name of position') }}
 		</td>
 		<td>
-			{{ Form::text('name', $position->name) }}
+			{{ Form::text('name', $position->name, array('class' => 'form-control')) }}
 		</td>
 	</tr>
 	<tr>

@@ -60,7 +60,7 @@ $('#startPositionBtn').on('click', init);
 		<td>
 		</td>
 		<td>
-			{{ Form::text('name') }}
+			{{ Form::text('name', array('class' => 'form-control')) }}
 		</td>
 	</tr>
 	<tr>
