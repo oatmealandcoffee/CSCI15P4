@@ -13,7 +13,7 @@ All Games
 <h2>Your Games</h2>
 
 {{ Form::open(array('url'=>'/game/create', 'method'=>'GET')) }}
-{{ Form::submit('New Game') }}
+{{ Form::submit('New Game', array('class' => 'btn btn-default')) }}
 {{ Form::close() }}
 
 <table class="table">
@@ -32,12 +32,12 @@ All Games
 			</td>
 			<td>
 				{{ Form::open(array('url'=>'/game/'.$game->id.'/edit', 'method' => 'GET')) }}
-                {{ Form::submit('Play') }}
+                {{ Form::submit('Play', array('class' => 'btn btn-default')) }}
                	{{ Form::close() }}
 			</td>
 			<td>
 				{{ Form::open(array('url'=>'/game/'.$game->id, 'method' => 'DELETE')) }}
-				{{ Form::submit('Delete') }}
+				{{ Form::submit('Delete', array('class' => 'btn btn-default')) }}
 				{{ Form::close() }}
 			</td>
 		</tr>

@@ -33,10 +33,10 @@ Show User
 		<td>
 			<p>
 			{{ Form::open(array('url'=>'/user/'.$user->id.'/edit/', 'method'=>'GET')) }}
-			{{ Form::submit('Edit') }}
+			{{ Form::submit('Edit', array('class' => 'btn btn-default')) }}
 			{{ Form::close() }}
 			{{ Form::open(array('url'=>'/user/'.$user->id, 'method'=>'DELETE')) }}
-            {{ Form::submit('Delete') }}
+            {{ Form::submit('Delete', array('class' => 'btn btn-default')) }}
             {{ Form::close() }}
             </p>
 		</td>

@@ -37,6 +37,7 @@ $('#startPositionBtn').on('click', init);
 </script>
 
 {{ Form::open(array('url'=>'/position/'.$position->id, 'method'=>'PUT')) }}
+{{ Form::hidden('fen', $position->fen, array('id' => 'fen')) }}
 <table class="table">
 	<tr>
 	<td>
@@ -60,7 +61,6 @@ $('#startPositionBtn').on('click', init);
 	<tr>
 		<td>
 			{{ Form::label('name', 'Name of position') }}
-			{{ Form::hidden('fen', $position->fen, array('id' => 'fen')) }}
 		</td>
 		<td>
 			{{ Form::text('name', $position->name) }}
@@ -80,7 +80,7 @@ $('#startPositionBtn').on('click', init);
 
 		</td>
          <td>
-			{{ Form::button('Reset Position', array('id'=>'startPositionBtn', 'onClick' => '$(init);')) }}   {{ Form::submit('Update') }}
+			{{ Form::button('Reset Position', array('class' => 'btn btn-default', 'id'=>'startPositionBtn', 'onClick' => '$(init);')) }}   {{ Form::submit('Update', array('class' => 'btn btn-default')) }}
          </td>
 	</tr>
 </table>

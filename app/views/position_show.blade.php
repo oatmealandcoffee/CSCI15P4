@@ -51,17 +51,17 @@ $(document).ready(init);
     <tr>
         <td>
         	{{ Form::open(array('url'=>'/position', 'method' => 'GET')) }}
-			{{ Form::submit('Play') }}
+			{{ Form::submit('Play', array('class' => 'btn btn-default')) }}
         	{{ Form::close() }}
         </td>
         <td>
             {{ Form::open(array('url'=>'/position/'.$position->id.'/edit', 'method' => 'GET')) }}
-            {{ Form::submit('Edit') }}
+            {{ Form::submit('Edit', array('class' => 'btn btn-default')) }}
             {{ Form::close() }}
         </td>
         <td>
 			{{ Form::open(array('url'=>'/position/'.$position->id, 'method' => 'DELETE')) }}
-			{{ Form::submit('Delete') }}
+			{{ Form::submit('Delete', array('class' => 'btn btn-default')) }}
         	{{ Form::close() }}
        	</td>
        	<td></td>

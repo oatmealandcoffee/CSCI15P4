@@ -77,7 +77,7 @@ $('#startPositionBtn').on('click', init);
 
 		</td>
          <td>
-			{{ Form::button('Reset Position', array('id'=>'startPositionBtn', 'onClick' => '$(init);')) }}   {{ Form::submit('Create') }}
+			{{ Form::button('Reset Position', array('class' => 'btn btn-default', 'id'=>'startPositionBtn', 'onClick' => '$(init);')) }}   {{ Form::submit('Create', array('class' => 'btn btn-default')) }}
          </td>
 	</tr>
 </table>

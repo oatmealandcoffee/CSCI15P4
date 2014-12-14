@@ -202,10 +202,10 @@
 		</tr>
 		<tr>
 			<td>
-				{{ Form::button('Reset Position', array('id'=>'startPositionBtn', 'onClick' => '$(init);')) }}
+				{{ Form::button('Reset Position', array('class' => 'btn btn-default', 'id'=>'startPositionBtn', 'onClick' => '$(init);')) }}
 			</td>
 			<td>
-				{{ Form::submit('Submit Move', array('id'=>'submitBtn')) }}
+				{{ Form::submit('Submit Move', array('class' => 'btn btn-default', 'id'=>'submitBtn')) }}
 			</td>
 			<td></td>
 		</tr>

@@ -28,7 +28,7 @@ Sign Up
 {{ Form::password('password') }}
 <small>Min 6 characters</small>
 
-{{ Form::submit('Submit') }}
+{{ Form::submit('Submit', array('class' => 'btn btn-default')) }}
 
 {{ Form::close() }}
 </p>

@@ -40,7 +40,7 @@ Create User
 		<td>
 		</td>
          <td>
-			{{ Form::submit('Create') }}
+			{{ Form::submit('Create', array('class' => 'btn btn-default')) }}
          </td>
 	</tr>
 </table>

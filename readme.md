@@ -297,6 +297,7 @@
 * 14\_12\_14\_05\_02\_000: Fixed bug preventing board from being found in DOM which prevented game state lifecycle to complete
 * 14\_12\_14\_05\_02\_000: Added game delete
 * 14\_12\_14\_05\_03\_000: Updated buttons in position index
+* 14\_12\_14\_05\_04\_000: Updated buttons in all forms
 
 
-cd /Applications/MAMP/htdocs/CSCI15P4; git add --all; git commit -m "Updated buttons in position index"; git push origin master
+cd /Applications/MAMP/htdocs/CSCI15P4; git add --all; git commit -m "Updated buttons in all forms"; git push origin master

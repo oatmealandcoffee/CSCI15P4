@@ -47,7 +47,7 @@ Update User
 		<td>
 		</td>
          <td>
-			{{ Form::submit('Update') }}
+			{{ Form::submit('Update', array('class' => 'btn btn-default')) }}
          </td>
 	</tr>
 </table>

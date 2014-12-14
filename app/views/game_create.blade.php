@@ -56,7 +56,7 @@ $('#resetSettingsButton').on('click', reset);
 	</tr>
 	<tr>
 		<td></td>
-		<td>{{ Form::button('Reset', array('id'=>'resetSettingsButton', 'onClick' => '$(reset);')) }}   {{ Form::submit('Create') }}</td>
+		<td>{{ Form::button('Reset', array('class' => 'btn btn-default', 'id'=>'resetSettingsButton', 'onClick' => '$(reset);')) }}   {{ Form::submit('Create', array('class' => 'btn btn-default')) }}</td>
 	</tr>
 </table>
 {{ Form::close() }}
