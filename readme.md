@@ -6,60 +6,39 @@
 
 # Description
 <!-- 2-3+ sentences -->
+This is the Laravel Chess Server, a simple server designed to allow users to play chess with each other across the Internet. Features include:
+* Play against others or yourself
+* Curate a common collection of opening positions
+* Start a new game with an opening position
 
 # Demo information
 <!-- If you attend your section to do an in-person demo, make a note of this. If you opt to do the Jing screencast demo, include the link here .-->
+Will likely do an in-person demo
 
 # Test Requirements and Details
 <!-- Any details the instructor or TA needs to know, for example, test credentials. -->
 
+## Access
+LCS comes with three basic credentials (passwords are the account name before the '@')
+* admin@regan15.pw (required for deleting user accounts)
+* alice@regan15.pw
+* bob@regan15.pw
+
+New accounts must have 6 character passwords.
+
+## Site Areas
+* "Games" lists all of the games you are currently playing, and is where new games are created. You can play as many games as you would like against any variety of players.
+* "Positions" is the common collection of opening positions. Positions can be created, edited, and deleted, but both the name and the position of the pieces must be unique.
+* "Account" is where an account can be updated as needed, but both the username and email must be unique.
+
 # Dependencies and Citations
 <!--A list of any plugins, libraries, packages or outside code used in the project. See Student Responsibilities for more details on avoiding code plagiarism.-->
+* Chess board provided with [chessboard.js](http://chessboardjs.com)
+* Chess logic provided by [chess.js](https://github.com/jhlywa/chess.js)
 * Based on the Laravel framework
 * PHP created and edited with [PHPStorm](http://www.jetbrains.com/phpstorm/).
 * HTML and CSS created and edited with [BBEdit](http://www.barebones.com/products/bbedit/)
 * Design created with [Bootstrap](http://www.bootstrap.org)
-* Chess board provided with [chessboard.js](http://chessboardjs.com)
-* Chess logic provided by [chess.js](https://github.com/jhlywa/chess.js)
-
-# Project Notes
-
-## Roadmap
-
-	X Update footer menu to
-		X Games
-		X Positions
-		X Account
-		X Logout
-	X User Index
-		X Admin only
-		X Link to User Delete
-	X User Delete	
-		X Admin only
-		X Delete all played games
-
-	* Foo CRUD
-		* get /foo - index
-		* get /foo/create - create
-		* post /foo - store // redirect::action
-		* get /foo/{foo_id} - show($foo_id)
-		* get /foo/{foo_id}/edit - edit($foo_id)
-		* put /foo/{foo_id} - update($foo_id) // redirect::action
-		* delete /foo/{foo_id} - destroy($foo_id) // redirect::action
-    
-## Bugs
-* [fixed] User edit/store is not capturing and displaying errors
-* [fixed] User edit is not saving changes
-* [fixed] Play button does not behave as expected in position show
-	* Needs to take fen and init the game create interface
-* [fixed] New games aren't editable by either player
-* [fixed] FEN is not applied to board in position edit when there is an error
-* [fixed] User's games do not appear in the user's game listing
-* [fixed] User does not redirect correctly create->store->show
-	* redirect to action as opposed to route
-* [fixed] Position Edit page is not getting/using position data
-* [fixed] Position index listing is incorrect after deleting a position
-	* last positions come back as invalid
 
 # Change History
 
@@ -152,4 +131,4 @@
 * 14\_12\_15\_06\_03\_000: Added h2 tags to all pages for consistency; Updated "create" button in position create to primary class
 * 14\_12\_15\_06\_04\_000: Added user admin, restricted access by account email
 
-cd /Applications/MAMP/htdocs/CSCI15P4; git add --all; git commit -m "Added user admin, restricted access by account email"; git push origin master
+cd /Applications/MAMP/htdocs/CSCI15P4; git add --all; git commit -m "Updated readme"; git push origin master
