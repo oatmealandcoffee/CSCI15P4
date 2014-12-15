@@ -188,6 +188,11 @@ class UserController extends \BaseController {
 	 */
 	public function show($user_id)
 	{
+
+        if ( !is_numeric( $user_id ) || $user_id < 0 ) {
+            return Redirect::guest('/');
+        }
+
         if ( !Auth::check() || $user_id != Auth::id() ) {
             return Redirect::guest('/');
         }
@@ -210,6 +215,10 @@ class UserController extends \BaseController {
 	 */
 	public function edit($user_id)
 	{
+        if ( !is_numeric( $user_id ) || $user_id < 0 ) {
+            return Redirect::guest('/');
+        }
+
         if ( !Auth::check() || $user_id != Auth::id() ) {
             return Redirect::guest('/');
         }
@@ -232,6 +241,11 @@ class UserController extends \BaseController {
 	 */
 	public function update($user_id)
 	{
+
+        if ( !is_numeric( $user_id ) || $user_id < 0 ) {
+            return Redirect::guest('/');
+        }
+
         if ( !Auth::check() || $user_id != Auth::id() ) {
             return Redirect::guest('/');
         }
@@ -313,6 +327,11 @@ class UserController extends \BaseController {
 	 */
 	public function destroy($user_id)
 	{
+
+        if ( !is_numeric( $user_id ) || $user_id < 0 ) {
+            return Redirect::guest('/');
+        }
+
         if ( !Auth::check() || $user_id != Auth::id() ) {
             return Redirect::guest('/');
         }

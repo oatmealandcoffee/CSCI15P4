@@ -134,21 +134,21 @@
     		X Fix button style
     			X Clear/Reset: class="btn btn-default" (white)
     			X Action: class="btn btn-primary" (blue)
-    	* Validation/Security
-    		* User
-    			* Create
-    			* Edit
-			* Position
-				* Create
-				* Edit
+    	X Validation/Security
+    		X User
+    			X Create
+    			X Edit
+			X Position
+				X Create
+				X Edit
 		* Position Create layout needs to be fixed
     	* Game Create
             * User is white or black before submitting
-        * Game Edit
-            *! Game not found
-            * Highlight player's own side in addition to turn
-            * Move is different from server
-        * Validate Object IDs
+        X Game Edit
+            X Game not found
+            - Highlight player's own side in addition to turn
+            - Move is different from server
+        X Validate Object IDs
     	* Login failure -> add flash messaging
     	* User Edit
     	    X User not found
@@ -318,6 +318,6 @@
 * 14\_12\_14\_06\_01\_001: Updated position index to align link text with button
 * 14\_12\_14\_06\_01\_002: Fixed routing issue in position edit; Updated user edit to recognize the submitter
 * 14\_12\_14\_06\_02\_000: Updated UserController and PositionController to sanitize text fields
+* 14\_12\_14\_06\_02\_001: Updated layout of position edit to make consistent
 
-
-cd /Applications/MAMP/htdocs/CSCI15P4; git add --all; git commit -m "Updated UserController and PositionController to sanitize text fields"; git push origin master
+cd /Applications/MAMP/htdocs/CSCI15P4; git add --all; git commit -m "Updated layout of position edit to make consistent"; git push origin master

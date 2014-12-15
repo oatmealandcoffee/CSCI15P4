@@ -18,6 +18,10 @@ class GameController extends \BaseController {
             return Redirect::guest('/');
         }
 
+        if ( !is_numeric( $game_id ) || $game_id < 0 ) {
+            return Redirect::guest('/');
+        }
+
         $game = Game::find($game_id);
 
         if ( !$game ) {
@@ -149,6 +153,10 @@ class GameController extends \BaseController {
             return Redirect::guest('/');
         }
 
+        if ( !is_numeric( $game_id ) || $game_id < 0 ) {
+            return Redirect::guest('/');
+        }
+
         // there is little point in simply showing a game; if a user is
         // viewing it, then they are likely playing it
         return Redirect::action('GameController@edit', array('$game_id' => $game_id ));
@@ -169,7 +177,7 @@ class GameController extends \BaseController {
         }
 
             if ( !is_numeric( $game_id ) || $game_id < 0 ) {
-                return Redirect::to('/game');
+                return Redirect::guest('/');
             }
 
             $game = Game::find($game_id);
@@ -206,9 +214,9 @@ class GameController extends \BaseController {
             return Redirect::guest('/');
         }
 
-            if ( !is_numeric( $game_id ) || $game_id < 0 ) {
-                return Redirect::to('/game');
-            }
+        if ( !is_numeric( $game_id ) || $game_id < 0 ) {
+            return Redirect::guest('/');
+        }
 
             // get the game
             $game = Game::find( $game_id );
@@ -228,7 +236,6 @@ class GameController extends \BaseController {
 
             return Redirect::action('GameController@edit', array('$game_id' => $game_id ));
 
-
 	}
 
 
@@ -241,6 +248,10 @@ class GameController extends \BaseController {
 	public function destroy($game_id)
 	{
         if ( !Auth::check() ) {
+            return Redirect::guest('/');
+        }
+
+        if ( !is_numeric( $game_id ) || $game_id < 0 ) {
             return Redirect::guest('/');
         }
 

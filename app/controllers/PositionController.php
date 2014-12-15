@@ -107,13 +107,11 @@ class PositionController extends \BaseController {
             return Redirect::guest('/');
         }
 
-            $positions = Position::all();
-
             if ( !is_numeric( $position_id ) || $position_id < 0 ) {
                 return Redirect::to('/position');
             }
 
-            $position = Position::find($position_id);
+        $position = Position::find($position_id);
 
             if (!$position) {
                 return Redirect::action('PositionController@index');
@@ -160,6 +158,10 @@ class PositionController extends \BaseController {
 	{
         if ( !Auth::check() ) {
             return Redirect::guest('/');
+        }
+
+        if ( !is_numeric( $position_id ) || $position_id < 0 ) {
+            return Redirect::to('/position');
         }
 
         # Step 1) Define the rules
@@ -227,6 +229,10 @@ class PositionController extends \BaseController {
 	{
         if ( !Auth::check() ) {
             return Redirect::guest('/');
+        }
+
+        if ( !is_numeric( $position_id ) || $position_id < 0 ) {
+            return Redirect::to('/position');
         }
 
         // get the Position object
