@@ -12,6 +12,12 @@
     <div class='error'>{{ $message }}</div>
 @endforeach
 
+@if ( Session::has('flash_message') )
+    <div class="alert {{ Session::get('flash_type') }}">
+        {{ Session::get('flash_message') }}
+    </div>
+@endif
+
 {{ Form::open(array('url' => '/login')) }}
 
 {{ Form::label('email') }}

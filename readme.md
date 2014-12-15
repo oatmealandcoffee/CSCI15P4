@@ -110,8 +110,8 @@
 		X Fix URLs
 		X Migrate
 			/ do not make tables beforehand; just use php artisan migrate
-	* Clean up authorization handling
-    > Validation
+	X Clean up authorization handling
+    X Validation
     	X User Create
     		X Unique username
     		X Unique email
@@ -142,21 +142,21 @@
 				X Create
 				X Edit
 		X Position Create layout needs to be fixed
-    	* Game Create
-            * User is white or black before submitting
+    	X Game Create
+            X User is white or black before submitting
         X Game Edit
             X Game not found
             - Highlight player's own side in addition to turn
             - Move is different from server
         X Validate Object IDs
-    	* Login failure -> add flash messaging
-    	* User Edit
+    	X Login failure -> add flash messaging
+    	X User Edit
     	    X User not found
-    		*? Unique username
-    		*? Unique email
+    		X Unique username
+    		X Unique email
     	* User Delete
     		X User not found
-    		*? Update games to opponent winning
+    		- Update games to opponent winning
     	X User Index
     		X Do something with it
 	*? Enable backups on Digital Ocean Droplet
@@ -320,5 +320,6 @@
 * 14\_12\_14\_06\_02\_000: Updated UserController and PositionController to sanitize text fields
 * 14\_12\_14\_06\_02\_001: Updated layout of position edit to make consistent
 * 14\_12\_14\_06\_02\_002: Updated game create to check of user is one of players in the game
+* 14\_12\_14\_06\_02\_003: Added flash messaging to login; Added style to have errors and alerts in read
 
-cd /Applications/MAMP/htdocs/CSCI15P4; git add --all; git commit -m "Updated game create to check of user is one of players in the game"; git push origin master
+cd /Applications/MAMP/htdocs/CSCI15P4; git add --all; git commit -m "Added flash messaging to login; Added style to have errors and alerts in read"; git push origin master
