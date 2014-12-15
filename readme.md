@@ -19,8 +19,8 @@ Will likely do an in-person demo
 <!-- Any details the instructor or TA needs to know, for example, test credentials. -->
 
 ## Access
-LCS comes with three basic credentials (passwords are the account name before the '@')
-* admin@regan15.pw (required for deleting user accounts; password is the account name before the '@' twice in a row)
+LCS comes with three basic credentials (passwords are the account name before the '@' twice in a row; foo@regan15.pw => foofoo)
+* admin@regan15.pw (required for deleting user accounts)
 * alice@regan15.pw
 * bob@regan15.pw
 
@@ -133,5 +133,6 @@ New accounts must have 6 character passwords.
 * 14\_12\_15\_06\_04\_000: Added user admin, restricted access by account email
 * 14\_12\_15\_06\_04\_001: Updated user index to exclude the admin account
 * 14\_12\_15\_06\_04\_002: Updated routes to better handle errors
+* 14\_12\_15\_06\_04\_003: Updated user edit and update to handle changes
 
-cd /Applications/MAMP/htdocs/CSCI15P4; git add --all; git commit -m "Updated routes to better handle errors"; git push origin master
+cd /Applications/MAMP/htdocs/CSCI15P4; git add --all; git commit -m "Updated user edit and update to handle changes"; git push origin master

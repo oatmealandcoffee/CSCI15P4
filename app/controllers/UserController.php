@@ -260,12 +260,30 @@ class UserController extends \BaseController {
         $new_username = stripslashes( $new_username );
         $new_username = htmlentities( $new_username );
         $new_email = Input::get('email');
+        $new_password = Input::get('password');
 
         $user = User::where('id', '=', $user_id)->first();
 
         // nothing changed
-        if ( $new_username == $user->username && $new_email == $user->email ) {
-            return Redirect::action('UserController@edit', array('user_id' => $user_id))->with('flash_message', '<div class=\'error\'>The username and email have already been taken.</div>');
+        if ( $new_username == $user->username && $new_email == $user->email && $new_password == '') {
+            return Redirect::action('UserController@edit', array('user_id' => $user_id))->with('flash_message', '<div class=\'error\'>No changes found.</div>');
+        }
+
+        // check the password first
+
+        if ( $new_username == $user->username && $new_email == $user->email && $new_password != '' ) {
+
+            # Step 1) Define the rules
+            $rules = array(
+                'password' => 'required|min:6'
+            );
+            # Step 2)
+            $validator = Validator::make(Input::all(), $rules);
+
+            # Step 3
+            if($validator->fails()) {
+                return Redirect::action('UserController@edit', array('user_id' => $user_id))->with('flash_message', '<div class=\'error\'>The password must be at least 6 characters.</div>' );
+            }
         }
 
         /*
@@ -314,6 +332,10 @@ class UserController extends \BaseController {
 
         if ( $new_email != $user->email ) {
             $user->email = $new_email;
+        }
+
+        if ( $new_password != '' ) {
+            $user->password = Hash::make(Input::get('password'));
         }
 
         // save the user object
