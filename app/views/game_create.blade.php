@@ -23,7 +23,9 @@ $('#resetSettingsButton').on('click', reset);
 <h2>Create Game</h2>
 
 {{ Form::open(array('url'=>'/game', 'method'=>'POST', 'class'=>'form-inline', 'role'=>'form')) }}
-
+@if ( Session::has('flash_message') )
+	<div class='error'>{{ Session::get('flash_message') }}</div>
+@endif
 <table class="table">
 	<tr>
 		<td><b>White</b></td>

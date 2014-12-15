@@ -73,7 +73,7 @@ class GameController extends \BaseController {
 
             return View::make('game_create')
                 ->with( 'users', $users )
-                ->with( 'positions', $positions);
+                ->with( 'positions', $positions );
 
 	}
 
@@ -89,7 +89,18 @@ class GameController extends \BaseController {
             return Redirect::guest('/');
         }
 
-            $s = new Game;
+
+        $error_str = '';
+
+        if ( Input::get('white_player') != Auth::user()->username && Input::get('black_player') != Auth::user()->username ) {
+            $error_str .= '<div class=\'error\'>You must be either white or black.</div>';
+        }
+
+        if ( $error_str != '' ) {
+            return Redirect::action('GameController@create')->with('flash_message', $error_str );
+        }
+
+        $s = new Game;
 
             // players
 

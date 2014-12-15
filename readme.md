@@ -141,7 +141,7 @@
 			X Position
 				X Create
 				X Edit
-		* Position Create layout needs to be fixed
+		X Position Create layout needs to be fixed
     	* Game Create
             * User is white or black before submitting
         X Game Edit
@@ -222,7 +222,7 @@
 ## Bugs
 * [] User edit/store is not capturing and displaying errors
 * [] User edit is not saving changes
-* [] Play button does not behave as expected in position show
+* [fixed] Play button does not behave as expected in position show
 	* Needs to take fen and init the game create interface
 * [fixed] New games aren't editable by either player
 * [fixed] FEN is not applied to board in position edit when there is an error
@@ -319,5 +319,6 @@
 * 14\_12\_14\_06\_01\_002: Fixed routing issue in position edit; Updated user edit to recognize the submitter
 * 14\_12\_14\_06\_02\_000: Updated UserController and PositionController to sanitize text fields
 * 14\_12\_14\_06\_02\_001: Updated layout of position edit to make consistent
+* 14\_12\_14\_06\_02\_002: Updated game create to check of user is one of players in the game
 
-cd /Applications/MAMP/htdocs/CSCI15P4; git add --all; git commit -m "Updated layout of position edit to make consistent"; git push origin master
+cd /Applications/MAMP/htdocs/CSCI15P4; git add --all; git commit -m "Updated game create to check of user is one of players in the game"; git push origin master
