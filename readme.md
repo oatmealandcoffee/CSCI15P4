@@ -6,23 +6,25 @@
 
 # Description
 <!-- 2-3+ sentences -->
-This is the Laravel Chess Server, a simple server designed to allow users to play chess with each other across the Internet. Features include:
+This project is a simple server designed to allow users to play chess with each other across the Internet. Features include:
 * Play against others or yourself
 * Curate a common collection of opening positions
 * Start a new game with an opening position
+* Simple user administration for the admin account
 
 # Demo information
 <!-- If you attend your section to do an in-person demo, make a note of this. If you opt to do the Jing screencast demo, include the link here .-->
-Will likely do an in-person demo
+Will do an in-person demo
 
 # Test Requirements and Details
 <!-- Any details the instructor or TA needs to know, for example, test credentials. -->
 
 ## Access
-LCS comes with three basic credentials (passwords are the account name before the '@' twice in a row; foo@regan15.pw => foofoo)
+LCS comes with some credentials (passwords are the account name before the '@' twice in a row; foo@regan15.pw => foofoo)
 * admin@regan15.pw (required for deleting user accounts)
 * alice@regan15.pw
 * bob@regan15.pw
+* charlie@regan15.pw
 
 New accounts must have 6 character passwords.
 
@@ -136,4 +138,4 @@ New accounts must have 6 character passwords.
 * 14\_12\_15\_06\_04\_003: Updated user edit and update to handle changes
 * 14\_12\_15\_06\_04\_004: Added status updates to game edit
 
-cd /Applications/MAMP/htdocs/CSCI15P4; git add --all; git commit -m "Added status updates to game edit"; git push origin master
+cd /Applications/MAMP/htdocs/CSCI15P4; git add --all; git commit -m "Updated readme"; git push origin master
