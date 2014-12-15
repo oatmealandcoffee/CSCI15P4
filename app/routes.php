@@ -23,7 +23,7 @@ Route::get('/', function()
 // REST
 Route::resource('user', 'UserController');
 
-// Explicit to clean up URLs
+// Explicit to clean up user URLs
 Route::get('/signup','UserController@getSignup' );
 Route::get('/login', 'UserController@getLogin' );
 Route::post('/signup', 'UserController@postSignup' );
@@ -43,28 +43,8 @@ Route::resource('position', 'PositionController');
 Route::resource('game', 'GameController');
 
 /*
- * TESTING ROUTES
+ * ERROR CAPTURE
  */
-
-Route::get('/getuserbyname', function() {
-    return User::where('username', '=', 'pregan')->first();
-});
-
-// testing for chess engine integration
-Route::get('/randomchess', function()
-{
-    return View::make('randomchess');
-});
-
-Route::get('mysql-test', function() {
-
-    # Print environment
-    echo 'Environment: '.App::environment().'<br>';
-
-    # Use the DB component to select all the databases
-    $results = DB::select('SHOW DATABASES;');
-
-    # If the "Pre" package is not installed, you should output using print_r instead
-    echo Pre::render($results);
-
+App::error(function($exception, $code) {
+    return View::make('index');
 });

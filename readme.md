@@ -132,5 +132,6 @@ New accounts must have 6 character passwords.
 * 14\_12\_15\_06\_03\_000: Added h2 tags to all pages for consistency; Updated "create" button in position create to primary class
 * 14\_12\_15\_06\_04\_000: Added user admin, restricted access by account email
 * 14\_12\_15\_06\_04\_001: Updated user index to exclude the admin account
+* 14\_12\_15\_06\_04\_002: Updated routes to better handle errors
 
-cd /Applications/MAMP/htdocs/CSCI15P4; git add --all; git commit -m "Updated user index to exclude the admin account"; git push origin master
+cd /Applications/MAMP/htdocs/CSCI15P4; git add --all; git commit -m "Updated routes to better handle errors"; git push origin master
