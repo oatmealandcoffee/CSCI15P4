@@ -134,5 +134,6 @@ New accounts must have 6 character passwords.
 * 14\_12\_15\_06\_04\_001: Updated user index to exclude the admin account
 * 14\_12\_15\_06\_04\_002: Updated routes to better handle errors
 * 14\_12\_15\_06\_04\_003: Updated user edit and update to handle changes
+* 14\_12\_15\_06\_04\_004: Added status updates to game edit
 
-cd /Applications/MAMP/htdocs/CSCI15P4; git add --all; git commit -m "Updated user edit and update to handle changes"; git push origin master
+cd /Applications/MAMP/htdocs/CSCI15P4; git add --all; git commit -m "Added status updates to game edit"; git push origin master

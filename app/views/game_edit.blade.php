@@ -23,6 +23,7 @@
 		// board to be inited later
 		var board;
 		engine = new Chess();
+		var statusEl;
 		var moveMade = false;
 
 		/* INIT STACK */
@@ -149,6 +150,8 @@
 				}
 			}
 
+			statusEl.html(status);
+
 			moveMade = true;
 		};
 
@@ -166,6 +169,8 @@
 		$(document).ready( function() {
 			$(init);
 			$(handleInterface);
+			statusEl = $('#status');
+			updateStatus();
 		});
 		$('#startPositionBtn').on('click', init);
 	</script>
@@ -179,7 +184,11 @@
 	{{ Form::hidden('submitter_id', $submitter_id) }}
 	<table class="table">
 		<tr>
-			<td>{{ ( $game->turn_id == $game->white_id ? '*' : '' ) }}White: {{ $white_username }}<br>{{ ( $game->turn_id == $game->black_id ? '*' : '' ) }}Black: {{ $black_username }}</td>
+			<td>
+				{{ ( $game->turn_id == $game->white_id ? '*' : '' ) }}White: {{ $white_username }}<br>
+				{{ ( $game->turn_id == $game->black_id ? '*' : '' ) }}Black: {{ $black_username }}<br>
+				<p>Status: <span id="status"></span></p>
+			</td>
 			<td></td>
 			<td></td>
 		</tr>
