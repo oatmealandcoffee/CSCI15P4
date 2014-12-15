@@ -136,7 +136,7 @@ class UserController extends \BaseController {
             return Redirect::guest('/');
         }
 
-        $users = User::all();
+        $users = User::whereNotIn('id', array( Auth::user()->id ) )->get();
 
         return View::make('user_index')->with('users', $users);
 	}

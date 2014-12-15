@@ -20,7 +20,7 @@ Will likely do an in-person demo
 
 ## Access
 LCS comes with three basic credentials (passwords are the account name before the '@')
-* admin@regan15.pw (required for deleting user accounts)
+* admin@regan15.pw (required for deleting user accounts; password is the account name before the '@' twice in a row)
 * alice@regan15.pw
 * bob@regan15.pw
 
@@ -30,6 +30,7 @@ New accounts must have 6 character passwords.
 * "Games" lists all of the games you are currently playing, and is where new games are created. You can play as many games as you would like against any variety of players.
 * "Positions" is the common collection of opening positions. Positions can be created, edited, and deleted, but both the name and the position of the pieces must be unique.
 * "Account" is where an account can be updated as needed, but both the username and email must be unique.
+	* To delete a user account, log in as the administrator and go to /localhost/user
 
 # Dependencies and Citations
 <!--A list of any plugins, libraries, packages or outside code used in the project. See Student Responsibilities for more details on avoiding code plagiarism.-->
@@ -130,5 +131,6 @@ New accounts must have 6 character passwords.
 * 14\_12\_14\_06\_02\_003: Added flash messaging to login; Added style to have errors and alerts in read
 * 14\_12\_15\_06\_03\_000: Added h2 tags to all pages for consistency; Updated "create" button in position create to primary class
 * 14\_12\_15\_06\_04\_000: Added user admin, restricted access by account email
+* 14\_12\_15\_06\_04\_001: Updated user index to exclude the admin account
 
-cd /Applications/MAMP/htdocs/CSCI15P4; git add --all; git commit -m "Updated readme"; git push origin master
+cd /Applications/MAMP/htdocs/CSCI15P4; git add --all; git commit -m "Updated user index to exclude the admin account"; git push origin master
