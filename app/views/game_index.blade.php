@@ -5,14 +5,12 @@
 @stop
 
 @section('title')
-All Games
+Games
 @stop
 
 @section('body')
 
-<h2>Your Games</h2>
-
-
+<h2>Games</h2>
 
 <table class="table">
 	<tr>

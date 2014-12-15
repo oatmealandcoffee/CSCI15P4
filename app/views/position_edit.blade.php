@@ -36,6 +36,7 @@ $(document).ready(init);
 $('#startPositionBtn').on('click', init);
 </script>
 
+<h2>Edit Position</h2>
 {{ Form::open(array('url'=>'/position/'.$position->id, 'method'=>'PUT')) }}
 {{ Form::hidden('fen', $position->fen, array('id' => 'fen')) }}
 <table class="table">

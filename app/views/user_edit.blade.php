@@ -1,7 +1,7 @@
 @extends('_master')
 
 @section('title')
-Update User
+Update Account
 @stop
 
 @section('head')
@@ -9,7 +9,7 @@ Update User
 @stop
 
 @section('body')
-
+<h2>Update Account</h2>
 {{ Form::open(array('url'=>'/user/'.$user->id, 'method'=>'PUT')) }}
 @if ( Session::has('flash_message') )
 	<div class='error'>{{ Session::get('flash_message') }}</div>

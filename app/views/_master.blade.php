@@ -71,7 +71,7 @@
     <footer>
     	<p>
     	@if(Auth::check())
-            <a href='/user/{{ Auth::user()->id; }}'>Account</a> | <a href='/logout'>Log out {{ Auth::user()->email; }}</a> | <a href="/game">Your Games</a> | <a href="/position">Positions</a>
+                <a href="/game">Games</a> | <a href="/position">Positions</a> | <a href='/user/{{ Auth::user()->id; }}'>Account</a> | <a href='/logout'>Log out {{ Auth::user()->email; }}</a>
         @else
             <a href='/signup'>Sign up</a> or <a href='/login'>Log in</a>
         @endif

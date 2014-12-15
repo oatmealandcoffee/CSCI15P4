@@ -26,189 +26,17 @@
 
 ## Roadmap
 
-	X Create project
-		X Create master blade
-		X download chess OSS Projects
-	X Create chess demo page
-	X Find positional database
-	X Create databases
-		X Establish connection
-		X establish environment 
-		X Create position table
-		X Create user table
-		* Create game table
-	X Create User Functionality
-		X Create Users DB Table
-		X Create UserController as RESTful
-		X Build credentialed access
-	X Position CRUD
-		X Update Position to RESTful Controller
-			X Store new position
-				X Get FEN from board to form element
-			X Edit pre-existing position
-			X Update pre-existing position
-			X Delete position
-		X Create GET
-		X Create POST
-		X Retrieve all GET
-			X View -> Update
-		X Retrieve {id} GET
-		X Update {id} POST
-			X Change position
-			X Change title
-			X New game
-			X Delete position
-		X Delete {id} POST
-	X User CRUD
-    	X Route::get('/user', 'UserController@index');
-    	X Route::get('/user/create', 'UserController@create');
-        X Route::post('/user', 'UserController@store');
-        X Route::get('/user/{user_id}', 'UserController@show');
-        X Add user not found redirect to create
-        X Route::get('/user/{user_id}/edit', 'UserController@edit');
-            X add form to edit
-            X add pre-population of form
-        X Route::put('/user/{user_id}', 'UserController@update');
-            X add user not found redirect to create
-        X Route::delete('/user/{user_id}', 'UserController@destroy'); 
-            X add user not found redirect to create
-	> Game CRUD
-		X get /game/create - create SELECT OPPONENT
-			- create autocomplete text field
-				X white
-				X black
-				X position
-		X post /game - store // redirect::action
-		> get /game - index BY USER ONLY; DO NOT SHOW ALL GAMES
-			X Add Game Info
-				X White
-				X Black
-				X Move
-				* Result
-			* Add "Play" button
-				* redirect to /game/{game_id}/edit
-        X get /game/{game_id} - show($foo_id)
-			X redirect to /game/{game_id}/edit
-        > get /game/{game_id}/edit - edit($foo_id) PLAYER MOVE
-        	> Add Game Info
-        		X White
-        		X Black
-        		X Move
-        		* Result
-        	> Make board editable
-        		> legal moves only
-       		X Add "Submit Move" button
-       			X redirect to put /game/{game_id}
-        X put /game/{game_id} - update($foo_id)
-        	* game/{game_id}/edit
-        * delete /game/{game_id} - destroy($foo_id)
-        	* redirect to /game
-		- Game invitations: how to get two players to play a game
-			- User name search
-			- User name list
-	X Deployment
-		X Fix URLs
-		X Migrate
-			/ do not make tables beforehand; just use php artisan migrate
-	X Clean up authorization handling
-    X Validation
-    	X User Create
-    		X Unique username
-    		X Unique email
-    	X Position Create
-        	X Unique Name
-        	X Unique FEN
-        X Position Edit
-        	X Position not found
-        	X Unique name
-        	X Unique FEN
-    	X Game delete (game index; admin only?)
-    		X Game not found
-    		- Update to opponent to winner
-    	X Game Show
-    		X Remove status
-    		X Disable moving pieces once legal move is made
-    		X Enable moving pieces when reset position button is pressed
-    	X Buttons
-    		X Align form buttons
-    		X Fix button style
-    			X Clear/Reset: class="btn btn-default" (white)
-    			X Action: class="btn btn-primary" (blue)
-    	X Validation/Security
-    		X User
-    			X Create
-    			X Edit
-			X Position
-				X Create
-				X Edit
-		X Position Create layout needs to be fixed
-    	X Game Create
-            X User is white or black before submitting
-        X Game Edit
-            X Game not found
-            - Highlight player's own side in addition to turn
-            - Move is different from server
-        X Validate Object IDs
-    	X Login failure -> add flash messaging
-    	X User Edit
-    	    X User not found
-    		X Unique username
-    		X Unique email
-    	* User Delete
-    		X User not found
-    		- Update games to opponent winning
-    	X User Index
-    		X Do something with it
-	*? Enable backups on Digital Ocean Droplet
-	X Credentialing
-	X Footer navigation
-		X login
-		X account
-		X games
-		X positions
-	- Game Play (core CRUD operations work; validation to come)
-		X for the engine to know if a move is valid, it needs the state before and after the move
-			X init engine with fen
-			X if ( move valid v. engine)
-				X prevent further moves
-			X else
-				X snapback
-			X submit move
-				X extract fen string
-				X get turn from engine
-		X init
-			X create engine object
-			X build valid, stateless fen
-				/ [FEN] w KQkq - 0 1
-				0 board fen
-				1 player turn: {b, w}
-				2 castle string {KQkq}
-				3 e.p.: {-}
-				4 half moves: {n >= 0}
-				5 full moves: {n > 0}
-    		/ pregan:mac, philipr:gmail
-    		X Validate moves
-    		X Switch board based on side (black side down if black)
-        	X Init
-        		X FEN
-        		X player_id
-        		X turn_id // id of the player whose turn it is
-        	> Handle checking for turn manually, disable ajax pings
-        	X if ( player_id == turn_id ) // it's the player's turn
-        		X update board
-        		X submit new position to server
-        			X game ID
-        			X board FEN
-        			X player_id
-        		X reload page
-        	* if ( player_id != turn_id ) // opponent's turn
-        		* 1/sec ajax ping server until new position received
-        			* get fen from server -> Route::get('/game/{$game_id}/fen')
-        			* verify login 
-        			* verify game participation
-        		* if ( board FEN != server FEN ) 
-        			* update board
-        			* set to player's turn
+	* Update footer menu to
+		* Games
+		* Positions
+		* Account
+		* Logout
+	* User Index
+		* Admin only
+		* Link to User Delete
+	* User Delete	
+		* Admin only
+		* Delete all played games
 
 	* Foo CRUD
 		* get /foo - index
@@ -220,8 +48,8 @@
 		* delete /foo/{foo_id} - destroy($foo_id) // redirect::action
     
 ## Bugs
-* [] User edit/store is not capturing and displaying errors
-* [] User edit is not saving changes
+* [fixed] User edit/store is not capturing and displaying errors
+* [fixed] User edit is not saving changes
 * [fixed] Play button does not behave as expected in position show
 	* Needs to take fen and init the game create interface
 * [fixed] New games aren't editable by either player
@@ -321,5 +149,6 @@
 * 14\_12\_14\_06\_02\_001: Updated layout of position edit to make consistent
 * 14\_12\_14\_06\_02\_002: Updated game create to check of user is one of players in the game
 * 14\_12\_14\_06\_02\_003: Added flash messaging to login; Added style to have errors and alerts in read
+* 14\_12\_14\_06\_03\_000: Added h2 tags to all pages for consistency; Updated "create" button in position create to primary class
 
-cd /Applications/MAMP/htdocs/CSCI15P4; git add --all; git commit -m "Added flash messaging to login; Added style to have errors and alerts in read"; git push origin master
+cd /Applications/MAMP/htdocs/CSCI15P4; git add --all; git commit -m "Added h2 tags to all pages for consistency; Updated "create" button in position create to primary class"; git push origin master

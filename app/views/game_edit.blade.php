@@ -1,7 +1,7 @@
 @extends('_master')
 
 @section('title')
-	Game Show
+	Game
 @stop
 
 @section('head')

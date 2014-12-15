@@ -5,11 +5,11 @@
 @stop
 
 @section('title')
-All Positions
+Positions
 @stop
 
 @section('body')
-
+<h2>Positions</h2>
 <table class="table">
 	<tr>
 		<td>

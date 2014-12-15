@@ -1,7 +1,7 @@
 @extends('_master')
 
 @section('title')
-Show User
+Account
 @stop
 
 @section('head')
@@ -10,7 +10,7 @@ Show User
 @stop
 
 @section('body')
-
+<h2>Account</h2>
 <table class="table">
 	<tr>
 		<td>

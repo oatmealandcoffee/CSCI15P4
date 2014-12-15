@@ -6,7 +6,7 @@
 
 @section('body')
 
-<h1>Login</h1>
+<h2>Login</h2>
 
 @foreach($errors->all() as $message)
     <div class='error'>{{ $message }}</div>

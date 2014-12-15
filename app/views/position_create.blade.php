@@ -34,7 +34,7 @@ var onChange = function(oldPos, newPos) {
 $(document).ready(init);
 $('#startPositionBtn').on('click', init);
 </script>
-
+<h2>Create Position</h2>
 {{ Form::open(array('url'=>'/position', 'method'=>'POST')) }}
 {{ Form::hidden('fen', 'rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR', array('id' => 'fen')) }}
 <table class="table">
@@ -77,7 +77,7 @@ $('#startPositionBtn').on('click', init);
 
 		</td>
          <td>
-			 <p>{{ Form::submit('Create', array('class' => 'btn btn-default')) }}</p>
+			 <p>{{ Form::submit('Create', array('class' => 'btn btn-primary')) }}</p>
 			 <p>{{ Form::button('Reset Position', array('class' => 'btn btn-default', 'id'=>'startPositionBtn', 'onClick' => '$(init);')) }}</p>
          </td>
 	</tr>
