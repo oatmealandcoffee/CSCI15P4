@@ -119,7 +119,7 @@ class UserController extends \BaseController {
     }
 
     /**
-     * RESTful Routing (DEPRECATED)
+     * RESTful Routing
      */
 
     /**
@@ -129,11 +129,16 @@ class UserController extends \BaseController {
 	 */
 	public function index()
 	{
-        if ( !Auth::check()) {
+
+
+        // only admins can see all users; stupidly simplistic admin account handling
+        if ( Auth::user()->email != 'admin@regan15.pw' ) {
             return Redirect::guest('/');
         }
-        return Redirect::action('GameController@index');
-        //echo Pre::render(User::all());
+
+        $users = User::all();
+
+        return View::make('user_index')->with('users', $users);
 	}
 
 
@@ -332,7 +337,8 @@ class UserController extends \BaseController {
             return Redirect::guest('/');
         }
 
-        if ( !Auth::check() || $user_id != Auth::id() ) {
+        // only admins can destroy users; stupidly simplistic admin account handling
+        if ( Auth::user()->email != 'admin@regan15.pw' ) {
             return Redirect::guest('/');
         }
 
@@ -343,11 +349,23 @@ class UserController extends \BaseController {
             return Redirect::action('UserController@index');
         }
 
+        // delete the user's games
+
+        $games = Game::where( 'white_id', '=', $user->id )
+            ->orWhere( 'black_id', '=', $user->id )
+            ->get();
+
+        if ($games) {
+            foreach( $games as $game ) {
+                $game->delete();
+            }
+        }
+
         // delete the user object
         $user->delete();
 
-        // redirect to the the new user page
-        return Redirect::action('UserController@create');
+        // redirect to the index page
+        return Redirect::action('UserController@index');
 	}
 
 

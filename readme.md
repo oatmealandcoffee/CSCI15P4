@@ -26,17 +26,17 @@
 
 ## Roadmap
 
-	* Update footer menu to
-		* Games
-		* Positions
-		* Account
-		* Logout
-	* User Index
-		* Admin only
-		* Link to User Delete
-	* User Delete	
-		* Admin only
-		* Delete all played games
+	X Update footer menu to
+		X Games
+		X Positions
+		X Account
+		X Logout
+	X User Index
+		X Admin only
+		X Link to User Delete
+	X User Delete	
+		X Admin only
+		X Delete all played games
 
 	* Foo CRUD
 		* get /foo - index
@@ -149,6 +149,7 @@
 * 14\_12\_14\_06\_02\_001: Updated layout of position edit to make consistent
 * 14\_12\_14\_06\_02\_002: Updated game create to check of user is one of players in the game
 * 14\_12\_14\_06\_02\_003: Added flash messaging to login; Added style to have errors and alerts in read
-* 14\_12\_14\_06\_03\_000: Added h2 tags to all pages for consistency; Updated "create" button in position create to primary class
+* 14\_12\_15\_06\_03\_000: Added h2 tags to all pages for consistency; Updated "create" button in position create to primary class
+* 14\_12\_15\_06\_04\_000: Added user admin, restricted access by account email
 
-cd /Applications/MAMP/htdocs/CSCI15P4; git add --all; git commit -m "Added h2 tags to all pages for consistency; Updated "create" button in position create to primary class"; git push origin master
+cd /Applications/MAMP/htdocs/CSCI15P4; git add --all; git commit -m "Added user admin, restricted access by account email"; git push origin master
