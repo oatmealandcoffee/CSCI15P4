@@ -14,7 +14,7 @@ This project is a simple server designed to allow users to play chess with each 
 
 # Demo information
 <!-- If you attend your section to do an in-person demo, make a note of this. If you opt to do the Jing screencast demo, include the link here .-->
-Will do an in-person demo
+[http://www.screencast.com/users/regan15pw/folders/Default/media/77f7065c-7f91-4dd0-a60a-ec79c00175c3](http://www.screencast.com/users/regan15pw/folders/Default/media/77f7065c-7f91-4dd0-a60a-ec79c00175c3)
 
 # Test Requirements and Details
 <!-- Any details the instructor or TA needs to know, for example, test credentials. -->
@@ -138,4 +138,4 @@ New accounts must have 6 character passwords.
 * 14\_12\_15\_06\_04\_003: Updated user edit and update to handle changes
 * 14\_12\_15\_06\_04\_004: Added status updates to game edit
 
-cd /Applications/MAMP/htdocs/CSCI15P4; git add --all; git commit -m "Updated readme"; git push origin master
+cd /Applications/MAMP/htdocs/CSCI15P4; git add --all; git commit -m "Updated readme with screencast information"; git push origin master
